@@ -183,6 +183,10 @@ def gen_sentence():
     return ' '.join(random.sample(lorems, 50))
 
 
+def gen_hint():
+    return ' '.join(random.sample(lorems, 20))
+
+
 def gen_name():
     return random.choice(names)
 
@@ -220,7 +224,7 @@ if __name__ == '__main__':
         print("GENERATING CHALLENGES")
         for x in range(CHAL_AMOUNT):
             word = gen_word()
-            db.session.add(Challenges(word, gen_sentence(), gen_value(), gen_category()))
+            db.session.add(Challenges(word, gen_sentence(), gen_value(), gen_category(), gen_hint()))
             db.session.commit()
             db.session.add(Keys(x + 1, word, 0))
             db.session.commit()
