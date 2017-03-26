@@ -92,6 +92,11 @@ def register():
         return redirect(url_for('auth.login'))
     if request.method == 'POST':
         errors = []
+        fname = request.form['fname']
+        affiliation = request.form['affiliation']
+        year = request.form['year']
+        city = request.form['city']
+        gender = request.form['gender']
         name = request.form['name']
         email = request.form['email']
         password = request.form['password']
@@ -120,7 +125,7 @@ def register():
             return render_template('register.html', errors=errors, name=request.form['name'], email=request.form['email'], password=request.form['password'])
         else:
             with app.app_context():
-                team = Teams(name, email.lower(), password)
+                team = Teams(fname, affiliation, year, city, gender, name, email.lower(), password)
                 db.session.add(team)
                 db.session.commit()
                 db.session.flush()
