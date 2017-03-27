@@ -160,7 +160,7 @@ class Teams(db.Model):
     mentor = db.Column(db.Boolean, default=False)
     joined = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
-    def __init__(self, fname, affiliation, year, city, gender, name, email, password, type):
+    def __init__(self, fname, affiliation, year, city, gender, name, email, password, user_type):
         self.fname = fname
         self.affiliation = affiliation
         self.year = year
@@ -169,7 +169,7 @@ class Teams(db.Model):
         self.name = name
         self.email = email
         self.password = bcrypt_sha256.encrypt(str(password))
-        if type is 'M':
+        if user_type is 'M':
             self.mentor = True
 
     def __repr__(self):
