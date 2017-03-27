@@ -66,7 +66,8 @@ def chals():
                 'description': x.description,
                 'category': x.category,
                 'files': files,
-                'tags': tags
+                'tags': tags,
+                'hint': x.hint
             })
 
         db.session.close()
@@ -81,9 +82,10 @@ def solves_per_chal():
     if not utils.user_can_view_challenges():
         return redirect(url_for('auth.login', next=request.path))
 
-    solves_sub = db.session.query(Solves.chalid, db.func.count(Solves.chalid).label('solves')).join(Teams, Solves.teamid == Teams.id).filter(Teams.banned == False).group_by(Solves.chalid).subquery()
+    solves_sub = db.session.query(Solves.chalid, db.func.count(Solves.chalid).label('solves')) \
+        .join(Teams, Solves.teamid == Teams.id).filter(Teams.banned == False).group_by(Solves.chalid).subquery()
     solves = db.session.query(solves_sub.columns.chalid, solves_sub.columns.solves, Challenges.name) \
-                       .join(Challenges, solves_sub.columns.chalid == Challenges.id).all()
+        .join(Challenges, solves_sub.columns.chalid == Challenges.id).all()
     json = {}
     if utils.hide_scores():
         for chal, count, name in solves:

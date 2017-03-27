@@ -42,6 +42,7 @@ function updateChalWindow(obj) {
             desc: marked(obj.description, {'gfm':true, 'breaks':true}),
             solves: solves,
             files: obj.files,
+            hint: obj.hint
         };
 
         $('#chal-window').append(template(wrapper));
@@ -198,6 +199,8 @@ function loadchals(refresh) {
         challenges = $.parseJSON(JSON.stringify(data));
 
         $('#challenges-board').html("");
+
+        console.log(challenges);
 
         for (var i = challenges['game'].length - 1; i >= 0; i--) {
             challenges['game'][i].solves = 0

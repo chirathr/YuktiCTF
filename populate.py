@@ -268,9 +268,19 @@ def get_hint(idx):
     c = challenge[idx]
     return c['hint']
 
+<<<<<<< HEAD
 def get_flag(idx):
     c = challenge[idx]
     return c['flag']
+=======
+def gen_hint():
+    return ' '.join(random.sample(lorems, 20))
+
+
+def gen_name():
+    return random.choice(names)
+
+>>>>>>> 1e16fa39e1a04ad94913caa67a22d44f5d06aa57
 
 def gen_email():
     return random.choice(emails)
