@@ -24,8 +24,8 @@ categories = [
     'Trivia',
 ]
 
-challenge = {'1':{'desc':'Decrypt the contents of the letter.','hint':'You need this number "10".','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 10, 'category': 'Cryptography' },
-             '2':{'desc':'Name the series.','hint':'Reverse search is the new search.','flag':'flag{westworld}','value': 10, 'category': 'Trivia' }
+challenge = {1:{'name':'Challenge 1', 'desc':'Decrypt the contents of the letter.','hint':'You need this number "10".','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 10, 'category': 'Cryptography' },
+             2:{'name':'Challenge 2', 'desc':'Name the series.','hint':'Reverse search is the new search.','flag':'flag{westworld}','value': 10, 'category': 'Trivia' }
              }
 challeng_desc = [
     'Decrypt the contents of the letter.',
@@ -260,45 +260,63 @@ extensions = [
 ]
 
 
+def gen_name():
+    return random.choice(names)
+
+
 def get_desc(idx):
     c = challenge[idx]
     return c['desc']
+
 
 def get_hint(idx):
     c = challenge[idx]
     return c['hint']
 
-<<<<<<< HEAD
+
 def get_flag(idx):
     c = challenge[idx]
     return c['flag']
-=======
-def gen_hint():
-    return ' '.join(random.sample(lorems, 20))
-
-
-def gen_name():
-    return random.choice(names)
-
->>>>>>> 1e16fa39e1a04ad94913caa67a22d44f5d06aa57
 
 def gen_email():
     return random.choice(emails)
+
 
 def get_category(idx):
     c = challenge[idx]
     return c['category']
 
+
 def get_value(idx):
     c = challenge[idx]
     return c['value']
 
+
 def get_name(idx):
-    return
+    c = challenge[idx]
+    return c['name']
+
+'''
+def gen_category():
+    return random.choice(categories)
+
+
+def gen_value():
+    return random.choice(range(100, 500, 50))
+
+
+def gen_word():
+    return random.choice(hipsters)
+
+
+def gen_file():
+    return gen_word() + random.choice(extensions)
+
 
 def random_date(start, end):
     return start + datetime.timedelta(
         seconds=random.randint(0, int((end - start).total_seconds())))
+'''
 
 
 if __name__ == '__main__':
@@ -308,12 +326,12 @@ if __name__ == '__main__':
         # Generating Challenges
         print("GENERATING CHALLENGES")
         for x in range(1,CHAL_AMOUNT):
-            word = gen_word()
-            db.session.add(Challenges(get_name(x), get_desc(x), get_value(x), get_category(x)))
+            db.session.add(Challenges(get_name(x), get_desc(x), get_value(x), get_category(x), get_hint(x)))
             db.session.commit()
-            db.session.add(Keys(x + 1, word, 0))
+            db.session.add(Keys(x, get_flag(x), 0))
             db.session.commit()
-
+        db.session.close()
+'''
         # Generating Users
         print("GENERATING USERS")
         used = []
@@ -322,7 +340,7 @@ if __name__ == '__main__':
             name = gen_name()
             if name not in used:
                 used.append(name)
-                team = Teams(name, name.lower() + gen_email(), 'password')
+                team = Teams(None,None, None, None, None, name, name.lower() + gen_email(), 'password', 's')
                 team.verified = True
                 db.session.add(team)
                 count += 1
@@ -379,5 +397,7 @@ if __name__ == '__main__':
 
                     db.session.add(wrong)
 
+
         db.session.commit()
-        db.session.close()
+'''
+
