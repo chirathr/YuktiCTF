@@ -11,7 +11,7 @@ from CTFd.models import Teams, Solves, Challenges, WrongKeys, Keys, Files, Award
 app = create_app()
 
 USER_AMOUNT = 50
-CHAL_AMOUNT = 20
+CHAL_AMOUNT = 2
 AWARDS_AMOUNT = 5
 
 categories = [
@@ -21,7 +21,88 @@ categories = [
     'Forensics',
     'Scripting',
     'Cryptography',
-    'Networking',
+    'Trivia',
+]
+
+challenge = {'1':{'desc':'Decrypt the contents of the letter.','hint':'You need this number "10".','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 10, 'category': 'Cryptography' },
+             '2':{'desc':'Name the series.','hint':'Reverse search is the new search.','flag':'flag{westworld}','value': 10, 'category': 'Trivia' }
+             }
+challeng_desc = [
+    'Decrypt the contents of the letter.',
+    'Name the series.'
+    '',
+    'What you think about the file is wrong!!',
+    '',
+    '',
+    '',
+    'The file format is correct but there is something fishy about the file.',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    ''
+]
+
+hint = [
+    'You need this number "10".',
+    'Reverse search is the new search.'
+    '',
+    'EXTend your thinking.',
+    '',
+    '',
+    '',
+    'Magic Number , Header',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    ''
+]
+
+flag = [
+    'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}',
+    'flag{westworld}'
+    '',
+    'flag{y0u_g0t_7h3_3xt3ns10n_c0rr3ct3d}',
+    '',
+    '',
+    '',
+    'flag{y0u_n33d_t0_ed1t_7h3_h34d3r}',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    ''
 ]
 lorems = [
     'Lorem', 'ipsum', 'dolor', 'sit', 'amet,', 'consectetur', 'adipiscing', 'elit.',
@@ -179,33 +260,31 @@ extensions = [
 ]
 
 
-def gen_sentence():
-    return ' '.join(random.sample(lorems, 50))
+def get_desc(idx):
+    c = challenge[idx]
+    return c['desc']
 
+def get_hint(idx):
+    c = challenge[idx]
+    return c['hint']
 
-def gen_name():
-    return random.choice(names)
-
+def get_flag(idx):
+    c = challenge[idx]
+    return c['flag']
 
 def gen_email():
     return random.choice(emails)
 
+def get_category(idx):
+    c = challenge[idx]
+    return c['category']
 
-def gen_category():
-    return random.choice(categories)
+def get_value(idx):
+    c = challenge[idx]
+    return c['value']
 
-
-def gen_value():
-    return random.choice(range(100, 500, 50))
-
-
-def gen_word():
-    return random.choice(hipsters)
-
-
-def gen_file():
-    return gen_word() + random.choice(extensions)
-
+def get_name(idx):
+    return
 
 def random_date(start, end):
     return start + datetime.timedelta(
@@ -218,23 +297,12 @@ if __name__ == '__main__':
 
         # Generating Challenges
         print("GENERATING CHALLENGES")
-        for x in range(CHAL_AMOUNT):
+        for x in range(1,CHAL_AMOUNT):
             word = gen_word()
-            db.session.add(Challenges(word, gen_sentence(), gen_value(), gen_category()))
+            db.session.add(Challenges(get_name(x), get_desc(x), get_value(x), get_category(x)))
             db.session.commit()
             db.session.add(Keys(x + 1, word, 0))
             db.session.commit()
-
-        # Generating Files
-        print("GENERATING FILES")
-        AMT_CHALS_WITH_FILES = int(CHAL_AMOUNT * (3.0 / 4.0))
-        for x in range(AMT_CHALS_WITH_FILES):
-            chal = random.randint(1, CHAL_AMOUNT)
-            filename = gen_file()
-            md5hash = hashlib.md5(filename).hexdigest()
-            db.session.add(Files(chal, md5hash + '/' + filename))
-
-        db.session.commit()
 
         # Generating Users
         print("GENERATING USERS")
