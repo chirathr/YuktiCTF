@@ -139,6 +139,16 @@ class Keys(db.Model):
         return "<Flag {0} for challenge {1}>".format(self.flag, self.chal)
 
 
+class MentorStudent(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    mentorId = db.Column(db.Integer, db.ForeignKey('teams.id'))
+    studentId = db.Column(db.Integer, db.ForeignKey('teams.id'))
+
+    def __init__(self, mentor_id, student_id):
+        self.mentorId = mentor_id
+        self.studentId = student_id
+
+
 class Teams(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     fname = db.Column(db.String(128))
