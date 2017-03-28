@@ -8,7 +8,7 @@ CTFd is a CTF in a can. Easily modifiable and has everything you need to run a j
 
 Install: 
  1. `./prepare.sh` to install dependencies using apt.
- 2. Modify [CTFd/config.py](https://github.com/CTFd/CTFd/blob/master/CTFd/config.py) to your liking.
+ 2. Modify [CTFd/config.py](https://gitlab.com/nambiarshiva/sihctfgame/blob/master/CTFd/config.py) to your liking.
  3. Use `python serve.py` in a terminal to drop into debug mode.
  4. [Here](https://github.com/CTFd/CTFd/wiki/Deployment) are some deployment options
 
