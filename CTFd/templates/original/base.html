@@ -44,9 +44,12 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
           {% if username is defined %}
-            {% if admin %}
-            <li><a href="{{ request.script_root }}/admin">Admin</a></li>
-            {% endif %}
+              {% if admin %}
+                  <li><a href="{{ request.script_root }}/admin">Admin</a></li>
+              {% endif %}
+              {% if is_mentor() %}
+                  <li><a href="{{ request.script_root }}/mystudent">My Students</a></li>
+              {% endif %}
             <li><a href="{{ request.script_root }}/team/{{ id }}">Team</a></li>
             <li><a href="{{ request.script_root }}/profile">Profile</a></li>
             <li><a href="{{ request.script_root }}/logout">Logout</a></li>

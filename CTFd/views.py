@@ -89,6 +89,7 @@ def setup():
             session['id'] = admin.id
             session['admin'] = admin.admin
             session['nonce'] = utils.sha512(os.urandom(10))
+            session['mentor'] = 'M'
 
             db.session.close()
             app.setup = False

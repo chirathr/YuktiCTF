@@ -96,6 +96,7 @@ def init_utils(app):
     app.jinja_env.filters['long2ip'] = long2ip
     app.jinja_env.globals.update(pages=pages)
     app.jinja_env.globals.update(can_register=can_register)
+    app.jinja_env.globals.update(is_mentor=is_mentor)
     app.jinja_env.globals.update(can_send_mail=can_send_mail)
     app.jinja_env.globals.update(ctf_name=ctf_name)
     app.jinja_env.globals.update(ctf_theme=ctf_theme)
@@ -188,6 +189,16 @@ def is_setup():
 def is_admin():
     if authed():
         return session['admin']
+    else:
+        return False
+
+
+def is_mentor():
+    if authed():
+        try:
+            return session['mentor']
+        except:
+            return False
     else:
         return False
 

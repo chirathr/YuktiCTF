@@ -179,7 +179,7 @@ class Teams(db.Model):
         self.name = name
         self.email = email
         self.password = bcrypt_sha256.encrypt(str(password))
-        if user_type is 'M':
+        if user_type == 'M':
             self.mentor = True
 
     def __repr__(self):

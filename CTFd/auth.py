@@ -135,6 +135,8 @@ def register():
                 session['id'] = team.id
                 session['admin'] = team.admin
                 session['nonce'] = utils.sha512(os.urandom(10))
+                if user_type == 'M':
+                    session['mentor'] = True
 
                 if utils.can_send_mail() and utils.get_config('verify_emails'): # Confirming users is enabled and we can send email.
                     db.session.close()
@@ -171,6 +173,8 @@ def login():
                 session['username'] = team.name
                 session['id'] = team.id
                 session['admin'] = team.admin
+                session['mentor'] = team.mentor
+                print team.mentor
                 session['nonce'] = utils.sha512(os.urandom(10))
                 db.session.close()
 
