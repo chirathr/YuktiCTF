@@ -25,7 +25,7 @@ categories = [
 ]
 
 challenge = {1:{'name':'Challenge 1', 'desc':'Decrypt the contents of the letter.','hint':'You need this number "10".','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 10, 'category': 'Cryptography' },
-             2:{'name':'Challenge 2', 'desc':'Name the series.','hint':'Reverse search is the new search.','flag':'flag{westworld}','value': 10, 'category': 'Trivia' }
+             2:{'name':'Challenge 2', 'desc':'Name the series.','hint':'Reverse search is the new search.','flag':'flag{westworld}','value': 10, 'category': 'Trivia' },
              1:{'name':'Challenge 1', 'desc':'Decrypt the contents of the letter.','hint':'You need this number "10".','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 10, 'category': 'Cryptography' },
              2:{'name':'Challenge 2', 'desc':'Name the series.','hint':'Reverse search is the new search.','flag':'flag{westworld}','value': 10, 'category': 'Trivia' }
              }
