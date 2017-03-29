@@ -1,0 +1,348 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import datetime
+import hashlib
+import random
+
+from CTFd import create_app
+from CTFd.models import Teams, Solves, Challenges, WrongKeys, Keys, Files, Awards
+
+app = create_app()
+
+USER_AMOUNT = 50
+CHAL_AMOUNT = 23
+AWARDS_AMOUNT = 5
+
+categories = [
+    'Exploitation',
+    'Reversing',
+    'Web',
+    'Forensics',
+    'Scripting',
+    'Cryptography',
+    'Trivia',
+]
+
+challenge = {1:{'name':'Challenge 1', 'desc':'Decrypt the contents of the letter.','hint':'You need this number "10".','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 10, 'category': 'Cryptography' },
+             2:{'name':'Challenge 2', 'desc':'Name the series.','hint':'Reverse search is the new search.','flag':'flag{westworld}','value': 10, 'category': 'Trivia' }
+             3:{'name':'Challenge 3', 'desc':'Can you find the flag here.','hint':'Some catch in the source','flag':'flag{A1w4ys_S3e_S0urc3_C0d3}', 'value': 10, 'category': 'Web' },
+             4:{'name':'Challenge 4', 'desc':'What you think about the file is wrong!!','hint':'EXTend your thinking.','flag':'flag{y0u_g0t_7h3_3xt3ns10n_c0rr3ct3d}','value': 30, 'category': 'Forensics' }
+             #5:{'name':'Challenge 5', 'desc':'','hint':'','flag':'', 'value': 30, 'category': 'Cryptography' },
+             6:{'name':'Challenge 6', 'desc':'Can you trick my arrays? I don\'t think so ... Try to leak out the flag.','hint':'Is the limit, the limit?','flag':'flag{B4by_57ep5_t0_1337}', 'value': 30, 'category': 'Exploitation' },
+             #7:{'name':'Challenge 7', 'desc':'','hint':'','flag':'', 'value': 50, 'category': 'Reversing' },
+             8:{'name':'Challenge 8', 'desc':'The file format is correct but there is something fishy about the file.','hint':'Magic Number , Header','flag':'flag{y0u_n33d_t0_ed1t_7h3_h34d3r}', 'value': 50, 'category': 'Forensics' },
+             9:{'name':'Challenge 9', 'desc':'This is updated version of previous web-Challenge','hint':'Extract the source','flag':'flag{Extr4ct_S0urc3_C0d3}', 'value': 80, 'category': 'Web' },
+             #10:{'name':'Challenge 10', 'desc':'Can you find the flag here.','hint':'Some catch in the source','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 80, 'category': 'Web' },
+             11:{'name':'Challenge 11', 'desc':'Know more about the file.','hint':'Mayhem Ends Threat At Delhi At Ten Am.','flag':'flag{m3tadat4_15_v3ry_1mp0rt4nt}', 'value': 80, 'category': 'Forensics' },
+             #12:{'name':'Challenge 12', 'desc':'Decrypt the contents of the letter.','hint':'You need this number "10".','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 10, 'category': 'Cryptography' },
+             #13:{'name':'Challenge 13', 'desc':'Name the series.','hint':'Reverse search is the new search.','flag':'flag{westworld}','value': 10, 'category': 'Trivia' }
+             14:{'name':'Challenge 14', 'desc':'There is no flag','hint':'Robots are good, Always ','flag':'flag{Y0u_4r3_G00d_1n_r0b0ts}', 'value': 10, 'category': 'Web' },
+             15:{'name':'Challenge 15', 'desc':'It is simple. Just link it. And get me a shell.','hint':'Symlinks are a powerful way to execute remote commands I have heard.','flag':'flag{s1m_l1nk5_r0k!}', 'value': 100, 'category': 'Exploitation' },
+             16:{'name':'Challenge 16', 'desc':'be a CookieMonster','hint':'You know cookies ','flag':'flag{Sh0uld_S3e_C00k1es}', 'value': 150, 'category': 'Web' },
+             #17:{'name':'Challenge 17', 'desc':'Can you find the flag here.','hint':'Some catch in the source','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 50, 'category': 'Web' },
+             #18:{'name':'Challenge 18', 'desc':'The file format is correct but there is something fishy about the file.','hint':'Magic Number , Header','flag':'flag{y0u_n33d_t0_ed1t_7h3_h34d3r}', 'value': 50, 'category': 'Forensics' },
+             19:{'name':'Challenge 19', 'desc':'EditThisCookie','hint':'Can you change the cookie? because only admin are permitted','flag':'flag{Y0u_ar3_C00k1e_monSt3r}', 'value': 200, 'category': 'Web' },
+             #20:{'name':'Challenge 20', 'desc':'Can you find the flag here.','hint':'Some catch in the source','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 80, 'category': 'Web' },
+             #21:{'name':'Challenge 21', 'desc':'Know more about the file.','hint':'Mayhem Ends Threat At Delhi At Ten Am.','flag':'flag{m3tadat4_15_v3ry_1mp0rt4nt}', 'value': 80, 'category': 'Forensics' },
+             22:{'name':'Challenge 22', 'desc':'Everything you think you know is wrong. Flow! And break the buffers ... Oh, and gain shell and read the flag.','hint':'Does the buffer take in only as many bytes as you intend it to? Sure?','flag':'flag{h4Ck3r_h4ppy_0v3rf10w}', 'value': 200, 'category': 'Exploitation' },
+             #23:{'name':'Challenge 23', 'desc':'Know more about the file.','hint':'Mayhem Ends Threat At Delhi At Ten Am.','flag':'flag{m3tadat4_15_v3ry_1mp0rt4nt}', 'value': 80, 'category': 'Forensics' },
+             }
+
+lorems = [
+    'Lorem', 'ipsum', 'dolor', 'sit', 'amet,', 'consectetur', 'adipiscing', 'elit.',
+    'Proin', 'fringilla', 'elit', 'velit,', 'sed', 'scelerisque', 'tellus', 'dapibus',
+    'vel.', 'Aenean', 'at', 'urna', 'porta,', 'fringilla', 'erat', 'eget,',
+    'lobortis', 'quam.', 'Praesent', 'luctus,', 'quam', 'at', 'consequat', 'luctus,',
+    'mauris', 'sem', 'pretium', 'metus,', 'eu', 'viverra', 'dui', 'leo',
+    'in', 'tortor.', 'Cras', 'iaculis', 'enim', 'erat,', 'sed', 'gravida',
+    'velit', 'consectetur', 'a.', 'Duis', 'eget', 'fermentum', 'elit.', 'Vivamus',
+    'laoreet', 'elementum', 'massa,', 'ut', 'sodales', 'mi', 'gravida', 'at.',
+    'Vivamus', 'dignissim', 'in', 'eros', 'non', 'iaculis.', 'Vivamus', 'nec',
+    'sem', 'fringilla,', 'semper', 'lectus', 'in,', 'malesuada', 'tellus.', 'Vestibulum',
+    'mattis', 'commodo', 'enim', 'sit', 'amet', 'scelerisque.', 'Proin', 'at',
+    'condimentum', 'nisi,', 'nec', 'fringilla', 'ante.', 'Vestibulum', 'sit', 'amet',
+    'neque', 'sit', 'amet', 'elit', 'placerat', 'interdum', 'egestas', 'ac',
+    'malesuada', 'quis', 'arcu', 'ac', 'blandit.', 'Vivamus', 'in', 'massa',
+    'a', 'purus', 'bibendum', 'sagittis.', 'Nunc', 'venenatis', 'lacus', 'sed',
+    'nulla', 'dapibus,', 'consequat', 'laoreet', 'nisi', 'faucibus.', 'Nam', 'consequat',
+    'viverra', 'nibh', 'a', 'cursus.', 'Phasellus', 'tristique', 'justo', 'vitae',
+    'rutrum', 'pharetra.', 'Sed', 'sed', 'porttitor', 'lacus.', 'Nam', 'ornare',
+    'sit', 'amet', 'nisi', 'imperdiet', 'vulputate.', 'Maecenas', 'hendrerit', 'ullamcorper',
+    'elit,', 'sed', 'pellentesque', 'lacus', 'bibendum', 'sit', 'amet.', 'Aliquam',
+    'consectetur', 'odio', 'quis', 'tellus', 'ornare,', 'id', 'malesuada', 'dui',
+    'rhoncus.', 'Quisque', 'fringilla', 'pellentesque', 'nulla', 'id', 'congue.', 'Nulla',
+    'ultricies', 'dolor', 'tristique', 'facilisis', 'at', 'accumsan', 'nisi.', 'Praesent',
+    'commodo,', 'mauris', 'sit', 'amet', 'placerat', 'condimentum,', 'nibh', 'leo',
+    'pulvinar', 'justo,', 'vel', 'dignissim', 'mi', 'dolor', 'et', 'est.',
+    'Nulla', 'facilisi.', 'Sed', 'nunc', 'est,', 'lobortis', 'id', 'diam',
+    'nec,', 'vulputate', 'varius', 'orci.', 'Maecenas', 'iaculis', 'vehicula', 'eros',
+    'eu', 'congue.', 'Nam', 'tempor', 'commodo', 'lobortis.', 'Donec', 'eget',
+    'posuere', 'dolor,', 'ut', 'rhoncus', 'tortor.', 'Donec', 'et', 'quam',
+    'quis', 'urna', 'rhoncus', 'fermentum', 'et', 'ut', 'tellus.', 'Aliquam',
+    'erat', 'volutpat.', 'Morbi', 'porttitor', 'ante', 'nec', 'porta', 'mollis.',
+    'Ut', 'sodales', 'pellentesque', 'rutrum.', 'Nullam', 'elit', 'eros,', 'sollicitudin',
+    'ac', 'rutrum', 'sit', 'amet,', 'eleifend', 'vel', 'nulla.', 'Morbi',
+    'quis', 'lacinia', 'nisi.', 'Integer', 'at', 'neque', 'vel', 'velit',
+    'tincidunt', 'elementum', 'lobortis', 'sit', 'amet', 'tellus.', 'Nunc', 'volutpat',
+    'diam', 'ac', 'diam', 'lacinia,', 'id', 'molestie', 'quam', 'eu',
+    'ultricies', 'ligula.', 'Duis', 'iaculis', 'massa', 'massa,', 'eget', 'venenatis',
+    'dolor', 'fermentum', 'laoreet.', 'Nam', 'posuere,', 'erat', 'quis', 'tempor',
+    'consequat,', 'purus', 'erat', 'hendrerit', 'arcu,', 'nec', 'aliquam', 'ligula',
+    'augue', 'vitae', 'felis.', 'Vestibulum', 'tincidunt', 'ipsum', 'vel', 'pharetra',
+    'lacinia.', 'Quisque', 'dignissim,', 'arcu', 'non', 'feugiat', 'semper,', 'felis',
+    'est', 'commodo', 'lorem,', 'malesuada', 'elementum', 'nibh', 'lectus', 'porttitor',
+    'nisi.', 'Duis', 'non', 'lacinia', 'nisl.', 'Etiam', 'ante', 'nisl,',
+    'mattis', 'eget', 'convallis', 'vel,', 'ullamcorper', 'ac', 'nisl.', 'Duis',
+    'eu', 'massa', 'at', 'urna', 'laoreet', 'convallis.', 'Donec', 'tincidunt',
+    'sapien', 'sit', 'amet', 'varius', 'eu', 'dignissim', 'tortor,', 'elementum',
+    'gravida', 'eros.', 'Cras', 'viverra', 'accumsan', 'erat,', 'et', 'euismod',
+    'dui', 'placerat', 'ac.', 'Ut', 'tortor', 'arcu,', 'euismod', 'vitae',
+    'aliquam', 'in,', 'interdum', 'vitae', 'magna.', 'Vestibulum', 'leo', 'ante,',
+    'posuere', 'eget', 'est', 'non,', 'adipiscing', 'ultrices', 'erat.', 'Donec',
+    'suscipit', 'felis', 'molestie,', 'ultricies', 'dui', 'a,', 'facilisis', 'magna.',
+    'Cum', 'sociis', 'natoque', 'penatibus', 'et', 'magnis', 'dis', 'parturient',
+    'montes,', 'nascetur', 'ridiculus', 'mus.', 'Nulla', 'quis', 'odio', 'sit',
+    'amet', 'ante', 'tristique', 'accumsan', 'ut', 'iaculis', 'neque.', 'Vivamus',
+    'in', 'venenatis', 'enim.', 'Nunc', 'dignissim', 'justo', 'neque,', 'sed',
+    'ultricies', 'justo', 'dictum', 'in.', 'Nulla', 'eget', 'nunc', 'ac',
+    'arcu', 'vestibulum', 'bibendum', 'vitae', 'quis', 'tellus.', 'Morbi', 'bibendum,',
+    'quam', 'ac', 'cursus', 'posuere,', 'purus', 'lectus', 'tempor', 'est,',
+    'eu', 'iaculis', 'quam', 'enim', 'a', 'nibh.', 'Etiam', 'consequat',
+]
+hipsters = [
+    'Ethnic', 'narwhal', 'pickled', 'Odd', 'Future', 'cliche', 'VHS', 'whatever',
+    'Etsy', 'American', 'Apparel', 'kitsch', 'wolf', 'mlkshk', 'fashion', 'axe',
+    'ethnic', 'banh', 'mi', 'cornhole', 'scenester', 'Echo', 'Park', 'Dreamcatcher',
+    'tofu', 'fap', 'selvage', 'authentic', 'cliche', 'High', 'Life', 'brunch',
+    'pork', 'belly', 'viral', 'XOXO', 'drinking', 'vinegar', 'bitters', 'Wayfarers',
+    'gastropub', 'dreamcatcher', 'chillwave', 'Shoreditch', 'kale', 'chips', 'swag', 'street',
+    'art', 'put', 'a', 'bird', 'on', 'it', 'Vice', 'synth',
+    'cliche', 'retro', 'Master', 'cleanse', 'ugh', 'Austin', 'slow-carb', 'small',
+    'batch', 'Hashtag', 'food', 'truck', 'deep', 'v', 'semiotics', 'chia',
+    'normcore', 'bicycle', 'rights', 'Austin', 'drinking', 'vinegar', 'hella', 'readymade',
+    'farm-to-table', 'Wes', 'Anderson', 'put', 'a', 'bird', 'on', 'it',
+    'freegan', 'Synth', 'lo-fi', 'food', 'truck', 'chambray', 'Shoreditch', 'cliche',
+    'kogiSynth', 'lo-fi', 'fap', 'single-origin', 'coffee', 'brunch', 'butcher', 'Pickled',
+    'Etsy', 'locavore', 'forage', 'pug', 'stumptown', 'occupy', 'PBR&B', 'actually',
+    'shabby', 'chic', 'church-key', 'disrupt', 'lomo', 'hoodie', 'Tumblr', 'biodiesel',
+    'Pinterest', 'butcher', 'Hella', 'Carles', 'pour-over', 'YOLO', 'VHS', 'literally',
+    'Selvage', 'narwhal', 'flexitarian', 'wayfarers', 'kitsch', 'bespoke', 'sriracha', 'Banh',
+    'mi', '8-bit', 'cornhole', 'viral', 'Tonx', 'keytar', 'gastropub', 'YOLO',
+    'hashtag', 'food', 'truck', '3', 'wolf', 'moonFingerstache', 'flexitarian', 'craft',
+    'beer', 'shabby', 'chic', '8-bit', 'try-hard', 'semiotics', 'Helvetica', 'keytar',
+    'PBR', 'four', 'loko', 'scenester', 'keytar', '3', 'wolf', 'moon',
+    'sriracha', 'gluten-free', 'literally', 'try-hard', 'put', 'a', 'bird', 'on',
+    'it', 'cornhole', 'blog', 'fanny', 'pack', 'Mumblecore', 'pickled', 'distillery',
+    'butcher', 'Ennui', 'tote', 'bag', 'letterpress', 'disrupt', 'keffiyeh', 'art',
+    'party', 'aesthetic', 'Helvetica', 'stumptown', 'Wes', 'Anderson', 'next', 'level',
+    "McSweeney's", 'cornhole', 'Schlitz', 'skateboard', 'pop-up', 'Chillwave', 'biodiesel', 'semiotics',
+    'seitan', 'authentic', 'bicycle', 'rights', 'wolf', 'pork', 'belly', 'letterpress',
+    'locavore', 'whatever', 'fixie', 'viral', 'mustache', 'beard', 'Hashtag', 'sustainable',
+    'lomo', 'cardigan', 'lo-fiWilliamsburg', 'craft', 'beer', 'bitters', 'iPhone', 'gastropub',
+    'messenger', 'bag', 'Organic', 'post-ironic', 'fingerstache', 'ennui', 'banh', 'mi',
+    'Art', 'party', 'bitters', 'twee', 'bespoke', 'church-key', 'Intelligentsia', 'sriracha',
+    'Echo', 'Park', 'Tofu', 'locavore', 'street', 'art', 'freegan', 'farm-to-table',
+    'distillery', 'hoodie', 'swag', 'ugh', 'YOLO', 'VHS', 'Cred', 'hella',
+    'readymade', 'distillery', 'Banh', 'mi', 'Echo', 'Park', "McSweeney's,", 'mlkshk',
+    'photo', 'booth', 'swag', 'Odd', 'Future', 'squid', 'Tonx', 'craft',
+    'beer', 'High', 'Life', 'tousled', 'PBR', 'you', 'probably', "haven't",
+    'heard', 'of', 'them', 'locavore', 'PBR&B', 'street', 'art', 'pop-up',
+]
+names = [
+    'James', 'John', 'Robert', 'Michael', 'William', 'David', 'Richard', 'Joseph',
+    'Charles', 'Thomas', 'Christopher', 'Daniel', 'Matthew', 'Donald', 'Anthony', 'Paul',
+    'Mark', 'George', 'Steven', 'Kenneth', 'Andrew', 'Edward', 'Brian', 'Joshua',
+    'Kevin', 'Ronald', 'Timothy', 'Jason', 'Jeffrey', 'Gary', 'Ryan', 'Nicholas',
+    'Eric', 'Stephen', 'Jacob', 'Larry', 'Frank', 'Jonathan', 'Scott', 'Justin',
+    'Raymond', 'Brandon', 'Gregory', 'Samuel', 'Patrick', 'Benjamin', 'Jack', 'Dennis',
+    'Jerry', 'Alexander', 'Tyler', 'Douglas', 'Henry', 'Peter', 'Walter', 'Aaron',
+    'Jose', 'Adam', 'Harold', 'Zachary', 'Nathan', 'Carl', 'Kyle', 'Arthur',
+    'Gerald', 'Lawrence', 'Roger', 'Albert', 'Keith', 'Jeremy', 'Terry', 'Joe',
+    'Sean', 'Willie', 'Jesse', 'Ralph', 'Billy', 'Austin', 'Bruce', 'Christian',
+    'Roy', 'Bryan', 'Eugene', 'Louis', 'Harry', 'Wayne', 'Ethan', 'Jordan',
+    'Russell', 'Alan', 'Philip', 'Randy', 'Juan', 'Howard', 'Vincent', 'Bobby',
+    'Dylan', 'Johnny', 'Phillip', 'Craig', 'Mary', 'Patricia', 'Elizabeth', 'Jennifer',
+    'Linda', 'Barbara', 'Susan', 'Margaret', 'Jessica', 'Dorothy', 'Sarah', 'Karen',
+    'Nancy', 'Betty', 'Lisa', 'Sandra', 'Helen', 'Donna', 'Ashley', 'Kimberly',
+    'Carol', 'Michelle', 'Amanda', 'Emily', 'Melissa', 'Laura', 'Deborah', 'Stephanie',
+    'Rebecca', 'Sharon', 'Cynthia', 'Ruth', 'Kathleen', 'Anna', 'Shirley', 'Amy',
+    'Angela', 'Virginia', 'Brenda', 'Pamela', 'Catherine', 'Katherine', 'Nicole', 'Christine',
+    'Janet', 'Debra', 'Carolyn', 'Samantha', 'Rachel', 'Heather', 'Maria', 'Diane',
+    'Frances', 'Joyce', 'Julie', 'Martha', 'Joan', 'Evelyn', 'Kelly', 'Christina',
+    'Emma', 'Lauren', 'Alice', 'Judith', 'Marie', 'Doris', 'Ann', 'Jean',
+    'Victoria', 'Cheryl', 'Megan', 'Kathryn', 'Andrea', 'Jacqueline', 'Gloria', 'Teresa',
+    'Janice', 'Sara', 'Rose', 'Julia', 'Hannah', 'Theresa', 'Judy', 'Mildred',
+    'Grace', 'Beverly', 'Denise', 'Marilyn', 'Amber', 'Danielle', 'Brittany', 'Diana',
+    'Jane', 'Lori', 'Olivia', 'Tiffany', 'Kathy', 'Tammy', 'Crystal', 'Madison',
+]
+emails = [
+    '@gmail.com',
+    '@yahoo.com',
+    '@outlook.com',
+    '@hotmail.com',
+    '@mailinator.com',
+    '@poly.edu',
+    '@nyu.edu'
+]
+extensions = [
+    '.doc', '.log', '.msg', '.rtf', '.txt', '.wpd', '.wps', '.123',
+    '.csv', '.dat', '.db ', '.dll', '.mdb', '.pps', '.ppt', '.sql',
+    '.wks', '.xls', '.xml', '.mng', '.pct', '.bmp', '.gif', '.jpe',
+    '.jpg', '.png', '.psd', '.psp', '.tif', '.ai ', '.drw', '.dxf',
+    '.eps', '.ps ', '.svg', '.3dm', '.3dm', '.ind', '.pdf', '.qxd',
+    '.qxp', '.aac', '.aif', '.iff', '.m3u', '.mid', '.mid', '.mp3',
+    '.mpa', '.ra ', '.ram', '.wav', '.wma', '.3gp', '.asf', '.asx',
+    '.avi', '.mov', '.mp4', '.mpg', '.qt ', '.rm ', '.swf', '.wmv',
+    '.asp', '.css', '.htm', '.htm', '.js ', '.jsp', '.php', '.xht',
+    '.fnt', '.fon', '.otf', '.ttf', '.8bi', '.plu', '.xll', '.cab',
+    '.cpl', '.cur', '.dmp', '.drv', '.key', '.lnk', '.sys', '.cfg',
+    '.ini', '.reg', '.app', '.bat', '.cgi', '.com', '.exe', '.pif',
+    '.vb ', '.ws ', '.deb', '.gz ', '.pkg', '.rar', '.sea', '.sit',
+    '.sit', '.zip', '.bin', '.hqx', '.0 E', '.mim', '.uue', '.cpp',
+    '.jav', '.pl ', '.bak', '.gho', '.old', '.ori', '.tmp', '.dmg',
+    '.iso', '.toa', '.vcd', '.gam', '.nes', '.rom', '.sav', '.msi',
+]
+
+
+def gen_name():
+    return random.choice(names)
+
+
+def get_desc(idx):
+    c = challenge[idx]
+    return c['desc']
+
+
+def get_hint(idx):
+    c = challenge[idx]
+    return c['hint']
+
+
+def get_flag(idx):
+    c = challenge[idx]
+    return c['flag']
+
+def gen_email():
+    return random.choice(emails)
+
+
+def get_category(idx):
+    c = challenge[idx]
+    return c['category']
+
+
+def get_value(idx):
+    c = challenge[idx]
+    return c['value']
+
+
+def get_name(idx):
+    c = challenge[idx]
+    return c['name']
+
+'''
+def gen_category():
+    return random.choice(categories)
+
+
+def gen_value():
+    return random.choice(range(100, 500, 50))
+
+
+def gen_word():
+    return random.choice(hipsters)
+
+
+def gen_file():
+    return gen_word() + random.choice(extensions)
+
+
+def random_date(start, end):
+    return start + datetime.timedelta(
+        seconds=random.randint(0, int((end - start).total_seconds())))
+'''
+
+
+if __name__ == '__main__':
+    with app.app_context():
+        db = app.db
+
+        # Generating Challenges
+        print("GENERATING CHALLENGES")
+        for x in range(1,len(challenge)+1):
+            db.session.add(Challenges(get_name(x), get_desc(x), get_value(x), get_category(x), get_hint(x)))
+            db.session.commit()
+            db.session.add(Keys(x, get_flag(x), 0))
+            db.session.commit()
+        db.session.close()
+'''
+        # Generating Users
+        print("GENERATING USERS")
+        used = []
+        count = 0
+        while count < USER_AMOUNT:
+            name = gen_name()
+            if name not in used:
+                used.append(name)
+                team = Teams(None,None, None, None, None, name, name.lower() + gen_email(), 'password', 's')
+                team.verified = True
+                db.session.add(team)
+                count += 1
+
+        db.session.commit()
+
+        # Generating Solves
+        print("GENERATING SOLVES")
+        for x in range(USER_AMOUNT):
+            used = []
+            base_time = datetime.datetime.utcnow() + datetime.timedelta(minutes=-10000)
+            for y in range(random.randint(1, CHAL_AMOUNT)):
+                chalid = random.randint(1, CHAL_AMOUNT)
+                if chalid not in used:
+                    used.append(chalid)
+                    solve = Solves(chalid, x + 1, '127.0.0.1', gen_word())
+
+                    new_base = random_date(base_time, base_time + datetime.timedelta(minutes=random.randint(30, 60)))
+                    solve.date = new_base
+                    base_time = new_base
+
+                    db.session.add(solve)
+
+        db.session.commit()
+
+        # Generating Awards
+        print("GENERATING AWARDS")
+        for x in range(USER_AMOUNT):
+            base_time = datetime.datetime.utcnow() + datetime.timedelta(minutes=-10000)
+            for _ in range(random.randint(0, AWARDS_AMOUNT)):
+                award = Awards(x + 1, gen_word(), random.randint(-10, 10))
+                new_base = random_date(base_time, base_time + datetime.timedelta(minutes=random.randint(30, 60)))
+                award.date = new_base
+                base_time = new_base
+
+                db.session.add(award)
+
+        db.session.commit()
+
+        # Generating Wrong Keys
+        print("GENERATING WRONG KEYS")
+        for x in range(USER_AMOUNT):
+            used = []
+            base_time = datetime.datetime.utcnow() + datetime.timedelta(minutes=-10000)
+            for y in range(random.randint(1, CHAL_AMOUNT * 20)):
+                chalid = random.randint(1, CHAL_AMOUNT)
+                if chalid not in used:
+                    used.append(chalid)
+                    wrong = WrongKeys(x + 1, chalid, gen_word())
+
+                    new_base = random_date(base_time, base_time + datetime.timedelta(minutes=random.randint(30, 60)))
+                    wrong.date = new_base
+                    base_time = new_base
+
+                    db.session.add(wrong)
+
+
+        db.session.commit()
+'''
+
