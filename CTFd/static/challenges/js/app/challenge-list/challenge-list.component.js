@@ -6,6 +6,7 @@ angular.
     controller: ['$http',
       function challengeListController($http) {
         var self = this;
+        this.data = {};
 
         $http.get('/chals').then(function(response) {
           self.challenges = response.data;

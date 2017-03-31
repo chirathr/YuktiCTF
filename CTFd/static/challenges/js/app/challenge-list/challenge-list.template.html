@@ -10,11 +10,14 @@
       <!--Body content-->
 
       <ul class="challenges">
-        <li ng-repeat="challenge in $ctrl.challenges.game | filter:$ctrl.query">
-          <span>{{challenge.name}}</span>
-          <p>{{challenge.description}}</p>
+          <button ng-repeat="challenge in $ctrl.challenges.game" ng-click="$ctrl.selection = challenge">{{challenge.name}}</button>
         </li>
       </ul>
+
+
+        <div class="slide-animate-container">
+            <div class="slide-animate" ng-include="'/static/challenges/js/app/challenge-detail/challenge-detail.template.html'"></div>
+        </div>
 
     </div>
   </div>
