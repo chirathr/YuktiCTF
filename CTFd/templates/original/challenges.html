@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="challengeApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title of the document</title>
+
+        <!--Scripts-->
+
+        <!-- Angular -->
+        <script src="{{ request.script_root }}/static/challenges/js/angular/angular.js"></script>
+        <script src="{{ request.script_root }}/static/challenges/js/angular/angular-loader.js"></script>
+        <script src="{{ request.script_root }}/static/challenges/js/angular/angular-route.js"></script>
+        <script src="{{ request.script_root }}/static/challenges/js/angular/angular-animate.js"></script>
+
+        <!-- challenges app -->
+        <script src="{{ request.script_root }}/static/challenges/js/app/app.module.js"></script>
+        <script src="{{ request.script_root }}/static/challenges/js/app/app.config.js"></script>
+        <script src="{{ request.script_root }}/static/challenges/js/app/challenge-list/challenge-list.module.js"></script>
+        <script src="{{ request.script_root }}/static/challenges/js/app/challenge-list/challenge-list.component.js"></script>
+
+    </head>
+
+    <body>
+        <div ng-view></div>
+    </body>
+
+</html>

@@ -13,6 +13,7 @@ from CTFd import utils
 
 __version__ = '1.0.1'
 
+
 class ThemeLoader(FileSystemLoader):
     def get_source(self, environment, template):
         if template.startswith('admin/'):
