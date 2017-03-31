@@ -1,0 +1,186 @@
+{
+    "20":{
+        "category":"Web",
+        "name":"Challenge 20",
+        "hint":"Some catch in the source",
+        "value":80,
+        "flag":"flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}",
+        "desc":"Can you find the flag here."
+    },
+    "21":{
+        "category":"Forensics",
+        "name":"Challenge 21",
+        "hint":"Mayhem Ends Threat At Delhi At Ten Am.",
+        "value":80,
+        "flag":"flag{m3tadat4_15_v3ry_1mp0rt4nt}",
+        "desc":"Know more about the file."
+    },
+    "22":{
+        "category":"Exploitation",
+        "name":"Challenge 22",
+        "hint":"Does the buffer take in only as many bytes as you intend it to? Sure?",
+        "value":200,
+        "flag":"flag{h4Ck3r_h4ppy_0v3rf10w}",
+        "desc":"Everything you think you know is wrong. Flow! And break the buffers ... Oh, and gain shell and read the flag."
+    },
+    "23":{
+        "category":"Forensics",
+        "name":"Challenge 23",
+        "hint":"Mayhem Ends Threat At Delhi At Ten Am.",
+        "value":80,
+        "flag":"flag{m3tadat4_15_v3ry_1mp0rt4nt}",
+        "desc":"Know more about the file."
+    },
+    "1":{
+        "category":"Cryptography",
+        "name":"Challenge 1",
+        "hint":"You need this number \"10\".",
+        "value":10,
+        "flag":"flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}",
+        "desc":"Decrypt the contents of the letter."
+    },
+    "3":{
+        "category":"Web",
+        "name":"Challenge 3",
+        "hint":"Some catch in the source",
+        "value":10,
+        "flag":"flag{A1w4ys_S3e_S0urc3_C0d3}",
+        "desc":"Can you find the flag here."
+    },
+    "2":{
+        "category":"Trivia",
+        "name":"Challenge 2",
+        "hint":"Reverse search is the new search.",
+        "value":10,
+        "flag":"flag{westworld}",
+        "desc":"Name the series."
+    },
+    "5":{
+        "category":"Cryptography",
+        "name":"Challenge 5",
+        "hint":"",
+        "value":30,
+        "flag":"",
+        "desc":""
+    },
+    "4":{
+        "category":"Forensics",
+        "name":"Challenge 4",
+        "hint":"EXTend your thinking.",
+        "value":30,
+        "flag":"flag{y0u_g0t_7h3_3xt3ns10n_c0rr3ct3d}",
+        "desc":"What you think about the file is wrong!!"
+    },
+    "7":{
+        "category":"Reversing",
+        "name":"Challenge 7",
+        "hint":"",
+        "value":50,
+        "flag":"",
+        "desc":""
+    },
+    "6":{
+        "category":"Exploitation",
+        "name":"Challenge 6",
+        "hint":"Is the limit, the limit?",
+        "value":30,
+        "flag":"flag{B4by_57ep5_t0_1337}",
+        "desc":"Can you trick my arrays? I don't think so ... Try to leak out the flag."
+    },
+    "9":{
+        "category":"Web",
+        "name":"Challenge 9",
+        "hint":"Extract the source",
+        "value":80,
+        "flag":"flag{Extr4ct_S0urc3_C0d3}",
+        "desc":"This is updated version of previous web-Challenge"
+    },
+    "8":{
+        "category":"Forensics",
+        "name":"Challenge 8",
+        "hint":"Magic Number , Header",
+        "value":50,
+        "flag":"flag{y0u_n33d_t0_ed1t_7h3_h34d3r}",
+        "desc":"The file format is correct but there is something fishy about the file."
+    },
+    "11":{
+        "category":"Forensics",
+        "name":"Challenge 11",
+        "hint":"Mayhem Ends Threat At Delhi At Ten Am.",
+        "value":80,
+        "flag":"flag{m3tadat4_15_v3ry_1mp0rt4nt}",
+        "desc":"Know more about the file."
+    },
+    "10":{
+        "category":"Web",
+        "name":"Challenge 10",
+        "hint":"Some catch in the source",
+        "value":80,
+        "flag":"flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}",
+        "desc":"Can you find the flag here."
+    },
+    "13":{
+        "category":"Trivia",
+        "name":"Challenge 13",
+        "hint":"Reverse search is the new search.",
+        "value":10,
+        "flag":"flag{westworld}",
+        "desc":"Name the series."
+    },
+    "12":{
+        "category":"Cryptography",
+        "name":"Challenge 12",
+        "hint":"You need this number \"10\".",
+        "value":10,
+        "flag":"flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}",
+        "desc":"Decrypt the contents of the letter."
+    },
+    "15":{
+        "category":"Exploitation",
+        "name":"Challenge 15",
+        "hint":"Symlinks are a powerful way to execute remote commands I have heard.",
+        "value":100,
+        "flag":"flag{s1m_l1nk5_r0k!}",
+        "desc":"It is simple. Just link it. And get me a shell."
+    },
+    "14":{
+        "category":"Web",
+        "name":"Challenge 14",
+        "hint":"Robots are good, Always ",
+        "value":10,
+        "flag":"flag{Y0u_4r3_G00d_1n_r0b0ts}",
+        "desc":"There is no flag"
+    },
+    "17":{
+        "category":"Web",
+        "name":"Challenge 17",
+        "hint":"Some catch in the source",
+        "value":50,
+        "flag":"flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}",
+        "desc":"Can you find the flag here."
+    },
+    "16":{
+        "category":"Web",
+        "name":"Challenge 16",
+        "hint":"You know cookies ",
+        "value":150,
+        "flag":"flag{Sh0uld_S3e_C00k1es}",
+        "desc":"be a CookieMonster"
+    },
+    "19":{
+        "category":"Web",
+        "name":"Challenge 19",
+        "hint":"Can you change the cookie? because only admin are permitted",
+        "value":200,
+        "flag":"flag{Y0u_ar3_C00k1e_monSt3r}",
+        "desc":"EditThisCookie"
+    },
+    "18":{
+        "category":"Forensics",
+        "name":"Challenge 18",
+        "hint":"Magic Number , Header",
+        "value":50,
+        "flag":"flag{y0u_n33d_t0_ed1t_7h3_h34d3r}",
+        "desc":"The file format is correct but there is something fishy about the file."
+    }
+}
