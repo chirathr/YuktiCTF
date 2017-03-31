@@ -175,6 +175,17 @@ def team(teamid):
         return jsonify(json)
 
 
+@views.route('/my-students', methods=['GET'])
+def my_students():
+    if utils.authed():
+        if utils.is_mentor():
+            return render_template("my_students.html")
+        else:
+            return redirect("/")
+    else:
+        return redirect(url_for('auth.login'))
+
+
 @views.route('/profile', methods=['POST', 'GET'])
 def profile():
     if utils.authed():
