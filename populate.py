@@ -11,7 +11,7 @@ from CTFd.models import Teams, Solves, Challenges, WrongKeys, Keys, Files, Award
 app = create_app()
 
 USER_AMOUNT = 50
-CHAL_AMOUNT = 20
+CHAL_AMOUNT = 23
 AWARDS_AMOUNT = 5
 
 categories = [
@@ -21,8 +21,34 @@ categories = [
     'Forensics',
     'Scripting',
     'Cryptography',
-    'Networking',
+    'Trivia',
 ]
+
+challenge = {1:{'name':'Challenge 1', 'desc':'Decrypt the contents of the letter.','hint':'You need this number "10".','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 10, 'category': 'Cryptography' },
+             2:{'name':'Challenge 2', 'desc':'Name the series.','hint':'Reverse search is the new search.','flag':'flag{westworld}','value': 10, 'category': 'Trivia' },
+             3:{'name':'Challenge 3', 'desc':'Can you find the flag here.','hint':'Some catch in the source','flag':'flag{A1w4ys_S3e_S0urc3_C0d3}', 'value': 10, 'category': 'Web' },
+             4:{'name':'Challenge 4', 'desc':'What you think about the file is wrong!!','hint':'EXTend your thinking.','flag':'flag{y0u_g0t_7h3_3xt3ns10n_c0rr3ct3d}','value': 30, 'category': 'Forensics' },
+             #5:{'name':'Challenge 5', 'desc':'','hint':'','flag':'', 'value': 30, 'category': 'Cryptography' },
+             6:{'name':'Challenge 6', 'desc':'Can you trick my arrays? I don\'t think so ... Try to leak out the flag.','hint':'Is the limit, the limit?','flag':'flag{B4by_57ep5_t0_1337}', 'value': 30, 'category': 'Exploitation' },
+             #7:{'name':'Challenge 7', 'desc':'','hint':'','flag':'', 'value': 50, 'category': 'Reversing' },
+             8:{'name':'Challenge 8', 'desc':'The file format is correct but there is something fishy about the file.','hint':'Magic Number , Header','flag':'flag{y0u_n33d_t0_ed1t_7h3_h34d3r}', 'value': 50, 'category': 'Forensics' },
+             9:{'name':'Challenge 9', 'desc':'This is updated version of previous web-Challenge','hint':'Extract the source','flag':'flag{Extr4ct_S0urc3_C0d3}', 'value': 80, 'category': 'Web' },
+             #10:{'name':'Challenge 10', 'desc':'Can you find the flag here.','hint':'Some catch in the source','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 80, 'category': 'Web' },
+             11:{'name':'Challenge 11', 'desc':'Know more about the file.','hint':'Mayhem Ends Threat At Delhi At Ten Am.','flag':'flag{m3tadat4_15_v3ry_1mp0rt4nt}', 'value': 80, 'category': 'Forensics' },
+             #12:{'name':'Challenge 12', 'desc':'Decrypt the contents of the letter.','hint':'You need this number "10".','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 10, 'category': 'Cryptography' },
+             #13:{'name':'Challenge 13', 'desc':'Name the series.','hint':'Reverse search is the new search.','flag':'flag{westworld}','value': 10, 'category': 'Trivia' }
+             14:{'name':'Challenge 14', 'desc':'There is no flag','hint':'Robots are good, Always ','flag':'flag{Y0u_4r3_G00d_1n_r0b0ts}', 'value': 10, 'category': 'Web' },
+             15:{'name':'Challenge 15', 'desc':'It is simple. Just link it. And get me a shell.','hint':'Symlinks are a powerful way to execute remote commands I have heard.','flag':'flag{s1m_l1nk5_r0k!}', 'value': 100, 'category': 'Exploitation' },
+             16:{'name':'Challenge 16', 'desc':'be a CookieMonster','hint':'You know cookies ','flag':'flag{Sh0uld_S3e_C00k1es}', 'value': 150, 'category': 'Web' },
+             #17:{'name':'Challenge 17', 'desc':'Can you find the flag here.','hint':'Some catch in the source','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 50, 'category': 'Web' },
+             #18:{'name':'Challenge 18', 'desc':'The file format is correct but there is something fishy about the file.','hint':'Magic Number , Header','flag':'flag{y0u_n33d_t0_ed1t_7h3_h34d3r}', 'value': 50, 'category': 'Forensics' },
+             19:{'name':'Challenge 19', 'desc':'EditThisCookie','hint':'Can you change the cookie? because only admin are permitted','flag':'flag{Y0u_ar3_C00k1e_monSt3r}', 'value': 200, 'category': 'Web' },
+             #20:{'name':'Challenge 20', 'desc':'Can you find the flag here.','hint':'Some catch in the source','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 80, 'category': 'Web' },
+             #21:{'name':'Challenge 21', 'desc':'Know more about the file.','hint':'Mayhem Ends Threat At Delhi At Ten Am.','flag':'flag{m3tadat4_15_v3ry_1mp0rt4nt}', 'value': 80, 'category': 'Forensics' },
+             22:{'name':'Challenge 22', 'desc':'Everything you think you know is wrong. Flow! And break the buffers ... Oh, and gain shell and read the flag.','hint':'Does the buffer take in only as many bytes as you intend it to? Sure?','flag':'flag{h4Ck3r_h4ppy_0v3rf10w}', 'value': 200, 'category': 'Exploitation' },
+             #23:{'name':'Challenge 23', 'desc':'Know more about the file.','hint':'Mayhem Ends Threat At Delhi At Ten Am.','flag':'flag{m3tadat4_15_v3ry_1mp0rt4nt}', 'value': 80, 'category': 'Forensics' },
+             }
+
 lorems = [
     'Lorem', 'ipsum', 'dolor', 'sit', 'amet,', 'consectetur', 'adipiscing', 'elit.',
     'Proin', 'fringilla', 'elit', 'velit,', 'sed', 'scelerisque', 'tellus', 'dapibus',
@@ -179,22 +205,43 @@ extensions = [
 ]
 
 
-def gen_sentence():
-    return ' '.join(random.sample(lorems, 50))
-
-
-def gen_hint():
-    return ' '.join(random.sample(lorems, 20))
-
-
 def gen_name():
     return random.choice(names)
 
+
+def get_desc(idx):
+    c = challenge[idx]
+    return c['desc']
+
+
+def get_hint(idx):
+    c = challenge[idx]
+    return c['hint']
+
+
+def get_flag(idx):
+    c = challenge[idx]
+    return c['flag']
 
 def gen_email():
     return random.choice(emails)
 
 
+def get_category(idx):
+    c = challenge[idx]
+    return c['category']
+
+
+def get_value(idx):
+    c = challenge[idx]
+    return c['value']
+
+
+def get_name(idx):
+    c = challenge[idx]
+    return c['name']
+
+'''
 def gen_category():
     return random.choice(categories)
 
@@ -214,6 +261,7 @@ def gen_file():
 def random_date(start, end):
     return start + datetime.timedelta(
         seconds=random.randint(0, int((end - start).total_seconds())))
+'''
 
 
 if __name__ == '__main__':
@@ -222,24 +270,13 @@ if __name__ == '__main__':
 
         # Generating Challenges
         print("GENERATING CHALLENGES")
-        for x in range(CHAL_AMOUNT):
-            word = gen_word()
-            db.session.add(Challenges(word, gen_sentence(), gen_value(), gen_category(), gen_hint()))
+        for x in range(1,len(challenge)+1):
+            db.session.add(Challenges(get_name(x), get_desc(x), get_value(x), get_category(x), get_hint(x)))
             db.session.commit()
-            db.session.add(Keys(x + 1, word, 0))
+            db.session.add(Keys(x, get_flag(x), 0))
             db.session.commit()
-
-        # Generating Files
-        print("GENERATING FILES")
-        AMT_CHALS_WITH_FILES = int(CHAL_AMOUNT * (3.0 / 4.0))
-        for x in range(AMT_CHALS_WITH_FILES):
-            chal = random.randint(1, CHAL_AMOUNT)
-            filename = gen_file()
-            md5hash = hashlib.md5(filename).hexdigest()
-            db.session.add(Files(chal, md5hash + '/' + filename))
-
-        db.session.commit()
-
+        db.session.close()
+'''
         # Generating Users
         print("GENERATING USERS")
         used = []
@@ -248,7 +285,7 @@ if __name__ == '__main__':
             name = gen_name()
             if name not in used:
                 used.append(name)
-                team = Teams(name, name.lower() + gen_email(), 'password')
+                team = Teams(None,None, None, None, None, name, name.lower() + gen_email(), 'password', 's')
                 team.verified = True
                 db.session.add(team)
                 count += 1
@@ -305,5 +342,7 @@ if __name__ == '__main__':
 
                     db.session.add(wrong)
 
+
         db.session.commit()
-        db.session.close()
+'''
+
