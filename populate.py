@@ -35,6 +35,11 @@ challenge = {}
 for i in c:
     challenge[int(i)] = c[i]
 
+names_file = os.path.join('data', 'names.json')
+fh = open(names_file)
+names = json.load(fh)
+fh.close()
+
 lorems = [
     'Lorem', 'ipsum', 'dolor', 'sit', 'amet,', 'consectetur', 'adipiscing', 'elit.',
     'Proin', 'fringilla', 'elit', 'velit,', 'sed', 'scelerisque', 'tellus', 'dapibus',
@@ -134,33 +139,6 @@ hipsters = [
     'photo', 'booth', 'swag', 'Odd', 'Future', 'squid', 'Tonx', 'craft',
     'beer', 'High', 'Life', 'tousled', 'PBR', 'you', 'probably', "haven't",
     'heard', 'of', 'them', 'locavore', 'PBR&B', 'street', 'art', 'pop-up',
-]
-names = [
-    'James', 'John', 'Robert', 'Michael', 'William', 'David', 'Richard', 'Joseph',
-    'Charles', 'Thomas', 'Christopher', 'Daniel', 'Matthew', 'Donald', 'Anthony', 'Paul',
-    'Mark', 'George', 'Steven', 'Kenneth', 'Andrew', 'Edward', 'Brian', 'Joshua',
-    'Kevin', 'Ronald', 'Timothy', 'Jason', 'Jeffrey', 'Gary', 'Ryan', 'Nicholas',
-    'Eric', 'Stephen', 'Jacob', 'Larry', 'Frank', 'Jonathan', 'Scott', 'Justin',
-    'Raymond', 'Brandon', 'Gregory', 'Samuel', 'Patrick', 'Benjamin', 'Jack', 'Dennis',
-    'Jerry', 'Alexander', 'Tyler', 'Douglas', 'Henry', 'Peter', 'Walter', 'Aaron',
-    'Jose', 'Adam', 'Harold', 'Zachary', 'Nathan', 'Carl', 'Kyle', 'Arthur',
-    'Gerald', 'Lawrence', 'Roger', 'Albert', 'Keith', 'Jeremy', 'Terry', 'Joe',
-    'Sean', 'Willie', 'Jesse', 'Ralph', 'Billy', 'Austin', 'Bruce', 'Christian',
-    'Roy', 'Bryan', 'Eugene', 'Louis', 'Harry', 'Wayne', 'Ethan', 'Jordan',
-    'Russell', 'Alan', 'Philip', 'Randy', 'Juan', 'Howard', 'Vincent', 'Bobby',
-    'Dylan', 'Johnny', 'Phillip', 'Craig', 'Mary', 'Patricia', 'Elizabeth', 'Jennifer',
-    'Linda', 'Barbara', 'Susan', 'Margaret', 'Jessica', 'Dorothy', 'Sarah', 'Karen',
-    'Nancy', 'Betty', 'Lisa', 'Sandra', 'Helen', 'Donna', 'Ashley', 'Kimberly',
-    'Carol', 'Michelle', 'Amanda', 'Emily', 'Melissa', 'Laura', 'Deborah', 'Stephanie',
-    'Rebecca', 'Sharon', 'Cynthia', 'Ruth', 'Kathleen', 'Anna', 'Shirley', 'Amy',
-    'Angela', 'Virginia', 'Brenda', 'Pamela', 'Catherine', 'Katherine', 'Nicole', 'Christine',
-    'Janet', 'Debra', 'Carolyn', 'Samantha', 'Rachel', 'Heather', 'Maria', 'Diane',
-    'Frances', 'Joyce', 'Julie', 'Martha', 'Joan', 'Evelyn', 'Kelly', 'Christina',
-    'Emma', 'Lauren', 'Alice', 'Judith', 'Marie', 'Doris', 'Ann', 'Jean',
-    'Victoria', 'Cheryl', 'Megan', 'Kathryn', 'Andrea', 'Jacqueline', 'Gloria', 'Teresa',
-    'Janice', 'Sara', 'Rose', 'Julia', 'Hannah', 'Theresa', 'Judy', 'Mildred',
-    'Grace', 'Beverly', 'Denise', 'Marilyn', 'Amber', 'Danielle', 'Brittany', 'Diana',
-    'Jane', 'Lori', 'Olivia', 'Tiffany', 'Kathy', 'Tammy', 'Crystal', 'Madison',
 ]
 emails = [
     '@gmail.com',
