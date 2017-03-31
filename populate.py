@@ -85,8 +85,6 @@ emails = [
     '@outlook.com',
     '@hotmail.com',
     '@mailinator.com',
-    '@poly.edu',
-    '@nyu.edu'
 ]
 extensions = [
     '.doc', '.log', '.msg', '.rtf', '.txt', '.wpd', '.wps', '.123',
