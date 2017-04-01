@@ -4,11 +4,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="jumbotron home">
-    <div class="container">
+    <div class="page-title">
         <h1>Setup</h1>
     </div>
-</div>
 <div class="container main-container ScrollOn">
     <div id="login-container" class="col-md-6 col-md-offset-3">
         <h2 class="text-center">CTF Settings</h2>
@@ -21,31 +19,31 @@
             </div>
         </div>
         {% endfor %}
-        <form method="post" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizontal">
+        <form method="post" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizontal form-group">
             <input type="hidden" name="nonce" value="{{nonce}}"> {# This nonce is implemented specially in the route itself #}
             <span class="input">
-                <input class="input-field" type="text" name="ctf_name" id="ctf_name-input"/>
-                <label class="input-label" for="ctf_name-input">
+                <label class="input-label" for="ctf_name-input pad-down-10">
                     <span class="label-content" data-content="CTF Name">CTF Name</span>
                 </label>
+                <input class="input-field form-control" type="text" name="ctf_name" id="ctf_name-input"/>
             </span>
             <span class="input">
-                <input class="input-field" type="text" name="name" id="username-input" />
-                <label class="input-label" for="username-input">
+                <label class="input-label" for="username-input pad-down-10">
                     <span class="label-content" data-content="Username">Admin Username</span>
                 </label>
+                <input class="input-field form-control" type="text" name="name" id="username-input" />
             </span>
             <span class="input">
-                <input class="input-field" type="email" name="email" id="email-input" />
-                <label class="input-label" for="email-input">
+                <label class="input-label" for="email-input pad-down-10">
                     <span class="label-content" data-content="Email">Admin Email</span>
                 </label>
+                <input class="input-field form-control" type="email" name="email" id="email-input" />
             </span>
             <span class="input">
-                <input class="input-field" type="password" name="password" id="password-input" />
-                <label class="input-label" for="password-input">
+                <label class="input-label" for="password-input pad-down-10">
                     <span class="label-content" data-content="Password">Admin Password</span>
                 </label>
+                <input class="input-field form-control" type="password" name="password" id="password-input" />
             </span>
             <br/>
         </div>
