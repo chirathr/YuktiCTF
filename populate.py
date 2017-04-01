@@ -2,13 +2,12 @@
 # -*- coding: utf-8 -*-
 
 import datetime
-import hashlib
 import json
 import os
 import random
 
 from CTFd import create_app
-from CTFd.models import Teams, Solves, Challenges, WrongKeys, Keys, Files, Awards
+from CTFd.models import Teams, Solves, Challenges, WrongKeys, Keys, Awards
 
 app = create_app()
 
@@ -124,6 +123,7 @@ def get_flag(idx):
     c = challenge[idx]
     return c['flag']
 
+
 def gen_email():
     return random.choice(emails)
 
@@ -142,7 +142,7 @@ def get_name(idx):
     c = challenge[idx]
     return c['name']
 
-'''
+
 def gen_category():
     return random.choice(categories)
 
@@ -162,7 +162,6 @@ def gen_file():
 def random_date(start, end):
     return start + datetime.timedelta(
         seconds=random.randint(0, int((end - start).total_seconds())))
-'''
 
 
 if __name__ == '__main__':
@@ -171,13 +170,12 @@ if __name__ == '__main__':
 
         # Generating Challenges
         print("GENERATING CHALLENGES")
-        for x in range(1,len(challenge)+1):
+        for x in range(1, len(challenge)+1):
             db.session.add(Challenges(get_name(x), get_desc(x), get_value(x), get_category(x), get_hint(x)))
             db.session.commit()
             db.session.add(Keys(x, get_flag(x), 0))
             db.session.commit()
         db.session.close()
-'''
         # Generating Users
         print("GENERATING USERS")
         used = []
@@ -186,7 +184,7 @@ if __name__ == '__main__':
             name = gen_name()
             if name not in used:
                 used.append(name)
-                team = Teams(None,None, None, None, None, name, name.lower() + gen_email(), 'password', 's')
+                team = Teams(None, None, None, None, None, name, name.lower() + gen_email(), 'password', 's')
                 team.verified = True
                 db.session.add(team)
                 count += 1
@@ -243,7 +241,4 @@ if __name__ == '__main__':
 
                     db.session.add(wrong)
 
-
         db.session.commit()
-'''
-
