@@ -26,20 +26,23 @@
     <div id="score-graph"></div>
     <br>
 
-    <table id="scoreboard" class="table table-striped">
-        <thead>
+    <table id="teamsboard" class="table table-striped" style="border: 1px solid rgba(255,255,255,0.5); border-radius: 5px;">
+        <thead id="teamsboard-head">
             <tr>
-                <td width="10px"><b>Rank</b>
+                <td style="padding: 30px;"width="10px"><b>Rank</b>
                 </td>
-                <td><b>Team</b>
+                <td style="padding: 30px;"><b>Team</b>
                 </td>
-                <td><b>Score</b>
+                <td style="padding: 30px;"><b>Score</b>
                 </td>
             </tr>
         </thead>
         <tbody>
         {% for team in teams %}
-            <tr><td>{{ loop.index }}</td><td><a href="{{ request.script_root }}/team/{{ team.teamid }}">{{ team.name }}</a></td><td>{{ team.score }}</td></tr>
+            <tr>
+                <td style="padding: 20px; background-color: transparent;">{{ loop.index }}</td>
+                <td style="padding: 20px; background-color: transparent;"><a href="{{ request.script_root }}/team/{{ team.teamid }}">{{ team.name }}</a></td>
+                <td style="padding: 20px; background-color: transparent;">{{ team.score }}</td></tr>
         {% endfor %}
         </tbody>
     </table>
