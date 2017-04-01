@@ -20,5 +20,5 @@ msgstr ""
 
 #: templates/original/index.html:21
 msgid "Yukti CTF"
-msgstr "iयुक्ति"
+msgstr "युक्ति CTF"
 

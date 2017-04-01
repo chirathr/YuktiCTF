@@ -119,6 +119,8 @@ class Config(object):
         'hi': 'Hindi'
     }
 
+    BABEL_DEFAULT_LOCALE = 'hi'
+
 
     '''
     CACHE_TYPE specifies how CTFd should cache configuration values. If CACHE_TYPE is set to 'redis', CTFd will make use

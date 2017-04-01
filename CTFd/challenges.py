@@ -71,11 +71,9 @@ def challenges_angular_view():
         return redirect(url_for('auth.login', next='challenges'))
 
 
-
-
-
 @challenges.route('/chals', methods=['GET'])
-def chals():
+@challenges.route('/chals/<int:chalid>', methods=['GET'])
+def chals(chalid=None):
     if not utils.is_admin():
         if not utils.ctftime():
             if utils.view_after_ctf():
@@ -83,25 +81,41 @@ def chals():
             else:
                 return redirect(url_for('views.static_html'))
     if utils.user_can_view_challenges() and (utils.ctf_started() or utils.is_admin()):
-        chals = Challenges.query.filter(or_(Challenges.hidden != True, Challenges.hidden == None)).order_by(Challenges.value).all()
         json = {'game': []}
-        for x in chals:
-            print chals
-            tags = [tag.tag for tag in Tags.query.add_columns('tag').filter_by(chal=x.id).all()]
-            files = [str(f.location) for f in Files.query.filter_by(chal=x.id).all()]
-            chal_type = get_chal_class(x.type)
-            json['game'].append({
-                'id': x.id,
+        if chalid is None:
+            chals = Challenges.query.filter(or_(Challenges.hidden != True, Challenges.hidden == None)).order_by(Challenges.value).all()
+            for x in chals:
+                tags = [tag.tag for tag in Tags.query.add_columns('tag').filter_by(chal=x.id).all()]
+                files = [str(f.location) for f in Files.query.filter_by(chal=x.id).all()]
+                chal_type = get_chal_class(x.type)
+                json['game'].append({
+                    'id': x.id,
+                    'type': chal_type.name,
+                    'name': x.name,
+                    'value': x.value,
+                    'description': x.description,
+                    'category': x.category,
+                    'files': files,
+                    'tags': tags,
+                    'hint': x.hint
+                })
+        else:
+            chal = Challenges.query.filter_by(id=chalid).all()[0]
+            tags = [tag.tag for tag in Tags.query.add_columns('tag').filter_by(chal=chalid).all()]
+            files = [str(f.location) for f in Files.query.filter_by(chal=chalid).all()]
+            print chal
+            chal_type = get_chal_class(chal.type)
+            json = {
+                'id': chal.id,
                 'type': chal_type.name,
-                'name': x.name,
-                'value': x.value,
-                'description': x.description,
-                'category': x.category,
+                'name': chal.name,
+                'value': chal.value,
+                'description': chal.description,
+                'category': chal.category,
                 'files': files,
                 'tags': tags,
-                'hint': x.hint
-            })
-        print json
+                'hint': chal.hint
+            }
 
         db.session.close()
         return jsonify(json)

@@ -27,6 +27,7 @@ class ThemeLoader(FileSystemLoader):
 def create_app(config='CTFd.config.Config'):
     app = Flask(__name__)
     babel = Babel(app)
+    app.config['BABEL_DEFAULT_LOCALE'] = 'hi'
     with app.app_context():
         app.config.from_object(config)
         app.jinja_loader = ThemeLoader(os.path.join(app.root_path, app.template_folder), followlinks=True)
