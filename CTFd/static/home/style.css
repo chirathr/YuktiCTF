@@ -515,11 +515,18 @@ hr{
 .dropdown-submenu.pull-left{float:none;}
 .dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
 
+
+
+
+
+
+
 @media (max-width: 768px){
     .dropdown-submenu li a{
         text-align:center;
     }
 }
+
 
 /*
  * Showup.js jQuery Plugin
@@ -974,4 +981,15 @@ hr{
 /* optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
  background: #FF0000;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .ctf-name {
+        font-size: 5em;
+    }
+    .ctf-text {
+        font-size: 1.5em;
+    }
+
 }
