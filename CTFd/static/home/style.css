@@ -154,7 +154,7 @@ body {
 }
 
 a{
-    color: #252525;
+    color: white;
     text-decoration: none;
 }
 
@@ -190,6 +190,8 @@ section{
 
 .container {
     position: relative;
+    overflow: scroll;
+    height: 600px;
 }
 
 
@@ -254,8 +256,17 @@ hr{
 
 .container{
     z-index:2;
-    overflow:hidden;
+    overflow: scroll;
 }
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
 
 .ImageWrapper img{
     padding:80px;
@@ -920,6 +931,7 @@ hr{
 
 .content-home {
     margin-top: 10%;
+    overflow: scroll;
 }
 
 .ctf-text {
@@ -932,4 +944,19 @@ hr{
     text-align: center;
     padding: 20px;
     font-size: 1.7em;
+}
+
+#teamsboard {
+    background-color: rgba(255,255,255,0.05);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 5px;
+}
+
+#teamsboard-head {
+    background-color: rgba(255,255,255,0.23);
+}
+
+.team-data {
+    padding: 10px;
 }

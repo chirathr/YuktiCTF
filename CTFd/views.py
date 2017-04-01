@@ -192,7 +192,13 @@ def my_students():
         else:
             return redirect("/")
     else:
-        return redirect(url_for('auth.login'))
+        return redirect(url_for('auth.login'))\
+
+
+
+@views.route('/about', methods=['GET'])
+def about():
+    return render_template("about.html")
 
 
 @views.route('/profile', methods=['POST', 'GET'])
