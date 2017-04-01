@@ -97,7 +97,7 @@ def setup():
             with app.app_context():
                 cache.clear()
 
-            return redirect(url_for('views.static_html'))
+            return redirect(url_for('views.index'))
         return render_template('setup.html', nonce=session.get('nonce'))
     return redirect(url_for('views.static_html'))
 
