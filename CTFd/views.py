@@ -4,7 +4,7 @@ import re
 from flask import current_app as app, render_template, request, redirect, abort, jsonify, url_for, session, Blueprint, Response, send_file
 from jinja2.exceptions import TemplateNotFound
 from passlib.hash import bcrypt_sha256
-from flask.ext.babel import Babel, gettext
+from flask_babel import Babel, gettext
 
 from CTFd.models import db, Teams, Solves, Awards, Files, Pages
 from CTFd.utils import cache
@@ -104,6 +104,10 @@ def setup():
 
 @views.route('/')
 def index():
+    try:
+        print session["lan"]
+    except:
+        session["lan"] = "en"
     return render_template('index.html')
 
 
@@ -121,7 +125,6 @@ def static_html(template):
     except TemplateNotFound:
         page = Pages.query.filter_by(route=template).first_or_404()
         return render_template('page.html', content=page.html)
-
 
 
 @views.route('/teams', defaults={'page': '1'})
@@ -281,8 +284,13 @@ def file_handler(path):
 babel = Babel(app)
 
 
-
 @babel.localeselector
 def get_locale():
-    return 'hi'
+    return session["lan"]
     # return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
+
+
+@views.route('/lan/<string:l>')
+def set_lan(l):
+    session["lan"] = l
+    return redirect("/")

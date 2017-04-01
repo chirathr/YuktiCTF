@@ -22,7 +22,7 @@
         </div>
 
         <div class="col-md-6 col-md-offset-3 text-center">
-            <h3 class="WhiteText">Building Tomorrow's Cyber Warrior</h3>
+            <h3 class="WhiteText">{{ gettext("Building Tomorrow's Cyber Warrior") }}</h3>
 
             <br></br>
         </div>
@@ -34,4 +34,27 @@
         </div>
     </div>
 </div>
+
+<div class="lan-tab">
+    <a href="/lan/en" class="lan">English |</a>
+    <a href="/lan/hi" class="lan"> Hindi</a>
+</div>
+
+<style>
+    .lan-tab {
+        position: fixed;
+        bottom: 4%;
+        color: white;
+        text-align: center;
+        width: 100%;
+        z-index: 4000;
+    }
+
+    .lan {
+        display: inline-block;
+        color: white;
+        font-weight: bold;
+        font-size: 1em;
+    }
+</style>
 {% endblock %}
