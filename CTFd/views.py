@@ -99,7 +99,7 @@ def setup():
 
             return redirect(url_for('views.index'))
         return render_template('setup.html', nonce=session.get('nonce'))
-    return redirect(url_for('views.static_html'))
+    return redirect(url_for('views.index'))
 
 
 @views.route('/')
