@@ -4,7 +4,7 @@ import re
 import time
 
 from flask import render_template, request, redirect, jsonify, url_for, session, Blueprint
-from sqlalchemy.sql import or_
+from sqlalchemy.sql import or_, and_
 
 from CTFd.models import db, Challenges, Files, Solves, WrongKeys, Keys, Tags, Teams, Awards
 from CTFd.plugins.keys import get_key_class
@@ -101,21 +101,26 @@ def chals(chalid=None):
                 })
         else:
             chal = Challenges.query.filter_by(id=chalid).all()[0]
-            tags = [tag.tag for tag in Tags.query.add_columns('tag').filter_by(chal=chalid).all()]
-            files = [str(f.location) for f in Files.query.filter_by(chal=chalid).all()]
-            print chal
-            chal_type = get_chal_class(chal.type)
-            json = {
-                'id': chal.id,
-                'type': chal_type.name,
-                'name': chal.name,
-                'value': chal.value,
-                'description': chal.description,
-                'category': chal.category,
-                'files': files,
-                'tags': tags,
-                'hint': chal.hint
-            }
+            if chal is None or chal.hidden:
+                json = {
+                    "locked": True
+                }
+            else:
+                tags = [tag.tag for tag in Tags.query.add_columns('tag').filter_by(chal=chal.id).all()]
+                files = [str(f.location) for f in Files.query.filter_by(chal=chal.id).all()]
+
+                chal_type = get_chal_class(chal.type)
+                json = {
+                    'id': chal.id,
+                    'type': chal_type.name,
+                    'name': chal.name,
+                    'value': chal.value,
+                    'description': chal.description,
+                    'category': chal.category,
+                    'files': files,
+                    'tags': tags,
+                    'hint': chal.hint
+                }
 
         db.session.close()
         return jsonify(json)
