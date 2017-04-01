@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+
+{% block preloader %}
+    <!--preloader-->
+        <div class="ip-header">
+
+            <div class="ip-loader" id="IDID">
+                <img src="{{ request.script_root }}/static/home/img/preloader.svg" width="50" alt="">
+            </div>
+        </div>
+        <!--end preloader-->
+{% endblock %}
+
+
+{% block content %}
+<div class="container VContentWrapperTable">
+    <div class="row VContent">
+
+        <div class="col-md-12 text-center">
+            <h1 class="WhiteText Glow">{{ gettext('Yukti CTF') }}</h1>
+        </div>
+
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <h3 class="WhiteText">Building Tomorrow's Cyber Warrior</h3>
+
+            <br></br>
+        </div>
+        <div class="col-md-12 text-center">
+            <img src="{{ request.script_root }}/static/home/img/foss.png" width="150" alt="" hspace="20">
+            <img src="{{ request.script_root }}/static/home/img/bi0s.png" width="150" alt="" hspace="20">
+            <img src="{{ request.script_root }}/static/home/img/am.png" width="150" alt="" hspace="20">
+            <img src="{{ request.script_root }}/static/home/img/sih.png" width="150" alt="" hspace="20">
+        </div>
+    </div>
+</div>
+{% endblock %}

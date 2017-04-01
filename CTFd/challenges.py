@@ -86,6 +86,7 @@ def chals():
         chals = Challenges.query.filter(or_(Challenges.hidden != True, Challenges.hidden == None)).order_by(Challenges.value).all()
         json = {'game': []}
         for x in chals:
+            print chals
             tags = [tag.tag for tag in Tags.query.add_columns('tag').filter_by(chal=x.id).all()]
             files = [str(f.location) for f in Files.query.filter_by(chal=x.id).all()]
             chal_type = get_chal_class(x.type)
@@ -98,9 +99,9 @@ def chals():
                 'category': x.category,
                 'files': files,
                 'tags': tags,
-                'hint': x.hint,
-                'hidden': x.hidden
+                'hint': x.hint
             })
+        print json
 
         db.session.close()
         return jsonify(json)

@@ -14,19 +14,25 @@
     <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#000">
 
+    <script type="text/javascript">
+        var script_root = "{{ request.script_root }}";
+    </script>
+    {% block angularapp %}
+    {% endblock %}
+
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
-    <link rel="stylesheet" type="text/css" href="css/line-icons.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ request.script_root }}/static/home/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ request.script_root }}/static/home/css/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="{{ request.script_root }}/static/home/css/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="{{ request.script_root }}/static/home/css/line-icons.css">
+    <link rel="stylesheet" type="text/css" href="{{ request.script_root }}/static/home/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css"
           href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,800%7CMontserrat:700%7COswald:300%7CRaleway:300,900)">
 
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <link href="css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="{{ request.script_root }}/static/home/style.css" rel="stylesheet" type="text/css">
+    <link href="{{ request.script_root }}/static/home/css/responsive.css" rel="stylesheet" type="text/css">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -39,11 +45,15 @@
 
 	<body id="bigWrapper" data-spy="scroll" data-target=".navbar-default" data-offset="100">
 
+    {% block content %}
+    {% endblock %}
+
+
         <!--preloader-->
         <div class="ip-header">
 
             <div class="ip-loader" id="IDID">
-                <img src="img/preloader.svg" width="50" alt="">
+                <img src="{{ request.script_root }}/static/home/img/preloader.svg" width="50" alt="">
             </div>
         </div>
         <!--end preloader-->
@@ -112,10 +122,10 @@
                         <br></br>
                     </div>
                     <div class="col-md-12 text-center">
-                        <img src="img/sih.png" width="150" alt="" hspace="20">
-                        <img src="img/bi0s.png" width="150" alt="" hspace="20">
-                        <img src="img/am.png" width="150" alt="" hspace="20">
-                        <img src="img/foss.png" width="150" alt="" hspace="20">
+                        <img src="{{ request.script_root }}/static/home/img/sih.png" width="150" alt="" hspace="20">
+                        <img src="{{ request.script_root }}/static/home/img/bi0s.png" width="150" alt="" hspace="20">
+                        <img src="{{ request.script_root }}/static/home/img/am.png" width="150" alt="" hspace="20">
+                        <img src="{{ request.script_root }}/static/home/img/foss.png" width="150" alt="" hspace="20">
                     </div>
                 </div>
             </div>
@@ -125,10 +135,10 @@
 
 
 
-        <script type="text/javascript" src="js/scripts.min.js"></script>
-        <script src="js/custom.js"></script>
+        <script type="text/javascript" src="{{ request.script_root }}/static/home/js/scripts.min.js"></script>
+        <script src="{{ request.script_root }}/static/home/js/custom.js"></script>
 
-        <script src="js/OscarBackgroundEffect.js"></script>
+        <script src="{{ request.script_root }}/static/home/js/OscarBackgroundEffect.js"></script>
 
 
         <script>
@@ -141,6 +151,9 @@
             ga('send', 'pageview');
 
         </script>
+
+        {% block scripts %}
+        {% endblock %}
 
 	</body>
 </html>

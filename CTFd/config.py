@@ -114,6 +114,11 @@ class Config(object):
         '^192\.168\.'
     ]
 
+    LANGUAGES = {
+        'en': 'English',
+        'hi': 'Hindi'
+    }
+
 
     '''
     CACHE_TYPE specifies how CTFd should cache configuration values. If CACHE_TYPE is set to 'redis', CTFd will make use
@@ -134,3 +139,5 @@ class TestingConfig(Config):
     TESTING = True
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'sqlite://'
+
+

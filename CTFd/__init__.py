@@ -2,6 +2,7 @@ import os
 
 from distutils.version import StrictVersion
 from flask import Flask
+from flask_babel import Babel
 from jinja2 import FileSystemLoader
 from sqlalchemy.engine.url import make_url
 from sqlalchemy.exc import OperationalError, ProgrammingError
@@ -25,6 +26,7 @@ class ThemeLoader(FileSystemLoader):
 
 def create_app(config='CTFd.config.Config'):
     app = Flask(__name__)
+    babel = Babel(app)
     with app.app_context():
         app.config.from_object(config)
         app.jinja_loader = ThemeLoader(os.path.join(app.root_path, app.template_folder), followlinks=True)

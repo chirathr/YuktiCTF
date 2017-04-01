@@ -4,6 +4,7 @@ import re
 from flask import current_app as app, render_template, request, redirect, abort, jsonify, url_for, session, Blueprint, Response, send_file
 from jinja2.exceptions import TemplateNotFound
 from passlib.hash import bcrypt_sha256
+from flask.ext.babel import Babel, gettext
 
 from CTFd.models import db, Teams, Solves, Awards, Files, Pages
 from CTFd.utils import cache
@@ -101,6 +102,11 @@ def setup():
     return redirect(url_for('views.static_html'))
 
 
+@views.route('/')
+def index():
+    return render_template('index.html')
+
+
 # Custom CSS handler
 @views.route('/static/user.css')
 def custom_css():
@@ -108,7 +114,6 @@ def custom_css():
 
 
 # Static HTML files
-@views.route("/", defaults={'template': 'index'})
 @views.route("/<template>")
 def static_html(template):
     try:
@@ -116,6 +121,7 @@ def static_html(template):
     except TemplateNotFound:
         page = Pages.query.filter_by(route=template).first_or_404()
         return render_template('page.html', content=page.html)
+
 
 
 @views.route('/teams', defaults={'page': '1'})
@@ -270,3 +276,12 @@ def file_handler(path):
                     abort(403)
     upload_folder = os.path.join(app.root_path, app.config['UPLOAD_FOLDER'])
     return send_file(os.path.join(upload_folder, f.location))
+
+
+babel = Babel(app)
+
+
+
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
