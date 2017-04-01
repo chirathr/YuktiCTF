@@ -4,12 +4,10 @@
 {% endblock %}
 
 {% block content %}
-<div class="jumbotron home">
-    <div class="container">
+    <div class="page-title">
         <h1>Register</h1>
     </div>
-</div>
-<div class="container main-container">
+<div class="container main-container ScrollOn">
     <div class="row">
         <div id="login-container" class="col-md-6 col-md-offset-3">
             {% for error in errors %}
@@ -19,54 +17,54 @@
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                 </div>
             {% endfor %}
-            <form method="post" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizontal">
+            <form method="post" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizontal form-group">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 pad-down-10">
                         <span class="input">
-                        <input class="input-field" type="text" name="fname" id="input-10" />
                         <label class="input-label" for="input-10">
                             <span class="label-content" data-content="Full Name">Full Name</span>
                         </label>
+                        <input class="input-field form-control" type="text" name="fname" id="input-10" />
                     </span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 pad-down-10">
                         <span class="input">
-                        <input class="input-field" type="text" name="affiliation" id="input-10" />
                         <label class="input-label" for="input-10">
                             <span class="label-content" data-content="College/School">Affliation</span>
                         </label>
+                        <input class="input-field form-control" type="text" name="affiliation" id="input-10" />
                     </span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 pad-down-10">
                         <span class="input">
-                        <input class="input-field" type="text" name="year" id="input-10" />
                         <label class="input-label" for="input-10">
                             <span class="label-content" data-content="Year/Class">Grade/Year</span>
                         </label>
+                        <input class="input-field form-control" type="text" name="year" id="input-10" />
                     </span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 pad-down-10">
                         <span class="input">
-                        <input class="input-field" type="text" name="city" id="input-10" />
                         <label class="input-label" for="input-10">
                             <span class="label-content" data-content="City">City</span>
                         </label>
+                        <input class="input-field form-control" type="text" name="city" id="input-10" />
                     </span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 pad-down-10">
                         <span class="input">
                         <label class="input-label" for="input-10">
                             <span class="label-content" data-content="gender">Gender</span>
                         </label>
-                            <select class="input-field" type="text" name="gender" id="input-10" >
+                            <select class="input-field form-control" type="text" name="gender" id="input-10" >
                                 <option value="M" selected>Male</option>
                                 <option value="F">Female</option>
                             </select>
@@ -74,12 +72,12 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 pad-down-10">
                         <span class="input">
                         <label class="input-label" for="input-10">
                             <span class="label-content" data-content="mentor">Student or Mentor</span>
                         </label>
-                            <select class="input-field" type="text" name="user_type" id="input-10" >
+                            <select class="input-field form-control" type="text" name="user_type" id="input-10" >
                                 <option value="S" selected>Student</option>
                                 <option value="M">Mentor</option>
                             </select>
@@ -87,32 +85,32 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 pad-down-10">
                         <span class="input">
-                        <input class="input-field" type="text" name="name" id="input-10" />
                         <label class="input-label" for="input-10">
                             <span class="label-content" data-content="User Name">User Name</span>
                         </label>
+                        <input class="input-field form-control" type="text" name="name" id="input-10" />
                     </span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 pad-down-10">
                         <span class="input">
-                        <input class="input-field" type="text" name="email" id="input-10" />
                         <label class="input-label" for="input-10">
                             <span class="label-content" data-content="Email">Email</span>
                         </label>
+                        <input class="input-field form-control" type="text" name="email" id="input-10" />
                     </span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 pad-down-10">
                         <span class="input">
-                        <input class="input-field" type="password" name="password" id="input-10" />
                         <label class="input-label" for="input-10">
                             <span class="label-content" data-content="Password">Password</span>
                         </label>
+                        <input class="input-field form-control" type="password" name="password" id="input-10" />
                     </span>
                     </div>
                 </div>

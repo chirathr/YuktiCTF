@@ -960,3 +960,18 @@ hr{
 .team-data {
     padding: 10px;
 }
+
+.pad-down-10 {
+  padding-top: 10px;
+}
+.ScrollOn {
+  overflow: scroll;
+}
+::-webkit-scrollbar {
+ width: 0px;  /* remove scrollbar space */
+ background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+ background: #FF0000;
+}

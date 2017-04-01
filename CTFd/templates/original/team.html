@@ -4,11 +4,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="jumbotron home">
-    <div class="container">
+    <div class="page-title">
         <h1 id="team-id">{{ team.name }}</h1>
     </div>
-</div>
 <div class="container ScrollOn">
     {% if errors %}
             <div id='errors' class="row">
@@ -31,7 +29,7 @@
             {%if place %}
                 {{ place }} <small>place</small>
             {% endif %}
-        </h2> 
+        </h2>
         <h2 id="team-score" class="text-center">
             {%if score %}
                 {{ score }} <small>points</small>
