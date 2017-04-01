@@ -6,7 +6,7 @@ html {
     overflow: scroll;
     overflow-x: hidden;
 }
-::-webkit-scrollbar {
+   ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
     background: transparent;  /* optional: just make scrollbar invisible */
 }
@@ -74,4 +74,3 @@ html {
 .chal-score {
     color: white;
 }
-
