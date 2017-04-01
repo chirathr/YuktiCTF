@@ -3,6 +3,8 @@
 
 import datetime
 import hashlib
+import json
+import os
 import random
 
 from CTFd import create_app
@@ -24,92 +26,20 @@ categories = [
     'Trivia',
 ]
 
-challenge = {1:{'name':'Challenge 1', 'desc':'Decrypt the contents of the letter.','hint':'You need this number "10".','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 10, 'category': 'Cryptography' },
-             2:{'name':'Challenge 2', 'desc':'Name the series.','hint':'Reverse search is the new search.','flag':'flag{westworld}','value': 10, 'category': 'Trivia' },
-             3:{'name':'Challenge 3', 'desc':'Can you find the flag here.','hint':'Some catch in the source','flag':'flag{A1w4ys_S3e_S0urc3_C0d3}', 'value': 10, 'category': 'Web' },
-             4:{'name':'Challenge 4', 'desc':'What you think about the file is wrong!!','hint':'EXTend your thinking.','flag':'flag{y0u_g0t_7h3_3xt3ns10n_c0rr3ct3d}','value': 30, 'category': 'Forensics' },
-             #5:{'name':'Challenge 5', 'desc':'','hint':'','flag':'', 'value': 30, 'category': 'Cryptography' },
-             6:{'name':'Challenge 6', 'desc':'Can you trick my arrays? I don\'t think so ... Try to leak out the flag.','hint':'Is the limit, the limit?','flag':'flag{B4by_57ep5_t0_1337}', 'value': 30, 'category': 'Exploitation' },
-             #7:{'name':'Challenge 7', 'desc':'','hint':'','flag':'', 'value': 50, 'category': 'Reversing' },
-             8:{'name':'Challenge 8', 'desc':'The file format is correct but there is something fishy about the file.','hint':'Magic Number , Header','flag':'flag{y0u_n33d_t0_ed1t_7h3_h34d3r}', 'value': 50, 'category': 'Forensics' },
-             9:{'name':'Challenge 9', 'desc':'This is updated version of previous web-Challenge','hint':'Extract the source','flag':'flag{Extr4ct_S0urc3_C0d3}', 'value': 80, 'category': 'Web' },
-             #10:{'name':'Challenge 10', 'desc':'Can you find the flag here.','hint':'Some catch in the source','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 80, 'category': 'Web' },
-             11:{'name':'Challenge 11', 'desc':'Know more about the file.','hint':'Mayhem Ends Threat At Delhi At Ten Am.','flag':'flag{m3tadat4_15_v3ry_1mp0rt4nt}', 'value': 80, 'category': 'Forensics' },
-             #12:{'name':'Challenge 12', 'desc':'Decrypt the contents of the letter.','hint':'You need this number "10".','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 10, 'category': 'Cryptography' },
-             #13:{'name':'Challenge 13', 'desc':'Name the series.','hint':'Reverse search is the new search.','flag':'flag{westworld}','value': 10, 'category': 'Trivia' }
-             14:{'name':'Challenge 14', 'desc':'There is no flag','hint':'Robots are good, Always ','flag':'flag{Y0u_4r3_G00d_1n_r0b0ts}', 'value': 10, 'category': 'Web' },
-             15:{'name':'Challenge 15', 'desc':'It is simple. Just link it. And get me a shell.','hint':'Symlinks are a powerful way to execute remote commands I have heard.','flag':'flag{s1m_l1nk5_r0k!}', 'value': 100, 'category': 'Exploitation' },
-             16:{'name':'Challenge 16', 'desc':'be a CookieMonster','hint':'You know cookies ','flag':'flag{Sh0uld_S3e_C00k1es}', 'value': 150, 'category': 'Web' },
-             #17:{'name':'Challenge 17', 'desc':'Can you find the flag here.','hint':'Some catch in the source','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 50, 'category': 'Web' },
-             #18:{'name':'Challenge 18', 'desc':'The file format is correct but there is something fishy about the file.','hint':'Magic Number , Header','flag':'flag{y0u_n33d_t0_ed1t_7h3_h34d3r}', 'value': 50, 'category': 'Forensics' },
-             19:{'name':'Challenge 19', 'desc':'EditThisCookie','hint':'Can you change the cookie? because only admin are permitted','flag':'flag{Y0u_ar3_C00k1e_monSt3r}', 'value': 200, 'category': 'Web' },
-             #20:{'name':'Challenge 20', 'desc':'Can you find the flag here.','hint':'Some catch in the source','flag':'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}', 'value': 80, 'category': 'Web' },
-             #21:{'name':'Challenge 21', 'desc':'Know more about the file.','hint':'Mayhem Ends Threat At Delhi At Ten Am.','flag':'flag{m3tadat4_15_v3ry_1mp0rt4nt}', 'value': 80, 'category': 'Forensics' },
-             22:{'name':'Challenge 22', 'desc':'Everything you think you know is wrong. Flow! And break the buffers ... Oh, and gain shell and read the flag.','hint':'Does the buffer take in only as many bytes as you intend it to? Sure?','flag':'flag{h4Ck3r_h4ppy_0v3rf10w}', 'value': 200, 'category': 'Exploitation' },
-             #23:{'name':'Challenge 23', 'desc':'Know more about the file.','hint':'Mayhem Ends Threat At Delhi At Ten Am.','flag':'flag{m3tadat4_15_v3ry_1mp0rt4nt}', 'value': 80, 'category': 'Forensics' },
-             }
+challenges_json_file = os.path.join('data', 'chals.json')
+fh = open(challenges_json_file)
+c = json.load(fh)
+fh.close()
 
-lorems = [
-    'Lorem', 'ipsum', 'dolor', 'sit', 'amet,', 'consectetur', 'adipiscing', 'elit.',
-    'Proin', 'fringilla', 'elit', 'velit,', 'sed', 'scelerisque', 'tellus', 'dapibus',
-    'vel.', 'Aenean', 'at', 'urna', 'porta,', 'fringilla', 'erat', 'eget,',
-    'lobortis', 'quam.', 'Praesent', 'luctus,', 'quam', 'at', 'consequat', 'luctus,',
-    'mauris', 'sem', 'pretium', 'metus,', 'eu', 'viverra', 'dui', 'leo',
-    'in', 'tortor.', 'Cras', 'iaculis', 'enim', 'erat,', 'sed', 'gravida',
-    'velit', 'consectetur', 'a.', 'Duis', 'eget', 'fermentum', 'elit.', 'Vivamus',
-    'laoreet', 'elementum', 'massa,', 'ut', 'sodales', 'mi', 'gravida', 'at.',
-    'Vivamus', 'dignissim', 'in', 'eros', 'non', 'iaculis.', 'Vivamus', 'nec',
-    'sem', 'fringilla,', 'semper', 'lectus', 'in,', 'malesuada', 'tellus.', 'Vestibulum',
-    'mattis', 'commodo', 'enim', 'sit', 'amet', 'scelerisque.', 'Proin', 'at',
-    'condimentum', 'nisi,', 'nec', 'fringilla', 'ante.', 'Vestibulum', 'sit', 'amet',
-    'neque', 'sit', 'amet', 'elit', 'placerat', 'interdum', 'egestas', 'ac',
-    'malesuada', 'quis', 'arcu', 'ac', 'blandit.', 'Vivamus', 'in', 'massa',
-    'a', 'purus', 'bibendum', 'sagittis.', 'Nunc', 'venenatis', 'lacus', 'sed',
-    'nulla', 'dapibus,', 'consequat', 'laoreet', 'nisi', 'faucibus.', 'Nam', 'consequat',
-    'viverra', 'nibh', 'a', 'cursus.', 'Phasellus', 'tristique', 'justo', 'vitae',
-    'rutrum', 'pharetra.', 'Sed', 'sed', 'porttitor', 'lacus.', 'Nam', 'ornare',
-    'sit', 'amet', 'nisi', 'imperdiet', 'vulputate.', 'Maecenas', 'hendrerit', 'ullamcorper',
-    'elit,', 'sed', 'pellentesque', 'lacus', 'bibendum', 'sit', 'amet.', 'Aliquam',
-    'consectetur', 'odio', 'quis', 'tellus', 'ornare,', 'id', 'malesuada', 'dui',
-    'rhoncus.', 'Quisque', 'fringilla', 'pellentesque', 'nulla', 'id', 'congue.', 'Nulla',
-    'ultricies', 'dolor', 'tristique', 'facilisis', 'at', 'accumsan', 'nisi.', 'Praesent',
-    'commodo,', 'mauris', 'sit', 'amet', 'placerat', 'condimentum,', 'nibh', 'leo',
-    'pulvinar', 'justo,', 'vel', 'dignissim', 'mi', 'dolor', 'et', 'est.',
-    'Nulla', 'facilisi.', 'Sed', 'nunc', 'est,', 'lobortis', 'id', 'diam',
-    'nec,', 'vulputate', 'varius', 'orci.', 'Maecenas', 'iaculis', 'vehicula', 'eros',
-    'eu', 'congue.', 'Nam', 'tempor', 'commodo', 'lobortis.', 'Donec', 'eget',
-    'posuere', 'dolor,', 'ut', 'rhoncus', 'tortor.', 'Donec', 'et', 'quam',
-    'quis', 'urna', 'rhoncus', 'fermentum', 'et', 'ut', 'tellus.', 'Aliquam',
-    'erat', 'volutpat.', 'Morbi', 'porttitor', 'ante', 'nec', 'porta', 'mollis.',
-    'Ut', 'sodales', 'pellentesque', 'rutrum.', 'Nullam', 'elit', 'eros,', 'sollicitudin',
-    'ac', 'rutrum', 'sit', 'amet,', 'eleifend', 'vel', 'nulla.', 'Morbi',
-    'quis', 'lacinia', 'nisi.', 'Integer', 'at', 'neque', 'vel', 'velit',
-    'tincidunt', 'elementum', 'lobortis', 'sit', 'amet', 'tellus.', 'Nunc', 'volutpat',
-    'diam', 'ac', 'diam', 'lacinia,', 'id', 'molestie', 'quam', 'eu',
-    'ultricies', 'ligula.', 'Duis', 'iaculis', 'massa', 'massa,', 'eget', 'venenatis',
-    'dolor', 'fermentum', 'laoreet.', 'Nam', 'posuere,', 'erat', 'quis', 'tempor',
-    'consequat,', 'purus', 'erat', 'hendrerit', 'arcu,', 'nec', 'aliquam', 'ligula',
-    'augue', 'vitae', 'felis.', 'Vestibulum', 'tincidunt', 'ipsum', 'vel', 'pharetra',
-    'lacinia.', 'Quisque', 'dignissim,', 'arcu', 'non', 'feugiat', 'semper,', 'felis',
-    'est', 'commodo', 'lorem,', 'malesuada', 'elementum', 'nibh', 'lectus', 'porttitor',
-    'nisi.', 'Duis', 'non', 'lacinia', 'nisl.', 'Etiam', 'ante', 'nisl,',
-    'mattis', 'eget', 'convallis', 'vel,', 'ullamcorper', 'ac', 'nisl.', 'Duis',
-    'eu', 'massa', 'at', 'urna', 'laoreet', 'convallis.', 'Donec', 'tincidunt',
-    'sapien', 'sit', 'amet', 'varius', 'eu', 'dignissim', 'tortor,', 'elementum',
-    'gravida', 'eros.', 'Cras', 'viverra', 'accumsan', 'erat,', 'et', 'euismod',
-    'dui', 'placerat', 'ac.', 'Ut', 'tortor', 'arcu,', 'euismod', 'vitae',
-    'aliquam', 'in,', 'interdum', 'vitae', 'magna.', 'Vestibulum', 'leo', 'ante,',
-    'posuere', 'eget', 'est', 'non,', 'adipiscing', 'ultrices', 'erat.', 'Donec',
-    'suscipit', 'felis', 'molestie,', 'ultricies', 'dui', 'a,', 'facilisis', 'magna.',
-    'Cum', 'sociis', 'natoque', 'penatibus', 'et', 'magnis', 'dis', 'parturient',
-    'montes,', 'nascetur', 'ridiculus', 'mus.', 'Nulla', 'quis', 'odio', 'sit',
-    'amet', 'ante', 'tristique', 'accumsan', 'ut', 'iaculis', 'neque.', 'Vivamus',
-    'in', 'venenatis', 'enim.', 'Nunc', 'dignissim', 'justo', 'neque,', 'sed',
-    'ultricies', 'justo', 'dictum', 'in.', 'Nulla', 'eget', 'nunc', 'ac',
-    'arcu', 'vestibulum', 'bibendum', 'vitae', 'quis', 'tellus.', 'Morbi', 'bibendum,',
-    'quam', 'ac', 'cursus', 'posuere,', 'purus', 'lectus', 'tempor', 'est,',
-    'eu', 'iaculis', 'quam', 'enim', 'a', 'nibh.', 'Etiam', 'consequat',
-]
+challenge = {}
+for i in c:
+    challenge[int(i)] = c[i]
+
+names_file = os.path.join('data', 'names.json')
+fh = open(names_file)
+names = json.load(fh)
+fh.close()
+
 hipsters = [
     'Ethnic', 'narwhal', 'pickled', 'Odd', 'Future', 'cliche', 'VHS', 'whatever',
     'Etsy', 'American', 'Apparel', 'kitsch', 'wolf', 'mlkshk', 'fashion', 'axe',
@@ -149,41 +79,12 @@ hipsters = [
     'beer', 'High', 'Life', 'tousled', 'PBR', 'you', 'probably', "haven't",
     'heard', 'of', 'them', 'locavore', 'PBR&B', 'street', 'art', 'pop-up',
 ]
-names = [
-    'James', 'John', 'Robert', 'Michael', 'William', 'David', 'Richard', 'Joseph',
-    'Charles', 'Thomas', 'Christopher', 'Daniel', 'Matthew', 'Donald', 'Anthony', 'Paul',
-    'Mark', 'George', 'Steven', 'Kenneth', 'Andrew', 'Edward', 'Brian', 'Joshua',
-    'Kevin', 'Ronald', 'Timothy', 'Jason', 'Jeffrey', 'Gary', 'Ryan', 'Nicholas',
-    'Eric', 'Stephen', 'Jacob', 'Larry', 'Frank', 'Jonathan', 'Scott', 'Justin',
-    'Raymond', 'Brandon', 'Gregory', 'Samuel', 'Patrick', 'Benjamin', 'Jack', 'Dennis',
-    'Jerry', 'Alexander', 'Tyler', 'Douglas', 'Henry', 'Peter', 'Walter', 'Aaron',
-    'Jose', 'Adam', 'Harold', 'Zachary', 'Nathan', 'Carl', 'Kyle', 'Arthur',
-    'Gerald', 'Lawrence', 'Roger', 'Albert', 'Keith', 'Jeremy', 'Terry', 'Joe',
-    'Sean', 'Willie', 'Jesse', 'Ralph', 'Billy', 'Austin', 'Bruce', 'Christian',
-    'Roy', 'Bryan', 'Eugene', 'Louis', 'Harry', 'Wayne', 'Ethan', 'Jordan',
-    'Russell', 'Alan', 'Philip', 'Randy', 'Juan', 'Howard', 'Vincent', 'Bobby',
-    'Dylan', 'Johnny', 'Phillip', 'Craig', 'Mary', 'Patricia', 'Elizabeth', 'Jennifer',
-    'Linda', 'Barbara', 'Susan', 'Margaret', 'Jessica', 'Dorothy', 'Sarah', 'Karen',
-    'Nancy', 'Betty', 'Lisa', 'Sandra', 'Helen', 'Donna', 'Ashley', 'Kimberly',
-    'Carol', 'Michelle', 'Amanda', 'Emily', 'Melissa', 'Laura', 'Deborah', 'Stephanie',
-    'Rebecca', 'Sharon', 'Cynthia', 'Ruth', 'Kathleen', 'Anna', 'Shirley', 'Amy',
-    'Angela', 'Virginia', 'Brenda', 'Pamela', 'Catherine', 'Katherine', 'Nicole', 'Christine',
-    'Janet', 'Debra', 'Carolyn', 'Samantha', 'Rachel', 'Heather', 'Maria', 'Diane',
-    'Frances', 'Joyce', 'Julie', 'Martha', 'Joan', 'Evelyn', 'Kelly', 'Christina',
-    'Emma', 'Lauren', 'Alice', 'Judith', 'Marie', 'Doris', 'Ann', 'Jean',
-    'Victoria', 'Cheryl', 'Megan', 'Kathryn', 'Andrea', 'Jacqueline', 'Gloria', 'Teresa',
-    'Janice', 'Sara', 'Rose', 'Julia', 'Hannah', 'Theresa', 'Judy', 'Mildred',
-    'Grace', 'Beverly', 'Denise', 'Marilyn', 'Amber', 'Danielle', 'Brittany', 'Diana',
-    'Jane', 'Lori', 'Olivia', 'Tiffany', 'Kathy', 'Tammy', 'Crystal', 'Madison',
-]
 emails = [
     '@gmail.com',
     '@yahoo.com',
     '@outlook.com',
     '@hotmail.com',
     '@mailinator.com',
-    '@poly.edu',
-    '@nyu.edu'
 ]
 extensions = [
     '.doc', '.log', '.msg', '.rtf', '.txt', '.wpd', '.wps', '.123',
