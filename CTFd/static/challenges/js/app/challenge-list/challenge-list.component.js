@@ -50,12 +50,13 @@ angular.
 
         this.check_hidden = function(challenge, hidden) {
             if (hidden)
-               return challenge;
-            else return {
+               return {
                     "name": "Challenge locked",
                     "description": "Solve previous challenges to unlock",
                     "start": true
-                }
+                };
+            else
+                return challenge;
         }
 
 

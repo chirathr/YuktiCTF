@@ -45,23 +45,23 @@
 {#            <li><a href="{{ request.script_root }}/challenges">Challenges</a></li>#}
 {#          </ul>#}
 {#          <ul class="nav navbar-nav navbar-right">#}
-{#          {% if username is defined %}#}
-{#              {% if admin %}#}
-{#                  <li><a href="{{ request.script_root }}/admin">Admin</a></li>#}
-{#              {% endif %}#}
-{#              {% if is_mentor() %}#}
-{#                  <li><a href="{{ request.script_root }}/my-students">My Students</a></li>#}
-{#              {% endif %}#}
-{#            <li><a href="{{ request.script_root }}/team/{{ id }}">Team</a></li>#}
-{#            <li><a href="{{ request.script_root }}/profile">Profile</a></li>#}
-{#            <li><a href="{{ request.script_root }}/logout">Logout</a></li>#}
-{#          {% else %}#}
-{#            {% if can_register() %}#}
-{#            <li><a href="{{ request.script_root }}/register">Register</a></li>#}
-{#            <li><a style="padding-left:0px;padding-right:0px;">|</a></li>#}
-{#            {% endif %}#}
-{#            <li><a href="{{ request.script_root }}/login">Login</a></li>#}
-{#          {% endif %}#}
+          {% if username is defined %}
+              {% if admin %}
+                  <li><a href="{{ request.script_root }}/admin">Admin</a></li>
+              {% endif %}
+              {% if is_mentor() %}
+                  <li><a href="{{ request.script_root }}/my-students">My Students</a></li>
+              {% endif %}
+            <li><a href="{{ request.script_root }}/team/{{ id }}">Team</a></li>
+            <li><a href="{{ request.script_root }}/profile">Profile</a></li>
+            <li><a href="{{ request.script_root }}/logout">Logout</a></li>
+          {% else %}
+            {% if can_register() %}
+            <li><a href="{{ request.script_root }}/register">Register</a></li>
+            <li><a style="padding-left:0px;padding-right:0px;">|</a></li>
+            {% endif %}
+            <li><a href="{{ request.script_root }}/login">Login</a></li>
+          {% endif %}
 {#          </ul>#}
 {#        </div>#}
 {#      </div>#}

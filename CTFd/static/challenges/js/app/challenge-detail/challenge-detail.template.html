@@ -1,18 +1,19 @@
-<h1>{{ $ctrl.selection.name }}</h1>
-<h5>{{ $ctrl.selection.description }}</h5>
+<div class="challenge-data" ng-controller="challengeController">
+    <h1 class="chal-text">{{ $ctrl.selection.name }}</h1>
+    <h5 class="chat-desc">{{ $ctrl.selection.description }}</h5>
 
-<div class="fields clearfix">
-    <div class="flag-input">
-        <form class="flag-form" ng-if="$ctrl.selection.start != true">
-            <label class="flag-label">FLAG </label>
-            <input class="flag-input" name="flag" type="text" required placeholder="Flag" aria-required="true">
-            <button class="flag-btn" name="flag-btn">Submit</button>
-        </form>
+    <div class="fields clearfix">
+        <div class="flag-input">
+            <form class="flag-form" ng-if="$ctrl.selection.start != true" ng-submit="submitForm()">>
+                <label class="flag-label">FLAG </label>
+                <input class="flag-input" name="key" type="text" required placeholder="Flag" aria-required="true">
+                <button class="flag-btn" type="submit" name="flag-btn">Submit</button>
+            </form>
+        </div>
     </div>
 </div>
 
 <style>
-
     .flag-form {
         background-color: rgba(255,255,255,.1);
         border-bottom: 1px solid white;
@@ -20,11 +21,12 @@
         font-size: 25px;
         font-weight: 100;
         width: 100%;
+        margin: 20px 0px 0px 0px;
     }
     .flag-label {
         text-align: center;
         background-color: rgba(75,75,75,0);
-{#        width: 14%;#}
+        width: auto;
         display: inline-block;
         font-weight: 100;
         padding: 5px 15px 2px 15px;
@@ -51,5 +53,14 @@
         -moz-box-shadow: none;
         box-shadow: none;
         padding: 8px 13px 8px 14px;
+    }
+
+    .chal-text {
+        font-size: 40px;
+        font-weight: normal;
+        font-family: monospace;
+    }
+    .chat-desc {
+        font-size: medium;
     }
 </style>

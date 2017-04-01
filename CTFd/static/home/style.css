@@ -16,6 +16,13 @@ body {
 
 /*general styles*/
 
+#loader-name {
+    wdith: 100px;
+    color: white;
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
 .DarkGreyBackground{
     background-color:#252525;
 }
