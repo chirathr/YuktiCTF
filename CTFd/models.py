@@ -183,6 +183,8 @@ class Teams(db.Model):
         self.password = bcrypt_sha256.encrypt(str(password))
         if user_type == 'M':
             self.mentor = True
+        elif user_type == 'A':
+            self.admin = True
 
     def __repr__(self):
         return '<team %r>' % self.name
