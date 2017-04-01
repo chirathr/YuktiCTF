@@ -1,9 +1,23 @@
-<div class="chal-left">
-    Search: <input ng-model="$ctrl.query" />
+<div class="side-bar">
+    <div class="side-bar-elements"></div>
+    <div class="side-bar-elements"></div>
+    <div class="side-bar-elements"></div>
+    <div class="side-bar-elements"></div>
+    <div class="side-bar-elements"></div>
+    <div class="side-bar-elements"></div>
+    <div class="side-bar-elements"></div>
+    <div class="side-bar-elements"></div>
+</div>
 
-    <button ng-repeat="challenge in $ctrl.challenges.game | filter:$ctrl.query" ng-click="$ctrl.selection = challenge" >
-      {{challenge.name}}
-    </button>
+<div class="chal-left">
+    <!-- Search: <input ng-model="$ctrl.query" /> -->
+    <div class="chal-list "ng-repeat="challenges in $ctrl.level">
+        <p>{{ challenges.name }}</p>
+        <div class="challenge" ng-repeat="challenge in challenges | filter:$ctrl.query | orderBy:'id'" ng-click="$ctrl.selection = $ctrl.check_hidden(challenge. challenge.hidden)">
+            <p class="chal-name">{{ challenge.name }}</p>
+            <p class="chal-score">{{ challenge.value }}</p>
+        </div>
+    </div>
 </div>
 
 <div class="vertical-line">
@@ -12,3 +26,35 @@
 <div class="chal-right">
     <div class="slide-animate" ng-include="'/static/challenges/js/app/challenge-detail/challenge-detail.template.html'"></div>
 </div>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<script>
+     //Firefox
+     $('.chal-left').bind('DOMMouseScroll', function(e){
+         if(e.originalEvent.detail > 0) {
+             //scroll down
+             console.log('Down');
+         }else {
+             //scroll up
+             console.log('Up');
+         }
+
+         //prevent page fom scrolling
+         return false;
+     });
+
+     //IE, Opera, Safari
+     $('.chal-left').bind('mousewheel', function(e){
+         if(e.originalEvent.wheelDelta < 0) {
+             //scroll down
+             console.log('Down');
+         }else {
+             //scroll up
+             console.log('Up');
+         }
+
+         //prevent page fom scrolling
+         return false;
+     });
+</script>

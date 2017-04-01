@@ -98,7 +98,8 @@ def chals():
                 'category': x.category,
                 'files': files,
                 'tags': tags,
-                'hint': x.hint
+                'hint': x.hint,
+                'hidden': x.hidden
             })
 
         db.session.close()

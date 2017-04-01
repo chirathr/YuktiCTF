@@ -3,15 +3,13 @@
 
 <div class="fields clearfix">
     <div class="flag-input">
-        <form class="flag-form">
+        <form class="flag-form" ng-if="$ctrl.selection.start != true">
             <label class="flag-label">FLAG </label>
             <input class="flag-input" name="flag" type="text" required placeholder="Flag" aria-required="true">
             <button class="flag-btn" name="flag-btn">Submit</button>
         </form>
     </div>
-
 </div>
-
 
 <style>
 
@@ -43,7 +41,6 @@
     }
 
     .flag-btn {
-{#        width: 11%;#}
         display: inline-block;
         background-color: rgba(255,255,255,1);
         border: 0px;
@@ -55,7 +52,4 @@
         box-shadow: none;
         padding: 8px 13px 8px 14px;
     }
-
-
-
 </style>

@@ -2,11 +2,25 @@ body {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/bg1.jpg");
 }
 
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
 .chal-left {
     position: fixed;
-    top:0;
-    left:0;
-    bottom:0;
+    padding: 4%;
+    top: 25%;
+    left: 0;
+    bottom: 25%;
     height: 100%;
     width: 50%;
     color: white;
@@ -29,5 +43,33 @@ body {
     bottom:25%;
     width: 50%;
     color: white;
+
+}
+
+.chal-list {
+    overflow:scroll;
+    position: fixed;
+    bottom: 10%;
+    width: 45%;
+    top: 25%;
+}
+
+.challenge {
+    border: 1px solid white;
+    display: inline-block;
+    width: 130px;
+    height: 70px;
+    margin: 10px;
+    background-color: rgba(249,249,249,0.11);
+    text-align: center;
+    padding: 5px;
+}
+
+.chal-name {
+
+}
+
+.chal-score {
+
 }
 

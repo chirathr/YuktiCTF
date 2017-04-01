@@ -62,16 +62,17 @@ class Challenges(db.Model):
     value = db.Column(db.Integer)
     category = db.Column(db.String(80))
     type = db.Column(db.Integer)
-    hidden = db.Column(db.Boolean)
+    hidden = db.Column(db.Boolean, default=False)
     hint = db.Column(db.String(500))
 
-    def __init__(self, name, description, value, category, hint, type=0):
+    def __init__(self, name, description, value, category, hint, hidden=True, type=0):
         self.name = name
         self.description = description
         self.value = value
         self.category = category
         self.type = type
         self.hint = hint
+        self.hidden = hidden
         # self.flags = json.dumps(flags)
 
     def __repr__(self):
