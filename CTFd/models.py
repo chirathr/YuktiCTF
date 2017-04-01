@@ -64,6 +64,7 @@ class Challenges(db.Model):
     type = db.Column(db.Integer)
     hidden = db.Column(db.Boolean)
     hint = db.Column(db.String(500))
+    level = db.Column(db.Integer)
 
     def __init__(self, name, description, value, category, hint, type=0):
         self.name = name
