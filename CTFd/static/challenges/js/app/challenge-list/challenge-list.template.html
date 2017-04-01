@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+
+      Search: <input ng-model="$ctrl.query" />
+
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <ul class="challenges">
+        <li ng-repeat="challenge in $ctrl.challenges.game | filter:$ctrl.query">
+          <span>{{challenge.name}}</span>
+          <p>{{challenge.description}}</p>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
