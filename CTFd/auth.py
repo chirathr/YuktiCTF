@@ -201,4 +201,4 @@ def login():
 def logout():
     if utils.authed():
         session.clear()
-    return redirect(url_for('views.static_html'))
+    return redirect(url_for('views.index'))
