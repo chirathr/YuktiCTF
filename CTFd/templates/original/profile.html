@@ -10,14 +10,14 @@
         margin-bottom: 10px;
     }
     </style>
+
+
 {% endblock %}
 
 {% block content %}
-<div class="jumbotron home">
-    <div class="container">
+    <div class="page-title">
         <h1>Profile</h1>
     </div>
-</div>
 <div class="container main-container">
 
     <div class="row">
@@ -51,81 +51,82 @@
                             aria-hidden="true">×</span></button>
                 </div>
             {% endif %}
-            <form method="post" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizontal">
+            <form method="post" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizontal form-group">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 pad-down-10">
                         <span class="input">
-                            <input class="input-field" type="text" name="name" id="name-input" value="{{name}}"/>
                             <label class="input-label" for="name-input">
-                                <span class="label-content" data-content="Team Name">Team Name</span>
+                                <span class="label-content" data-content="Team Name">Username</span>
                             </label>
+                            <input class="input-field form-control" type="text" name="name" id="name-input" value="{{name}}"/>
                         </span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 pad-down-10">
                         <span class="input">
-                            <input class="input-field" type="text" name="email" id="email-input" value="{{email}}"/>
                             <label class="input-label" for="email-input">
                                 <span class="label-content" data-content="Email">Email</span>
                             </label>
+                            <input class="input-field form-control" type="text" name="email" id="email-input" value="{{email}}"/>
                         </span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 pad-down-10">
                         <span class="input">
-                            <input class="input-field" type="password" name="confirm" id="confirm-input" />
                             <label class="input-label" for="confirm-input">
                                 <span class="label-content" data-content="Password">Current Password</span>
                             </label>
+                            <input class="input-field form-control" type="password" name="confirm" id="confirm-input" />
                         </span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 pad-down-10">
                         <span class="input">
-                            <input class="input-field" type="password" name="password" id="password-input" />
                             <label class="input-label" for="password-input">
                                 <span class="label-content" data-content="New Password">New Password</span>
                             </label>
+                            <input class="input-field form-control" type="password" name="password" id="password-input" />
                         </span>
                     </div>
                 </div>
-                <hr />
+                <hr/>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 pad-down-10">
                         <span class="input">
-                            <input class="input-field" type="text" name="affiliation" id="affiliation-input" value="{% if affiliation %}{{affiliation}}{% endif %}" />
                             <label class="input-label" for="affiliation-input">
                                 <span class="label-content" data-content="Affiliation">Affiliation</span>
                             </label>
+                            <input class="input-field form-control" type="text" name="affiliation" id="affiliation-input" value="{% if affiliation %}{{affiliation}}{% endif %}" />
                         </span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 pad-down-10">
                         <span class="input">
-                            <input class="input-field" type="text" name="website" id="website-input" value="{% if website %}{{website}}{% endif %}" />
                             <label class="input-label" for="website-input">
                                 <span class="label-content" data-content="Website">Website</span>
                             </label>
+                            <input class="input-field form-control" type="text" name="website" id="website-input" value="{% if website %}{{website}}{% endif %}" />
                         </span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 pad-down-10">
                         <span class="input">
-                            <input class="input-field" type="text" name="country" id="country-input" value="{% if country %}{{country}}{% endif %}" />
                             <label class="input-label" for="country-input">
-                                <span class="label-content" data-content="Country">Country</span>
+                                <span class="label-content" data-content="Country">State</span>
                             </label>
+                            <input class="input-field form-control" type="text" name="country" id="country-input" value="{% if country %}{{country}}{% endif %}" />
                         </span>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="submit-row">
-                        <button type="submit" id="submit" tabindex="5" class="btn btn-md btn-primary btn-theme btn-outlined pull-right">Submit</button>
+                        <button type="submit" id="submit" tabindex="5" class="btn btn-md btn-theme btn-outlined pull-right">Submit</button>
                     </div>
                 </div>
                 <input type="hidden" name="nonce" value="{{ nonce }}">

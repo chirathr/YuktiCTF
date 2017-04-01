@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="jumbotron home">
-    <div class="container">
+    <div class="page-title">
         <h1>Scoreboard</h1>
     </div>
-</div>
+
 <div class="container main-container ScrollOn">
     {% if errors %}
     <div class="container main-container">
@@ -31,7 +30,7 @@
     <table id="scoreboard" class="table table-striped">
         <thead>
             <tr>
-                <td width="10px"><b>Place</b>
+                <td width="10px"><b>Rank</b>
                 </td>
                 <td><b>Team</b>
                 </td>
