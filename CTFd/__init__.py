@@ -38,6 +38,8 @@ def create_app(config='CTFd.config.Config'):
         if url.drivername == 'postgres':
             url.drivername = 'postgresql'
 
+
+
         db.init_app(app)
 
         try:
@@ -54,6 +56,8 @@ def create_app(config='CTFd.config.Config'):
         app.db = db
 
         migrate.init_app(app, db)
+
+        app.config["CACHE_TYPE"] = "null"
 
         cache.init_app(app)
         app.cache = cache

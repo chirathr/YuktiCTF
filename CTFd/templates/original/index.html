@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% block stylesheet %}
     <link rel='stylesheet' href='{{ request.script_root }}/static/home/css/typewriter.css'>
 {% endblock %}
@@ -7,9 +6,8 @@
 {% block preloader %}
     <!--preloader-->
         <div class="ip-header">
-
             <div class="ip-loader" id="IDID" style="text-align: center">
-                <p id="loader-name">Yukti CTF</p>
+                <p id="loader-name">{{ gettext("Yukti CTF") }}</p>
                 <p id="loader-text"></p>
                 <img src="{{ request.script_root }}/static/home/img/preloader.svg" width="50" alt="">
             </div>
@@ -19,30 +17,27 @@
 
 
 {% block content %}
-<div class="container VContentWrapperTable">
-    <div class="row VContent">
+<div class="container content-home">
 
         <div class="col-md-12 text-center">
-            <h1 class="WhiteText Glow typewriter two">{{ gettext('Yukti CTF') }}</h1>
+            <h1 class="WhiteText Glow ctf-name">{{ gettext('Yukti CTF') }}</h1>
         </div>
 
         <div class="col-md-6 col-md-offset-3 text-center">
-            <h3 class="WhiteText typewriter one">{{ gettext("Building Tomorrow's Cyber Warrior") }}</h3>
+            <h3 class="WhiteText typewriter ctf-text">{{ gettext("Building Tomorrow's Cyber Warrior") }}</h3>
+        </div>
 
-            <br></br>
-        </div>
         <div class="col-md-12 text-center">
-            <img src="{{ request.script_root }}/static/home/img/foss.png" width="50" alt="" hspace="20">
-            <img src="{{ request.script_root }}/static/home/img/bi0s.png" width="50" alt="" hspace="20">
-            <img src="{{ request.script_root }}/static/home/img/am.png" width="50" alt="" hspace="20">
-            <img src="{{ request.script_root }}/static/home/img/sih.png" width="50" alt="" hspace="20">
+            <img src="{{ request.script_root }}/static/home/img/foss.png" width="70" alt="" hspace="20">
+            <img src="{{ request.script_root }}/static/home/img/bi0s.png" width="70" alt="" hspace="20">
+            <img src="{{ request.script_root }}/static/home/img/am.png" width="70" alt="" hspace="20">
+            <img src="{{ request.script_root }}/static/home/img/sih.png" width="70" alt="" hspace="20">
         </div>
-    </div>
 </div>
 
 <div class="lan-tab">
-    <a href="/lan/en" class="lan">English |</a>
-    <a href="/lan/hi" class="lan"> Hindi</a>
+    <a href="/lan/en" class="lan">{{ gettext("English") }} |</a>
+    <a href="/lan/hi" class="lan">{{ gettext("Hindi") }}</a>
 </div>
 
 <style>

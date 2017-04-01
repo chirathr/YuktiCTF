@@ -57,7 +57,16 @@ angular.
                 };
             else
                 return challenge;
-        }
+        };
+
+        app.controller("HttpGetController", function ($scope, $http) {
+
+        $scope.SendData = function () {
+            var Indata = {};
+            $http({url: "time.php", method: "POST", params: Indata});
+        };
+
+    });
 
 
       }
