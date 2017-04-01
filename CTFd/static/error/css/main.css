@@ -1,0 +1,212 @@
+/*------------------------------------------------------------------
+[Theme-2 Stylesheet]
+
+Project:	Travel Error Page
+Version:	0.0
+-------------------------------------------------------------------*/
+
+/*
+-> GENERAL CSS 					: css for reset default style and general page style.;
+-> CONTENT 						: css for main content wrappers of page.;
+-> CLOUD MESSAGE/.cloud-message	: css for main message cloud.
+-> MESSAGE / .message			: css for page message;
+-> NAVIGATION / .nav-wrapper 	: css for navigation of the page;
+-> SOCIAL LINKS / .social-links : css for social link area;
+-> HOVER EFFECTS 				: css for hover effects of the page;
+-> CAR MESSAGE / .msg 			: css for yellow car message;
+*/
+
+/*====================*/
+
+/* GENERAL CSS */
+*{
+	margin: 0px;
+	padding: 0px;
+	-webkit-box-sizing: border-box; 
+     -moz-box-sizing: border-box; 
+          box-sizing: border-box;
+}
+body{
+	color: #fff;
+	font-family: 'Signika', sans-serif;
+}
+
+/* CONTENT */
+.main-wrapper{
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+.main-wrapper > .container{
+	padding-top: 50px; 
+	margin: auto;
+	text-align: center;
+}
+
+/* CLOUD MESSAGE */
+.cloud-message {
+	width: 600px;
+	margin: 0 auto 30px auto;
+	position: relative;
+}
+.cloud-message img {
+	width: 100%;
+}
+
+
+/* MESSAGE */
+.message-wrp {
+	display: table;
+	position: absolute;
+	width: 100%;
+}
+.message {
+	font-size: 40px;
+	color: #8fd7f1;
+	vertical-align: middle;
+	display: table-cell;
+	height: 280px;
+}
+.message .t1 { font-size: 60px; display: block; font-weight: 700; }
+.message .t2 { font-size: 25px; display: block; font-weight: 700; }
+.message .t3 { font-size: 18px; font-weight: 400; }
+
+/* NAVIGATION */
+.nav-wrapper{
+	display: table;
+	margin: 0 auto 30px auto;
+	width: 600px;
+	border-radius: 40px;
+	background-color: rgba(78, 180, 219, 0.5);
+	box-shadow: 0 1px 0px 1px rgba(78, 180, 219, 0.6);
+}
+.nav-wrapper a{
+	display: table-cell;
+	font-size: 18px;
+	color: #fff;
+	padding: 11px 0 10px 0;
+	text-decoration: none;
+	text-align: center;
+	border-right: 1px solid rgba(78, 180, 219, 0.8);
+	width: 25%;
+	vertical-align: middle;
+}
+.nav-wrapper a:last-child{
+	border-right: none;
+}
+.nav-wrapper a:first-child{
+	border-radius: 40px 0 0 40px;
+}
+.nav-wrapper a:last-child {
+	border-radius: 0 40px 40px 0;	
+}
+
+.nav-wrapper a:hover{
+	background: #fff;
+	color: #000;
+}
+
+/* SOCIAL LINKS */
+.social-links{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 15px;
+	clear: both;
+}
+.social-links a{
+	width: 40px;
+	height: 40px;
+	background: rgba(78, 180, 219, 0.5);
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 19px;
+	margin: 1px;
+	padding: 9px 0 0 0;
+	border-radius: 20px;
+	box-shadow: 0 1px 0px 1px rgba(78, 180, 219, 0.7);
+}
+p.copyrights{
+	font-size: 12px;
+	text-align: center;
+	font-family: arial;
+}
+
+/* HOVER EFFECTS */
+.nav-wrapper a:hover,.search-box .btn:hover,.social-links a:hover{
+	background: #fff;
+	color: rgb(78, 180, 219);
+}
+
+/* CAR MESSAGE */
+.msg b { 
+	font-weight: 600; 
+	color: #7ac8e4; 
+	font-size: 18px;
+	top: 34px;
+	padding: 0 30px;
+}
+.msg b span { 
+	font-weight: 700; 
+	font-size: 30px;
+	line-height: 1.1;
+	text-transform: uppercase;
+}
+
+
+/* MEDIA QUARIES */
+
+/*===========================================*/
+/*	TABLET LAYOUT 
+/*===========================================*/
+@media only screen and (min-width: 768px) and (max-width: 979px) {}
+
+/*===========================================*/
+/*	MOBILE LAYOUT 
+/*===========================================*/
+@media only screen and (min-width: 200px) and (max-width: 767px) {
+	.nav-wrapper,.outer-wrapper { width: 80%; }
+	.main-wrapper > .container{ padding-top: 20px; padding-bottom: 20px; }
+	.cloud-message { margin-bottom: 0px; }
+
+	.nav-wrapper{ display: block; }
+	.nav-wrapper a{ display: block; width: 100%; }
+}
+@media only screen and (min-width: 200px) and (max-width: 419px) {
+	.nav-wrapper a{ padding: 5px; }
+	.nav-wrapper{ border-radius: 10px; }
+	.nav-wrapper a{ border-bottom: 1px solid rgba(78, 180, 219, 0.8); }
+	.nav-wrapper a:first-child{	border-radius: 8px 8px 0 0; }
+	.nav-wrapper a:last-child { border-radius: 0 0 8px 8px; }
+	
+	.cloud-message { width: 320px; }
+	.message { height: 150px; }
+	.message .t1 { font-size: 24px; }
+	.message .t2 { font-size: 12px; font-weight: 400; }
+	.message .t3 { font-size: 12px; padding: 0 20px; }
+}
+@media only screen and (min-width: 420px) and (max-width: 599px) {
+	
+	.cloud-message { width: 420px; }
+	.message { height: 198px; }
+	.message .t1 { font-size: 30px; }
+	.message .t2 { font-size: 20px; font-weight: 400; }
+	.message .t3 { font-size: 16px; padding: 0 20px; }
+
+	.nav-wrapper{ display: block; }
+	.nav-wrapper a{ display: block; width: 100%; }
+	.nav-wrapper{ border-radius: 10px; }
+	.nav-wrapper a{ border-bottom: 1px solid rgba(78, 180, 219, 0.8); }
+	.nav-wrapper a:first-child{	border-radius: 8px 8px 0 0; }
+	.nav-wrapper a:last-child { border-radius: 0 0 8px 8px; }
+}
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+
+	.cloud-message { width: 520px; }
+	.message { height: 240px; }
+	.message .t1 { font-size: 45px; }
+
+	.nav-wrapper{ display: table; }
+	.nav-wrapper a{ display: table-cell; width: 25%; }
+}

@@ -1,0 +1,602 @@
+.fix-wrp{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: -111;
+}
+.animate-wrp {
+	background: linear-gradient(to bottom, #8fd7f1, #ddd952);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+	overflow: hidden;
+	height: 800px;
+	width: 100%;
+}
+.sky {
+	position: absolute;
+	height: 3000px;
+	width: 4000px;
+	bottom: 0px;
+	left: 0px;
+	border: 1px solid;
+}
+.sky > div,
+.animate {
+	background-repeat: repeat-x;
+	/* background-size: contain; */
+	background-size: auto 100%; 
+	position: absolute;
+	background-position: 0 0;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+	-o-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-timing-function: linear;
+	-ms-animation-timing-function: linear;
+	-o-animation-timing-function: linear;
+	animation-timing-function: linear;
+}
+
+.c1,
+.car,
+.car-wheels {
+	width: 180px;
+	bottom: 110px;
+	left: 70px;
+	position: absolute;
+	z-index: 7;
+}
+.car-wheels {
+	z-index: 8;
+	bottom: 90px;
+}
+.c1 { left: 600px; bottom: 90px; z-index: 9; }
+.car-wheels.c1 { z-index: 10; bottom: 75px; }
+.msg {
+	position: absolute;
+	width: 220px;
+	height: 200px;
+	top: -165px;
+	left: 0;
+	background: url(../images/text-bubble.png) no-repeat;
+	background-size: 100%;
+}
+.msg b {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+}
+.msg b span { display: block;}
+
+.road-front,
+.road {
+	height: 150px;
+	background-color: #333;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	z-index: 0;
+	width: 100%;
+}
+.road-front {
+	height: 60px;
+	background-color: #72521e;
+}
+.grass, .grass1, .tree, .mountain, .mountain1 {
+	bottom: 150px;
+}
+.grass2 { bottom: 0px; z-index: 16; }
+.tree {}
+.tree-front { bottom: 15px; z-index: 15; }
+.mountain, .mountain1 {}
+
+.cloud { bottom: 15%; }
+.cloud1 { bottom: 24%; }
+.cloud2 { bottom: 20%; }
+
+
+/* Grass
+=========================== */
+@-moz-keyframes grass {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -1100px bottom; }
+}
+@-webkit-keyframes grass {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -1100px bottom; }
+}
+@-o-keyframes grass {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -1100px bottom; }
+}
+@-ms-keyframes grass {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -1100px bottom; }
+}
+@keyframes grass {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -1100px bottom; }
+}
+.grass {
+	position: absolute;
+	background: url(../images/grass1.png) repeat-x;
+	height: 76px;
+	width: 100%;
+	left: 0px;
+	z-index: 1;
+	-webkit-animation-name: grass;
+	-moz-animation-name: grass;
+	-ms-animation-name: grass;
+	-o-animation-name: grass;
+	animation-name: grass;
+	-webkit-animation-duration: 14s;
+	-moz-animation-duration: 14s;
+	-ms-animation-duration: 14s;
+	-o-animation-duration: 14s;
+	animation-duration: 14s;
+}
+
+@-moz-keyframes grass1 {
+	0% { background-position: 0 0; }
+	100% { background-position: -876px 0; }
+}
+@-webkit-keyframes grass1 {
+	0% { background-position: 0 0; }
+	100% { background-position: -876px 0; }
+}
+@-o-keyframes grass1 {
+	0% { background-position: 0 0; }
+	100% { background-position: -876px 0; }
+}
+@-ms-keyframes grass1 {
+	0% { background-position: 0 0; }
+	100% { background-position: -876px 0; }
+}
+@keyframes grass1 {
+	0% { background-position: 0 0; }
+	100% { background-position: -876px 0; }
+}
+.grass1 {
+	background: url(../images/grass2.png);
+	left: 0px;
+	width: 100%;
+	height: 73px;
+	z-index: 3;
+	-webkit-animation-name: grass1;
+	-moz-animation-name: grass1;
+	-ms-animation-name: grass1;
+	-o-animation-name: grass1;
+	animation-name: grass1;
+	-webkit-animation-duration: 10.4s;
+	-moz-animation-duration: 10.4s;
+	-ms-animation-duration: 10.4s;
+	-o-animation-duration: 10.4s;
+	animation-duration: 10.4s;
+}
+
+@-moz-keyframes grass2 {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -1189px bottom; }
+}
+@-webkit-keyframes grass2 {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -1189px bottom; }
+}
+@-o-keyframes grass2 {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -1189px bottom; }
+}
+@-ms-keyframes grass2 {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -1189px bottom; }
+}
+@keyframes grass2 {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -1189px bottom; }
+}
+.grass2 {
+	position: absolute;
+	background: url(../images/grass3.png) repeat-x;
+	height: 89px;
+	width: 100%;
+	left: 0px;
+	-webkit-animation-name: grass2;
+	-moz-animation-name: grass2;
+	-ms-animation-name: grass2;
+	-o-animation-name: grass2;
+	animation-name: grass2;
+	-webkit-animation-duration: 28s;
+	-moz-animation-duration: 28s;
+	-ms-animation-duration: 28s;
+	-o-animation-duration: 28s;
+	animation-duration: 28s;
+}
+
+
+/* Tree
+=========================== */
+@-moz-keyframes tree {
+	0% { background-position: 0 0; }
+	100% { background-position: -2302px 0; }
+}
+@-webkit-keyframes tree {
+	0% { background-position: 0 0; }
+	100% { background-position: -2302px 0; }
+}
+@-o-keyframes tree {
+	0% { background-position: 0 0; }
+	100% { background-position: -2302px 0; }
+}
+@-ms-keyframes tree {
+	0% { background-position: 0 0; }
+	100% { background-position: -2302px 0; }
+}
+@keyframes tree {
+	0% { background-position: 0 0; }
+	100% { background-position: -2302px 0; }
+}
+.tree {
+	background: url(../images/tree.png);
+	width: 100%;
+	height: 181px;
+	position: absolute;
+	z-index: 5;
+	-webkit-animation-name: tree;
+	-moz-animation-name: tree;
+	-ms-animation-name: tree;
+	-o-animation-name: tree;
+	animation-name: tree;
+	-webkit-animation-duration: 20s;
+	-moz-animation-duration: 20s;
+	-ms-animation-duration: 20s;
+	-o-animation-duration: 20s;
+	animation-duration: 20s;
+}
+
+@-moz-keyframes tree-front {
+	0% { background-position: 0 0; }
+	100% { background-position: -1359px 0; }
+}
+@-webkit-keyframes tree-front {
+	0% { background-position: 0 0; }
+	100% { background-position: -1359px 0; }
+}
+@-o-keyframes tree-front {
+	0% { background-position: 0 0; }
+	100% { background-position: -1359px 0; }
+}
+@-ms-keyframes tree-front {
+	0% { background-position: 0 0; }
+	100% { background-position: -1359px 0; }
+}
+@keyframes tree-front {
+	0% { background-position: 0 0; }
+	100% { background-position: -1359px 0; }
+}
+.tree-front {
+	background: url(../images/tree-front.png);
+	width: 100%;
+	height: 181px;
+	position: absolute;
+	-webkit-animation-name: tree-front;
+	-moz-animation-name: tree-front;
+	-ms-animation-name: tree-front;
+	-o-animation-name: tree-front;
+	animation-name: tree-front;
+	-webkit-animation-duration: 20s;
+	-moz-animation-duration: 20s;
+	-ms-animation-duration: 20s;
+	-o-animation-duration: 20s;
+	animation-duration: 20s;
+}
+
+
+/* Mountain
+=========================== */
+@-moz-keyframes mountain {
+	0% { background-position: 0 0; }
+	100% { background-position: -1275px 0; }
+}
+@-webkit-keyframes mountain {
+	0% { background-position: 0 0; }
+	100% { background-position: -1275px 0; }
+}
+@-o-keyframes mountain {
+	0% { background-position: 0 0; }
+	100% { background-position: -1275px 0; }
+}
+@-ms-keyframes mountain {
+	0% { background-position: 0 0; }
+	100% { background-position: -1275px 0; }
+}
+@keyframes mountain {
+	0% { background-position: 0 0; }
+	100% { background-position: -1275px 0; }
+}
+.mountain {
+	background: url(../images/mountain.png);
+	left: 0px;
+	width: 100%;
+	height: 105px;
+	z-index: 0;
+	-webkit-animation-name: mountain;
+	-moz-animation-name: mountain;
+	-ms-animation-name: mountain;
+	-o-animation-name: mountain;
+	animation-name: mountain;
+	-webkit-animation-duration: 14s;
+	-moz-animation-duration: 14s;
+	-ms-animation-duration: 14s;
+	-o-animation-duration: 14s;
+	animation-duration: 14s;
+}
+
+@-moz-keyframes mountain1 {
+	0% { background-position: 0 0; }
+	100% { background-position: -1874px 0; }
+}
+@-webkit-keyframes mountain1 {
+	0% { background-position: 0 0; }
+	100% { background-position: -1874px 0; }
+}
+@-o-keyframes mountain1 {
+	0% { background-position: 0 0; }
+	100% { background-position: -1874px 0; }
+}
+@-ms-keyframes mountain1 {
+	0% { background-position: 0 0; }
+	100% { background-position: -1874px 0; }
+}
+@keyframes mountain1 {
+	0% { background-position: 0 0; }
+	100% { background-position: -1874px 0; }
+}
+.mountain1 {
+	background: url(../images/mountain1.png);
+	left: 0px;
+	width: 100%;
+	height: 300px;
+	z-index: 2;
+	-webkit-animation-name: mountain1;
+	-moz-animation-name: mountain1;
+	-ms-animation-name: mountain1;
+	-o-animation-name: mountain1;
+	animation-name: mountain1;
+	-webkit-animation-duration: 22s;
+	-moz-animation-duration: 22s;
+	-ms-animation-duration: 22s;
+	-o-animation-duration: 22s;
+	animation-duration: 22s;
+}
+
+/* Clouds
+=========================== */
+@-moz-keyframes cloud {
+	0% { background-position: 0 0; }
+	100% { background-position: -600px 0; }
+}
+@-webkit-keyframes cloud {
+	0% { background-position: 0 0; }
+	100% { background-position: -600px 0; }
+}
+@-o-keyframes cloud {
+	0% { background-position: 0 0; }
+	100% { background-position: -600px 0; }
+}
+@-ms-keyframes cloud {
+	0% { background-position: 0 0; }
+	100% { background-position: -600px 0; }
+}
+@keyframes cloud {
+	0% { background-position: 0 0; }
+	100% { background-position: -600px 0; }
+}
+.cloud {
+	position: absolute;
+	background: url(../images/cloud.png) repeat-x;
+	height: 84px;
+	width: 100%;
+	left: 0px;
+	z-index: 1;
+	-webkit-animation-name: cloud;
+	-moz-animation-name: cloud;
+	-ms-animation-name: cloud;
+	-o-animation-name: cloud;
+	animation-name: cloud;
+	-webkit-animation-duration: 12s;
+	-moz-animation-duration: 12s;
+	-ms-animation-duration: 12s;
+	-o-animation-duration: 12s;
+	animation-duration: 12s;
+}
+
+@-moz-keyframes cloud1 {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -700px bottom; }
+}
+@-webkit-keyframes cloud1 {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -700px bottom; }
+}
+@-o-keyframes cloud1 {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -700px bottom; }
+}
+@-ms-keyframes cloud1 {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -700px bottom; }
+}
+@keyframes cloud1 {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -700px bottom; }
+}
+.cloud1 {
+	position: absolute;
+	background: url(../images/cloud1.png) repeat-x;
+	background-size: cover;
+	height: 60px;
+	width: 100%;
+	left: 0px;
+	z-index: 1;
+	-webkit-animation-name: cloud1;
+	-moz-animation-name: cloud1;
+	-ms-animation-name: cloud1;
+	-o-animation-name: cloud1;
+	animation-name: cloud1;
+	-webkit-animation-duration: 12s;
+	-moz-animation-duration: 12s;
+	-ms-animation-duration: 12s;
+	-o-animation-duration: 12s;
+	animation-duration: 12s;
+}
+
+@-moz-keyframes cloud2 {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -1200px bottom; }
+}
+@-webkit-keyframes cloud2 {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -1200px bottom; }
+}
+@-o-keyframes cloud2 {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -1200px bottom; }
+}
+@-ms-keyframes cloud2 {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -1200px bottom; }
+}
+@keyframes cloud2 {
+	0% { background-position: 0 bottom; }
+	100% { background-position: -1200px bottom; }
+}
+.cloud2 {
+	position: absolute;
+	background: url(../images/cloud2.png) repeat-x;
+	height: 30px;
+	width: 100%;
+	left: 0px;
+	z-index: 1;
+	-webkit-animation-name: cloud2;
+	-moz-animation-name: cloud2;
+	-ms-animation-name: cloud2;
+	-o-animation-name: cloud2;
+	animation-name: cloud2;
+	-webkit-animation-duration: 20s;
+	-moz-animation-duration: 20s;
+	-ms-animation-duration: 20s;
+	-o-animation-duration: 20s;
+	animation-duration: 20s;
+}
+
+/* Cars
+=========================== */
+@-moz-keyframes car {
+    0% { -moz-transform: translateY(0); transform: translateY(0); }
+    50% { -moz-transform: translateY(3px); transform: translateY(3px); }
+    100% { -moz-transform: translateY(0); transform: translateY(0); }
+}
+@-webkit-keyframes car {
+    0% { -webkit-transform: translateY(0); transform: translateY(0); }
+    50% { -webkit-transform: translateY(3px); transform: translateY(3px); }
+    100% { -webkit-transform: translateY(0); transform: translateY(0); }
+}
+@-o-keyframes car {
+    0% { -o-transform: translateY(0); transform: translateY(0); }
+    50% { -o-transform: translateY(3px); transform: translateY(3px); }
+    100% { -o-transform: translateY(0); transform: translateY(0); }
+}
+@-ms-keyframes car {
+    0% { -ms-transform: translateY(0); transform: translateY(0); }
+    50% { -ms-transform: translateY(3px); transform: translateY(3px); }
+    100% { -ms-transform: translateY(0); transform: translateY(0); }
+}
+@keyframes car {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(3px); }
+    100% { transform: translateY(0); }
+}
+
+@-moz-keyframes car1 {
+    0% { left: -10%; }
+    50% { left: 50%; }
+    100% { left: 150%; }
+}
+@-webkit-keyframes car1 {
+    0% { left: -10%; }
+    50% { left: 50%; }
+    100% { left: 150%; }
+}
+@-o-keyframes car1 {
+    0% { left: -10%; }
+    50% { left: 50%; }
+    100% { left: 150%; }
+}
+@-ms-keyframes car1 {
+    0% { left: -10%; }
+    50% { left: 50%; }
+    100% { left: 150%; }
+}
+@keyframes car1 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(3px); }
+    100% { transform: translateY(0); }
+}
+.car-wheels {
+	background-image: url(../images/car-wheels.png);
+	background-repeat: no-repeat !important;
+	background-position: center bottom !important;
+	height: 39px;
+	width: 204px;
+}
+.car {
+	background-image: url(../images/car.png);
+	height: 150px;
+	width: 204px;
+	-webkit-animation-timing-function: cubic-bezier(0.25,0.46,0.45,0.94);
+    -moz-animation-timing-function: cubic-bezier(0.25,0.46,0.45,0.94);
+    -ms-animation-timing-function: cubic-bezier(0.25,0.46,0.45,0.94);
+    -o-animation-timing-function: cubic-bezier(0.25,0.46,0.45,0.94);
+    animation-timing-function: cubic-bezier(0.25,0.46,0.45,0.94);
+	-webkit-animation-name: car;
+	-moz-animation-name: car;
+	-ms-animation-name: car;
+	-o-animation-name: car;
+	animation-name: car;
+	-webkit-animation-duration: 0.8s;
+	-moz-animation-duration: 0.8s;
+	-ms-animation-duration: 0.8s;
+	-o-animation-duration: 0.8s;
+	animation-duration: 0.8s;
+}
+.car1 {
+	background: url(../images/car1.png)  no-repeat;
+	height: 150px;
+	width: 243px;
+}
+.car-wheels.c1 {
+	height: 45px;
+	width: 243px;
+	background-image: url(../images/car-wheels1.png);
+}
+.c1 {
+	-webkit-animation-name: car1;
+	-moz-animation-name: car1;
+	-ms-animation-name: car1;
+	-o-animation-name: car1;
+	animation-name: car1;
+	-webkit-animation-timing-function: cubic-bezier(0.25,0.46,0.45,0.94);
+    -moz-animation-timing-function: cubic-bezier(0.25,0.46,0.45,0.94);
+    -ms-animation-timing-function: cubic-bezier(0.25,0.46,0.45,0.94);
+    -o-animation-timing-function: cubic-bezier(0.25,0.46,0.45,0.94);
+    animation-timing-function: cubic-bezier(0.25,0.46,0.45,0.94);
+	-webkit-animation-duration: 18s;
+	-moz-animation-duration: 18s;
+	-ms-animation-duration: 18s;
+	-o-animation-duration: 18s;
+	animation-duration: 18s;
+}

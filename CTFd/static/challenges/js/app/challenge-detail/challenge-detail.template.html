@@ -1,4 +1,61 @@
-<p>challenge</p>
+<h1>{{ $ctrl.selection.name }}</h1>
+<h5>{{ $ctrl.selection.description }}</h5>
 
-<p>{{ $ctrl.selection.name }}</p>
-<p>{{ $ctrl.selection.description }}</p>
+<div class="fields clearfix">
+    <div class="flag-input">
+        <form class="flag-form">
+            <label class="flag-label">FLAG </label>
+            <input class="flag-input" name="flag" type="text" required placeholder="Flag" aria-required="true">
+            <button class="flag-btn" name="flag-btn">Submit</button>
+        </form>
+    </div>
+
+</div>
+
+
+<style>
+
+    .flag-form {
+        background-color: rgba(255,255,255,.1);
+        border-bottom: 1px solid white;
+        border-right: 1px solid white;
+        font-size: 25px;
+        font-weight: 100;
+        width: 100%;
+    }
+    .flag-label {
+        text-align: center;
+        background-color: rgba(75,75,75,0);
+{#        width: 14%;#}
+        display: inline-block;
+        font-weight: 100;
+        padding: 5px 15px 2px 15px;
+    }
+
+    .flag-input {
+        background-color: rgba(75,75,75,0);
+        border: 0px;
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        display: inline-block;
+    }
+
+    .flag-btn {
+{#        width: 11%;#}
+        display: inline-block;
+        background-color: rgba(255,255,255,1);
+        border: 0px;
+        color: black;
+        font-weight: 600;
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        padding: 8px 13px 8px 14px;
+    }
+
+
+
+</style>

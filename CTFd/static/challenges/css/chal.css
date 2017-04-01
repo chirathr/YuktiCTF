@@ -1,0 +1,33 @@
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/bg1.jpg");
+}
+
+.chal-left {
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    height: 100%;
+    width: 50%;
+    color: white;
+}
+
+.vertical-line {
+    top: 25%;
+    bottom: 25%;
+    background-color: white;
+    position:fixed;
+    left: 49.9%;
+    width: 1px;
+}
+
+.chal-right {
+    padding: 4%;
+    position: fixed;
+    top:25%;
+    right:0;
+    bottom:25%;
+    width: 50%;
+    color: white;
+}
+

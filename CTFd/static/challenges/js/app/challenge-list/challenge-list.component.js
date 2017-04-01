@@ -6,8 +6,17 @@ angular.
     controller: ['$http',
       function challengeListController($http) {
         var self = this;
-        this.data = {};
-
+        this.selection = {
+            "category": "Cryptography",
+            "description": "Decrypt the contents of the letter.",
+            "files": [],
+            "hint": "You need this number \"10\".",
+            "id": 1,
+            "name": "Challenge 1",
+            "tags": [],
+            "type": "standard",
+            "value": 10
+        };
         $http.get('/chals').then(function(response) {
           self.challenges = response.data;
         });

@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html ng-app="challengeApp">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title of the document</title>
+{% extends "base.html" %}
 
-        <!--Scripts-->
+    <!--Scripts-->
 
-        <!-- Angular -->
+    <!-- Angular -->
+
+    {% block angularapp %}
         <script src="{{ request.script_root }}/static/challenges/js/angular/angular.js"></script>
         <script src="{{ request.script_root }}/static/challenges/js/angular/angular-loader.js"></script>
         <script src="{{ request.script_root }}/static/challenges/js/angular/angular-route.js"></script>
@@ -17,11 +15,13 @@
         <script src="{{ request.script_root }}/static/challenges/js/app/app.config.js"></script>
         <script src="{{ request.script_root }}/static/challenges/js/app/challenge-list/challenge-list.module.js"></script>
         <script src="{{ request.script_root }}/static/challenges/js/app/challenge-list/challenge-list.component.js"></script>
+        <link rel="stylesheet" href="{{ request.script_root }}/static/challenges/css/chal.css">
+    {% endblock %}
 
-    </head>
 
-    <body>
-        <div ng-view></div>
-    </body>
+    {% block content %}
+        <body ng-app="challengeApp">
+            <div ng-view></div>
+        </body>
+    {% endblock %}
 
-</html>

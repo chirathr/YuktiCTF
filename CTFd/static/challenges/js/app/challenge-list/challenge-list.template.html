@@ -1,24 +1,14 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-2">
-      <!--Sidebar content-->
+<div class="chal-left">
+    Search: <input ng-model="$ctrl.query" />
 
-      Search: <input ng-model="$ctrl.query" />
+    <button ng-repeat="challenge in $ctrl.challenges.game | filter:$ctrl.query" ng-click="$ctrl.selection = challenge" >
+      {{challenge.name}}
+    </button>
+</div>
 
-    </div>
-    <div class="col-md-10">
-      <!--Body content-->
+<div class="vertical-line">
+</div>
 
-      <ul class="challenges">
-          <button ng-repeat="challenge in $ctrl.challenges.game" ng-click="$ctrl.selection = challenge">{{challenge.name}}</button>
-        </li>
-      </ul>
-
-
-        <div class="slide-animate-container">
-            <div class="slide-animate" ng-include="'/static/challenges/js/app/challenge-detail/challenge-detail.template.html'"></div>
-        </div>
-
-    </div>
-  </div>
+<div class="chal-right">
+    <div class="slide-animate" ng-include="'/static/challenges/js/app/challenge-detail/challenge-detail.template.html'"></div>
 </div>

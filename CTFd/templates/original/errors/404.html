@@ -1,14 +1,118 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SIH CTF | Travel Error Page</title>
+	<meta name="description" content="404 Error Page.">
+	<meta name="keywords" content="travel error page, error page, 404, 404 page, 404 error">
+	<meta name="author" content="foss@amrita">
 
-{% block content %}
+	<!-- FONTS -->
+	<link href='http://fonts.googleapis.com/css?family=Signika:400,300,600,700' rel='stylesheet' type='text/css'>
+	<!-- EXTERNAL STYLESHEETS -->
+	<link href="{{ request.script_root }}/static/error/css/font-awesome-4.2.0/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-<div class="row">
-    <h2 style="text-align:center;">Whoops, looks like we can't find that.</h2>
-    <h2 style="text-align:center;">Sorry about that</h2>
-</div>
+	<!-- EFFECT -->
+	<link rel="stylesheet" href="{{ request.script_root }}/static/error/lib/snow-3d/snow-effect.css">
+
+	<!-- ANIMATION -->
+	<link href="{{ request.script_root }}/static/error/css/animation.css" rel="stylesheet" type="text/css" />
+	<!-- MAIN STYLESHEETS -->
+	<link rel="stylesheet" href="{{ request.script_root }}/static/error/css/main.css">
+
+</head>
+<body onload="init()">
+	<!-- ANIMATION -->
+	<div class="fix-wrp">
+		<div class="animate-wrp">
+			<div class="sky">
+				<div class="car">
+					<div class="msg"><b><span>Oops!</span>May be I am on wrong way.</b></div>
+				</div>
+				<div class="cloud1"></div>
+				<div class="grass1"></div>
+				<div class="grass"></div>
+				<div class="grass2"></div>
+				<div class="mountain1"></div>
+				<div class="tree"></div>
+				<div class="tree-front"></div>
+				<div class="road"></div>
+				<div class="road-front"></div>
+			</div>	
+		</div>
+	</div>
+	<!--/animate-wrp -->
+
+	<!-- MAIN WRAPPER -->
+	<div class="main-wrapper">
+
+		<!-- SNOW -->
+		<div id="snow-wrp">
+			
+		</div>
+		<!-- SNOW END -->
 
 
-{% endblock %}
+		<!-- CONTAINER -->
+		<div class="container">
+			
+			<!-- CLOUD MESSAGE -->
+			<div class="cloud-message">
+				<div class="message-wrp">
+					<div class="message">
+						<strong class="t1">OOPS!</strong>
+						<strong class="t2">Error 404 : Page Not Found.</strong>
+						<p class="t3">Looks like something went completely wrong!</p>
+					</div>
+				</div>
+				<img src="{{ request.script_root }}/static/error/images/cloud-large1.png" alt="cloud" />
+			</div>
+			<!--/cloud message -->
+			
+			<!-- NAVIGATION LINKS -->
+			<div class="nav-wrapper">
+				<a href="/">Home</a>
+				<a href="/game">Game</a>
+				<a href="/challenges-angular">Challenges</a>
+				<a href="/about">About</a>
+			</div>
+			<!--/nav-wrapper -->
+			
+			
+		</div>
+		<!--/container -->
+	</div>
+	<!--/main-wrapper -->
+	
+	<!-- COMMON SCRIPT -->
+	<script src="{{ request.script_root }}/static/error/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="{{ request.script_root }}/static/error/lib/snow-3d/ThreeCanvas.js"></script>
+	<script type="text/javascript" src="{{ request.script_root }}/static/error/lib/snow-3d/Snow.js"></script>
+	<script type="text/javascript" src="{{ request.script_root }}/static/error/lib/snow-3d/snow-effect.js"></script>
 
-{% block scripts %}
-{% endblock %}
+	<script>
+		function mainWindow(){
+			$(".main-wrapper").css({
+				width: $('html').width(),
+				height: $('html').height() > $(window).height() ? $('html').height() : $(window).height()  
+			});
+		}
+		function animateWindow(){
+			$(".animate-wrp").css({
+				width: $(window).width(),
+				height: $('.main-wrapper').height()
+			});
+		}
+		$(document).ready(function() {
+			mainWindow();
+			animateWindow();
+		});
+		$(window).resize(function(event) {
+			mainWindow();
+			animateWindow();
+		});
+	</script>
+</body>
+</html>
