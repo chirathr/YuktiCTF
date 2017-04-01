@@ -2,29 +2,18 @@
 # -*- coding: utf-8 -*-
 
 import datetime
-import hashlib
 import json
 import os
 import random
 
 from CTFd import create_app
-from CTFd.models import Teams, Solves, Challenges, WrongKeys, Keys, Files, Awards
+from CTFd.models import Teams, Solves, Challenges, WrongKeys, Keys, Awards
 
 app = create_app()
 
 USER_AMOUNT = 50
 CHAL_AMOUNT = 23
 AWARDS_AMOUNT = 5
-
-categories = [
-    'Exploitation',
-    'Reversing',
-    'Web',
-    'Forensics',
-    'Scripting',
-    'Cryptography',
-    'Trivia',
-]
 
 challenges_json_file = os.path.join('data', 'chals.json')
 fh = open(challenges_json_file)
@@ -86,24 +75,6 @@ emails = [
     '@hotmail.com',
     '@mailinator.com',
 ]
-extensions = [
-    '.doc', '.log', '.msg', '.rtf', '.txt', '.wpd', '.wps', '.123',
-    '.csv', '.dat', '.db ', '.dll', '.mdb', '.pps', '.ppt', '.sql',
-    '.wks', '.xls', '.xml', '.mng', '.pct', '.bmp', '.gif', '.jpe',
-    '.jpg', '.png', '.psd', '.psp', '.tif', '.ai ', '.drw', '.dxf',
-    '.eps', '.ps ', '.svg', '.3dm', '.3dm', '.ind', '.pdf', '.qxd',
-    '.qxp', '.aac', '.aif', '.iff', '.m3u', '.mid', '.mid', '.mp3',
-    '.mpa', '.ra ', '.ram', '.wav', '.wma', '.3gp', '.asf', '.asx',
-    '.avi', '.mov', '.mp4', '.mpg', '.qt ', '.rm ', '.swf', '.wmv',
-    '.asp', '.css', '.htm', '.htm', '.js ', '.jsp', '.php', '.xht',
-    '.fnt', '.fon', '.otf', '.ttf', '.8bi', '.plu', '.xll', '.cab',
-    '.cpl', '.cur', '.dmp', '.drv', '.key', '.lnk', '.sys', '.cfg',
-    '.ini', '.reg', '.app', '.bat', '.cgi', '.com', '.exe', '.pif',
-    '.vb ', '.ws ', '.deb', '.gz ', '.pkg', '.rar', '.sea', '.sit',
-    '.sit', '.zip', '.bin', '.hqx', '.0 E', '.mim', '.uue', '.cpp',
-    '.jav', '.pl ', '.bak', '.gho', '.old', '.ori', '.tmp', '.dmg',
-    '.iso', '.toa', '.vcd', '.gam', '.nes', '.rom', '.sav', '.msi',
-]
 
 
 def gen_name():
@@ -124,6 +95,7 @@ def get_flag(idx):
     c = challenge[idx]
     return c['flag']
 
+
 def gen_email():
     return random.choice(emails)
 
@@ -142,27 +114,14 @@ def get_name(idx):
     c = challenge[idx]
     return c['name']
 
-'''
-def gen_category():
-    return random.choice(categories)
-
-
-def gen_value():
-    return random.choice(range(100, 500, 50))
-
 
 def gen_word():
     return random.choice(hipsters)
 
 
-def gen_file():
-    return gen_word() + random.choice(extensions)
-
-
 def random_date(start, end):
     return start + datetime.timedelta(
         seconds=random.randint(0, int((end - start).total_seconds())))
-'''
 
 
 if __name__ == '__main__':
@@ -171,13 +130,12 @@ if __name__ == '__main__':
 
         # Generating Challenges
         print("GENERATING CHALLENGES")
-        for x in range(1,len(challenge)+1):
+        for x in range(1, len(challenge)+1):
             db.session.add(Challenges(get_name(x), get_desc(x), get_value(x), get_category(x), get_hint(x)))
             db.session.commit()
             db.session.add(Keys(x, get_flag(x), 0))
             db.session.commit()
         db.session.close()
-'''
         # Generating Users
         print("GENERATING USERS")
         used = []
@@ -186,7 +144,7 @@ if __name__ == '__main__':
             name = gen_name()
             if name not in used:
                 used.append(name)
-                team = Teams(None,None, None, None, None, name, name.lower() + gen_email(), 'password', 's')
+                team = Teams(None, None, None, None, None, name, name.lower() + gen_email(), 'password', 's')
                 team.verified = True
                 db.session.add(team)
                 count += 1
@@ -243,7 +201,4 @@ if __name__ == '__main__':
 
                     db.session.add(wrong)
 
-
         db.session.commit()
-'''
-

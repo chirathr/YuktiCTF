@@ -1,0 +1,629 @@
+@media (min-width: 1200px){
+
+}
+
+
+/*Notebooks and Small Laptops*/
+@media (min-width: 1025px){
+
+}
+
+/*iPad Landscape Mode and Large Tablets */
+@media (max-width: 1024px){
+
+    h1 {
+        font-size: 36px;
+        letter-spacing: 10px;
+    }
+
+
+    .ImageWrapper img {
+        padding: 40px;
+    }
+
+    #team .owl-buttons .owl-prev {
+        left: 0px;
+    }
+
+    #team .owl-buttons .owl-next {
+        right: 0px;
+    }
+
+    .TeamMember .CaptionFlyingBox {
+        left: 50%;
+        margin-left: -35%;
+        max-width:70%;
+        width: 70%;
+        bottom:0;
+    }
+
+    .SliderHeading{
+        font-size:50px;
+        line-height:40px;
+        letter-spacing:0;
+    }
+}
+
+/*Small Desktop and Very Small Notebook */
+@media (max-width: 992px){
+
+    .introLogo {
+        width: 100px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 8px;
+    }
+
+    .box-50{
+        width:100%;
+    }
+}
+
+/*Medium Tablets */
+@media (max-width: 900px){
+
+}
+
+@media (max-width: 778px){
+
+}
+
+/*iPad Portrait Mode, iPad Mini and Small Tablets */
+@media (max-width: 768px){
+
+    .ProcessNumber{
+        display:none;
+    }
+
+    .centered-sm{
+        text-align:center;
+    }
+
+    .nav>li>a {
+        padding-left:8px;
+        padding-right:8px;
+    }
+
+    .ChartBox{
+        height:200px;
+        padding:30px;
+    }
+
+    #filters .btn{
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+
+    .CaptionWrapper {
+        padding: 30px;
+        padding-bottom: 0;
+        padding-left:20px;
+        display: block;
+    }
+
+    .ClientLogo img {
+        top: 0px;
+        position: relative;
+        left:20px;
+    }
+
+    .clientLogoWrapper{
+       border:0;
+    }
+
+    .navbar-nav .open .dropdown-menu {
+        background-color: #323232;
+
+    }
+
+    .nav>li>a {
+         padding-left: 0px;
+         padding-right: 0px;
+    }
+
+
+    .serviceBox h2 span {
+        letter-spacing:5px;
+        font-size:18px;
+    }
+
+    .textOverlay{
+        padding-bottom:100px;
+        padding-top:100px;
+        margin-left:0;
+        z-index:6;
+    }
+
+
+    .nav>li {
+        position: relative;
+        display: block;
+        text-align: center;
+    }
+
+
+    .navbar-collapse{
+        background-color: #282828;
+    }
+
+
+    .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+        max-height: 100%;
+    }
+
+    .navbar-nav>li>.dropdown-menu {
+        text-align: center;
+    }
+
+
+
+    .gallery-inner, .grid-sizer{
+        width:50%;
+    }
+
+
+    .text-separator-title{
+        text-align: center;
+    }
+
+    .tableWrapper{
+        margin-top:15px;
+        margin-bottom:15px;
+    }
+
+
+    #countdown .countdown-amount{
+        font-size: 30px;
+    }
+
+    #countdown .countdown-section{
+        border-left:none;
+        padding:20px;
+    }
+
+
+    .BlogSection .gallery .item-3col-gutter,
+    .BlogSection .gallery .grid-sizer-3col-gutter{
+        width: 45%;/* change here the column width */
+    }
+
+    .BlogSection .gallery .item-3col-gutter{
+        margin-bottom:5%;
+        margin-left:5%
+    }
+
+    .BlogSection .gutter-sizer-3col{
+        width:5%;
+    }
+
+
+    .TabsOscar>li>a {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top:10px;
+        background: #eee;
+        float:none;
+        border: 1px solid #717171 !important;
+        border-bottom-color: #717171 !important;
+    }
+
+    .TabsOscar>li{
+        float:none;
+    }
+
+    .BlogFullWidthWrapper {
+        padding: 0px;
+        padding-bottom:40px;
+    }
+
+    .TopMenuWrapperforSize{
+        float: none;
+        margin:0 auto;
+    }
+
+    .NavbarEcommerceTopWrapper.navbar-left, .NavbarEcommerceTopWrapper .navbar-right {
+        float: none !important;
+        display: inline-Block !important;
+    }
+
+    .NavbarEcommerceTopWrapper .nav>li>a {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .NavbarEcommerceTopWrapper .PaddingVertical15{
+        padding-top:0;
+        padding-bottom:0;
+    }
+
+    .NavbarEcommerceTopWrapper .PaddingVertical45{
+        padding-top:20px;
+        padding-bottom:10px;
+    }
+
+    .SidebarPortfolioFixed{
+        display:none;
+    }
+
+    .PortfolioStyle2 .PortfolioStyle2Container {
+        position: relative;
+        left: 0;
+        width: 100%;
+        padding-top:50px;
+    }
+
+    .ShowOnMobile{
+        display:block;
+    }
+
+    .PortfolioStyle2 #filters .PaddingVertical45, .PortfolioStyle2 #filters .PaddingBottom30{
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+
+
+    .FullWidthParallax {
+        width: auto;
+        height: 100%;
+        left: 0;
+    }
+
+    .topArrow:after, .bottomArrow:after{
+        display:none;
+    }
+
+
+    .ImageWrapper img {
+        padding: 0;
+        margin-bottom: 30%;
+    }
+
+    .TeamMember .CaptionFlyingBox {
+        left: 50%;
+        margin-left: -35%;
+        max-width: 70%;
+        width: 70%;
+        bottom: -30%;
+    }
+
+    .gallery-inner-style2 {
+        width: 50%;
+    }
+
+
+    .ServiceWrapper3 {
+        border: none !important;
+    }
+
+    .MixedContent .ClientsWrapper2{
+        padding-left:10px;
+        padding-right:10px;
+    }
+
+}
+
+/*iPad Portrait Mode, iPad Mini and Small Tablets */
+@media (max-width: 767px) {
+
+
+}
+
+/*Medium Smart Phones v2*/
+@media screen and (max-width: 640px){
+    h1 {
+        font-size: 36px;
+        letter-spacing: 10px;
+    }
+
+    h2 {
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 8px;
+    }
+
+    .introLogo {
+        width: 80px;
+    }
+
+
+    .footerLogo{
+        width:100px;
+        height:auto;
+    }
+
+    .serviceBox h2 span {
+        padding: 0;
+        border: 0;
+    }
+
+    #singlePageIntro .container {
+        padding: 30px;
+    }
+
+
+    .tableWrapper {
+        padding: 30px;
+        padding-bottom:50px;
+    }
+}
+
+@media screen and (max-width: 600px){
+
+    .BorderedIntro .border {
+        display:none;
+    }
+
+    .ChartBox {
+        height: 150px;
+        padding: 30px;
+        display: block;
+    }
+
+    .ChartBoxContent {
+        display: block;
+        vertical-align: middle;
+        text-align: center;
+        margin-left: auto;
+        position: relative;
+        margin-right: auto;
+    }
+
+    #filters {
+        padding-top:0;
+    }
+
+
+    .gallery-inner, .grid-sizer{
+        width:100%;
+    }
+
+    .BlogSection .gallery .item-3col-gutter,
+    .BlogSection .gallery .grid-sizer-3col-gutter{
+        width: 100%;/* change here the column width */
+    }
+
+    .BlogSection .gallery .item-3col-gutter{
+        margin-bottom:0%;
+        margin-left:0%
+    }
+
+    .BlogSection .gutter-sizer-3col{
+        width:0%;
+    }
+
+    #FreelanceCarouselSection .ServiceWrapper.PaddingHorizontal40{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .CarouselItemDetails.PaddingHorizontal80{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .ConnectionLine{
+        width: 60%;
+        left: 70%;
+    }
+}
+
+@media screen and (max-width: 600px) and (orientation : landscape){
+
+}
+
+
+
+@media only screen and (max-width : 736px) and (orientation : landscape) {
+
+    .introLogo {
+        width: 80px;
+    }
+
+    h1 {
+        font-size: 36px;
+        letter-spacing: 0px;
+    }
+
+    h2 {
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 0px;
+    }
+
+    .NegativeMarginSection {
+        margin-top: 0
+    }
+
+    .ChartBox {
+        width: 100%;
+    }
+
+    .nav>li>a {
+        padding-top: 4px;
+        padding-bottom:4px;
+    }
+
+    .preloaderLogo{
+        min-width:100px;
+        max-width:100px;
+
+    }
+}
+
+
+
+@media screen and (max-width: 480px){
+
+
+
+    .NegativeMarginSection {
+        margin-top: 0
+    }
+
+
+    h1 {
+        font-size: 32px;
+        letter-spacing: 0px;
+    }
+
+    h2 {
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 0px;
+    }
+
+    h4 {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0px;
+    }
+
+
+    .navbar-default {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .EcommercePart .gallery .item-2col-gutter,
+    .EcommercePart .gallery .grid-sizer-2col-gutter{
+        width: 100%; /* change here the column width */
+    }
+
+    .EcommercePart .gutter-sizer-2col{
+        width: 0%;
+    }
+
+
+}
+
+
+
+/*google nexus ish*/
+@media screen and (max-width: 480px) {
+
+
+    .gallery-inner-style2 {
+        width: 100%;
+    }
+
+    .footerLogo{
+        width:100px;
+        height:auto;
+    }
+
+
+    #text-separator-clients h3 span {
+        padding:0;
+        border:none;
+    }
+
+    .serviceBox {
+        width: 100%;
+    }
+
+    #text-separator-testimonials h3 span {
+        padding:0;
+        border:none;
+    }
+
+    #FreelanceCarouselSection .ServiceWrapper.PaddingHorizontal40{
+        padding-left:0;
+        padding-right:0;
+    }
+
+    #FreelanceCarouselSection .ServiceWrapper.PaddingHorizontal40{
+        padding-left:0;
+        padding-right:0;
+    }
+
+    #FreelanceCarouselSection .ServiceWrapper h5{
+        font-size: 12px;
+    }
+
+    .CarouselItemDetails.PaddingHorizontal80{
+        padding-left:15px;
+        padding-right:15px;
+    }
+
+}
+/*Other Major Small Smart Phones*/
+@media screen and (max-width: 360px){
+
+
+
+    section .container {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    /*.textOverlay {*/
+    /*margin-left: -100px;*/
+    /*}*/
+
+
+    .portfolioFilters {
+        height: 450px;
+    }
+
+
+
+    .tableWrapper {
+        padding: 10px;
+        padding-bottom:30px;
+    }
+
+    .listwrapper{
+        width:100%;
+    }
+}
+
+/*iPhone Portrait Mode and Very Small Mobile Phones*/
+@media screen and (max-width: 320px) {
+
+
+}
+
+
+@media (max-width: 768px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+}
