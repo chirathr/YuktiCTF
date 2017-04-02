@@ -67,6 +67,10 @@ html {
 
 }
 
+.challenge:hover {
+  color: #e2dedb;
+}
+
 .chal-name {
     color: white;
 }
