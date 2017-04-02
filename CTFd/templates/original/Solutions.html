@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block stylesheets %}
+    <style>
+        .about-text {
+            font-size: 1.4em;
+        }
+    .about {
+        padding-top: 8%;
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="page-title">
+    <h1>{{ gettext("About") }}</h1>
+</div>
+<div class="container main-container">
+    <div class="row about">
+        <!-- <embed src="static/home/video/Caesar_Cipher.mp4" autostart="false" height="30" width="144" /> -->
+
+        <!-- <div class="vidbeo-embed" data-id="abcdefg" data-img="static/home/video/Caesar_Cipher.mp4" data-width="640" data-aspect="16:9"></div><script>(function(d){var s=d.createElement("script");var i=d.getElementsByTagName("script")[0];s.src="https://vidbeo.com/assets/js/vidbeo-embed.min.js";s.async=true;i.parentNode.insertBefore(s,i)})(document);</script>         -->
+        <iframe width="800" height="600"
+            src="static/home/video/Caesar_Cipher.mp4">
+        </iframe>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ request.script_root }}/static/{{ ctf_theme() }}/js/style.js"></script>
+{% endblock %}
+
+Caesar_Cipher.mp4
