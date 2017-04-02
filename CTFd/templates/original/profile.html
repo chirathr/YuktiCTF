@@ -52,84 +52,16 @@
                 </div>
             {% endif %}
             <form method="post" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizontal form-group">
-                <div class="row">
-                    <div class="col-md-12 pad-down-10">
-                        <span class="input">
-                            <label class="input-label" for="name-input">
-                                <span class="label-content" data-content="Team Name">Username</span>
-                            </label>
-                            <input class="input-field form-control" type="text" name="name" id="name-input" value="{{name}}"/>
-                        </span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 pad-down-10">
-                        <span class="input">
-                            <label class="input-label" for="email-input">
-                                <span class="label-content" data-content="Email">Email</span>
-                            </label>
-                            <input class="input-field form-control" type="text" name="email" id="email-input" value="{{email}}"/>
-                        </span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 pad-down-10">
-                        <span class="input">
-                            <label class="input-label" for="confirm-input">
-                                <span class="label-content" data-content="Password">Current Password</span>
-                            </label>
-                            <input class="input-field form-control" type="password" name="confirm" id="confirm-input" />
-                        </span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 pad-down-10">
-                        <span class="input">
-                            <label class="input-label" for="password-input">
-                                <span class="label-content" data-content="New Password">New Password</span>
-                            </label>
-                            <input class="input-field form-control" type="password" name="password" id="password-input" />
-                        </span>
-                    </div>
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="col-md-12 pad-down-10">
-                        <span class="input">
-                            <label class="input-label" for="affiliation-input">
-                                <span class="label-content" data-content="Affiliation">Affiliation</span>
-                            </label>
-                            <input class="input-field form-control" type="text" name="affiliation" id="affiliation-input" value="{% if affiliation %}{{affiliation}}{% endif %}" />
-                        </span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 pad-down-10">
-                        <span class="input">
-                            <label class="input-label" for="website-input">
-                                <span class="label-content" data-content="Website">Website</span>
-                            </label>
-                            <input class="input-field form-control" type="text" name="website" id="website-input" value="{% if website %}{{website}}{% endif %}" />
-                        </span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 pad-down-10">
-                        <span class="input">
-                            <label class="input-label" for="country-input">
-                                <span class="label-content" data-content="Country">State</span>
-                            </label>
-                            <input class="input-field form-control" type="text" name="country" id="country-input" value="{% if country %}{{country}}{% endif %}" />
-                        </span>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="submit-row">
-                        <button type="submit" id="submit" tabindex="5" class="btn btn-md btn-theme btn-outlined pull-right">Submit</button>
-                    </div>
-                </div>
-                <input type="hidden" name="nonce" value="{{ nonce }}">
+              <input placeholder="{{ gettext("Username") }}" type="text" name="name" id="input-10" />
+              <input placeholder="{{ gettext("Email") }}" type="text" name="email" id="input-10" />
+              <input placeholder="{{ gettext("Current Password") }}" type="password" name="confirm" id="input-10" />
+              <input placeholder="{{ gettext("New Password") }}" type="password" name="password" id="input-10" />
+              <input placeholder="{{ gettext("Affiliation") }}" type="text" name="affiliation" id="input-10" />
+              <input placeholder="{{ gettext("City") }}" type="text" name="website" id="input-10" />
+              <input placeholder="{{ gettext("State") }}" type="text" name="country" id="input-10" />
+              <input placeholder="{{ gettext("Email") }}" type="text" name="email" id="input-10" />
+              <input id="submit" type="submit" value="{{ gettext("Update") }}">
+              <input type="hidden" name="nonce" value="{{ nonce }}">
             </form>
         </div>
     </div>

@@ -20,40 +20,13 @@
         </div>
         {% endfor %}
         <form method="post" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizontal form-group">
-            <input type="hidden" name="nonce" value="{{nonce}}"> {# This nonce is implemented specially in the route itself #}
-            <span class="input">
-                <label class="input-label" for="ctf_name-input pad-down-10">
-                    <span class="label-content" data-content="CTF Name">CTF Name</span>
-                </label>
-                <input class="input-field form-control" type="text" name="ctf_name" id="ctf_name-input"/>
-            </span>
-            <span class="input">
-                <label class="input-label" for="username-input pad-down-10">
-                    <span class="label-content" data-content="Username">Admin Username</span>
-                </label>
-                <input class="input-field form-control" type="text" name="name" id="username-input" />
-            </span>
-            <span class="input">
-                <label class="input-label" for="email-input pad-down-10">
-                    <span class="label-content" data-content="Email">Admin Email</span>
-                </label>
-                <input class="input-field form-control" type="email" name="email" id="email-input" />
-            </span>
-            <span class="input">
-                <label class="input-label" for="password-input pad-down-10">
-                    <span class="label-content" data-content="Password">Admin Password</span>
-                </label>
-                <input class="input-field form-control" type="password" name="password" id="password-input" />
-            </span>
-            <br/>
-    <div class="container main-container" style="margin-bottom:100px;">
-        <div id="login-container" style="width: 10%; margin-left: 36%;">
-            <div class="submit-row text-center">
-                <button type="submit" id="submit" tabindex="5" class="btn btn-md btn-theme btn-outlined">Submit</button>
-            </div>
-        </div>
-    </div>
-    </form>
+          <input type="hidden" name="nonce" value="{{nonce}}"> {# This nonce is implemented specially in the route itself #}
+          <input placeholder="{{ gettext("Game Name") }}" type="text" name="ctf_name" id="input-10" />
+          <input placeholder="{{ gettext("Admin Username") }}" type="text" name="name" id="input-10" />
+          <input placeholder="{{ gettext("Admin Email") }}" type="text" name="email" id="input-10" />
+          <input placeholder="{{ gettext("Admin Password") }}" type="password" name="password" id="input-10" />
+          <input id="submit" type="submit" value="{{ gettext("Launch") }}">
+       </form>
 </div>
 
 {% endblock %}
