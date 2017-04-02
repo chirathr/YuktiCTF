@@ -112,3 +112,8 @@ html {
         top: 50%;
     }
 }
+
+.chal-hidden {
+    color: rgba(133,133,133,0.56);
+    background-color: rgba(133,133,133,0.25)
+}

@@ -43,7 +43,8 @@ angular.
                return {
                     "name": "Challenge locked",
                     "description": "Solve previous challenges to unlock",
-                    "start": true
+                    "start": true,
+                    "hidden": true
                 };
             else
                 return challenge;

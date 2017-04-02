@@ -13,7 +13,7 @@
     <!-- Search: <input ng-model="$ctrl.query" /> -->
     <div class="chal-list">
         <p>{{ challenges.name }}</p>
-        <div class="challenge" ng-repeat="challenge in $ctrl.challenges.game | filter:$ctrl.query | orderBy:'id'" ng-click="$ctrl.selection = $ctrl.check_hidden(challenge, challenge.hidden)">
+        <div class="challenge" ng-class="{'chal-hidden':challenge.hidden}" ng-repeat="challenge in $ctrl.challenges.game | filter:$ctrl.query | orderBy:'id'" ng-click="$ctrl.selection = $ctrl.check_hidden(challenge, challenge.hidden)">
             <p class="chal-name">{{ challenge.name }}</p>
             <p class="chal-score">{{ challenge.value }}</p>
         </div>
