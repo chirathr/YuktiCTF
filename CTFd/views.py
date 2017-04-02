@@ -201,6 +201,9 @@ def my_students():
 def about():
     return render_template("about.html")
 
+@views.route('/Solutions', methods=['GET'])
+def demo():
+    return render_template("Solutions.html")
 
 @views.route('/profile', methods=['POST', 'GET'])
 def profile():
