@@ -1,17 +1,15 @@
 <div class="challenge-data">
     <h1 class="chal-text">{{ $ctrl.selection.name }}</h1>
     <h5 class="chat-desc">{{ $ctrl.selection.description }}</h5>
-    <h5 class="chat-desc">{{ $ctrl.nonce }}</h5>
 
     <div class="fields clearfix">
         <div class="flag-input">
             <form class="flag-form" ng-if="$ctrl.selection.start != true" ng-submit="$ctrl.processForm(key, $ctrl.selection.id, $ctrl.nonce)" style="display: flex;flex-flow: row;">
-                <label class="flag-label" style="flex: 1 1 auto;">FLAG </label>
                 <input class="flag-input" style="flex: 1 1 auto; width: 50%;" ng-model="key" type="text" required placeholder="Flag" aria-required="true">
                 <button class="flag-btn" style="flex: 1 1 auto;" type="submit" name="flag-btn">Submit</button>
             </form>
         </div>
-
+        <br></br>
     </div>
     <div class="files">
         <div class="file" ng-repeat="path in $ctrl.selection.files">
@@ -20,23 +18,8 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-    <div class="hint">
-        <div class="hint-header"><span>Hints</span>
-
-        </div>
-        <div class="hint-content">
-            <ul>
-                <li>{{ $ctrl.selection.hint }}</li>
-
-            </ul>
-        </div>
-
-        <div class="demo-chal-link" ng-if="$ctrl.selection.id === 1">
-            <a href="/Solutions">Solution</a>
-        </div>
-    </div>
-      <button>show</button>
+      <p style="padding-top:3%">{{ $ctrl.selection.hint }}<p>
+      <a style="padding-top:3%" href="/Solutions">Solution</a>
 </div>
 
 <style>
