@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2017-04-02 09:55+0530\n"
-"PO-Revision-Date: 2017-04-02 15:40+0530\n"
+"PO-Revision-Date: 2017-04-02 15:51+0530\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hi <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -61,6 +61,9 @@ msgstr ""
 #: templates/original/index.html:37
 msgid "Yukti CTF"
 msgstr "युक्ति CTF"
+
+msgid "Solutions"
+msgstr "उपाय"
 
 #: templates/original/base.html:54 templates/original/my_students.html:9
 #: templates/original/teams.html:9

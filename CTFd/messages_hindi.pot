@@ -30,6 +30,9 @@ msgstr "एक हाल ही की रिपोर्ट में पता
 msgid "Yukti CTF"
 msgstr "युक्ति CTF"
 
+msgid "Solutions"
+msgstr "उपाय"
+
 #: templates/original/base.html:54 templates/original/my_students.html:9
 #: templates/original/teams.html:9
 msgid "Students"
@@ -165,4 +168,3 @@ msgstr "व्यवस्था"
 #: templates/original/teams.html:16
 msgid "School/College"
 msgstr "स्कूल / कॉलेज"
-
