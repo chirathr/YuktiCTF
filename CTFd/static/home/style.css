@@ -1200,3 +1200,9 @@ input[type="radio"]:checked + label::before {
   border: 1px solid white;
   box-shadow: inset 0 0 0 1px white, 0 0 0 1px yellowgreen;
 }
+
+#score-graph {
+    height: 450px;
+    display: block;
+    clear: both;
+}

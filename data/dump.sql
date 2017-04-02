@@ -153,47 +153,47 @@ CREATE TABLE challenges (
 	PRIMARY KEY (id), 
 	CHECK (hidden IN (0, 1))
 );
-INSERT INTO "challenges" VALUES(1,'Challenge 1','Decrypt the contents of the letter.',0,10,'Cryptography',0,1,'You need this number "10".',NULL);
-INSERT INTO "challenges" VALUES(2,'Challenge 2','Name the series.',0,10,'Trivia',0,1,'Reverse search is the new search.',NULL);
+INSERT INTO "challenges" VALUES(1,'Challenge 1','Decrypt the contents of the letter.',0,10,'Cryptography',0,0,'You need this number "10".',NULL);
+INSERT INTO "challenges" VALUES(2,'Challenge 2','Name the series.',0,10,'Trivia',0,0,'Reverse search is the new search.',NULL);
 INSERT INTO "challenges" VALUES(3,'Challenge 3','Can you find the flag here.
-http://localhost/3/index.php',0,10,'Web',0,1,'Some catch in the source',NULL);
-INSERT INTO "challenges" VALUES(4,'Challenge 4','What you think about the file is wrong!!',0,30,'Forensics',0,1,'EXTend your thinking.',NULL);
-INSERT INTO "challenges" VALUES(5,'Challenge 5','A message sent from a very old multi-tap mobile phone.',0,30,'Cryptography',0,1,'',NULL);
+http://localhost/3/index.php',0,10,'Web',0,0,'Some catch in the source',NULL);
+INSERT INTO "challenges" VALUES(4,'Challenge 4','What you think about the file is wrong!!',0,30,'Forensics',0,0,'EXTend your thinking.',NULL);
+INSERT INTO "challenges" VALUES(5,'Challenge 5','A message sent from a very old multi-tap mobile phone.',0,30,'Cryptography',0,0,'',NULL);
 INSERT INTO "challenges" VALUES(6,'Challenge 6','Can you trick my arrays? I don''t think so ... Try to leak out the flag.
-[ssh]',0,30,'Exploitation',0,1,'Is the limit, the limit?',NULL);
+[ssh]',0,30,'Exploitation',0,0,'Is the limit, the limit?',NULL);
 INSERT INTO "challenges" VALUES(7,'Challenge 7','It is known that the enemy is conducting a secret meeting next week. I found a file that will give me a secret password that I can use to find the location of meeting. Unfortunately, I don’t know what to do with it. Can you help me find secret password from the file?
-',0,50,'Reversing',0,1,'',NULL);
-INSERT INTO "challenges" VALUES(8,'Challenge 8','The file format is correct but there is something fishy about the file.',0,50,'Forensics',0,1,'Magic Number , Header',NULL);
+',0,50,'Reversing',0,0,'',NULL);
+INSERT INTO "challenges" VALUES(8,'Challenge 8','The file format is correct but there is something fishy about the file.',0,50,'Forensics',0,0,'Magic Number , Header',NULL);
 INSERT INTO "challenges" VALUES(9,'Challenge 9','This is updated version of previous web-Challenge
 
 http://localhost/9/index.php
-',0,80,'Web',0,1,'Extract the source',NULL);
+',0,80,'Web',0,0,'Extract the source',NULL);
 INSERT INTO "challenges" VALUES(10,'Challenge 10','The enemy (who is a big fan of coffee and an island in Indonesia) changed the password for next meeting for some reason and distributed this file to exchange password. Can you help me find the password for next meeting?
-',0,80,'Reversing',0,1,'Some catch in the source',NULL);
-INSERT INTO "challenges" VALUES(11,'Challenge 11','Know more about the file.',0,80,'Forensics',0,1,'Mayhem Ends Threat At Delhi At Ten Am.',NULL);
-INSERT INTO "challenges" VALUES(12,'Challenge 12','Those guys are getting better and better. They changed the password again for some reason! I don’t know why he keeps doing this. Anyway, this file has password for next level. Unfortunately, my brother did something called MD5 hashing of password and stored the result. Can you get the actual password?',0,80,'Reversing',0,1,'You need this number "10".',NULL);
+',0,80,'Reversing',0,0,'Some catch in the source',NULL);
+INSERT INTO "challenges" VALUES(11,'Challenge 11','Know more about the file.',0,80,'Forensics',0,0,'Mayhem Ends Threat At Delhi At Ten Am.',NULL);
+INSERT INTO "challenges" VALUES(12,'Challenge 12','Those guys are getting better and better. They changed the password again for some reason! I don’t know why he keeps doing this. Anyway, this file has password for next level. Unfortunately, my brother did something called MD5 hashing of password and stored the result. Can you get the actual password?',0,80,'Reversing',0,0,'You need this number "10".',NULL);
 INSERT INTO "challenges" VALUES(13,'Challenge 13','Two people, Blaise de Vigenère and Giovan Battista Bellaso, are meeting at a secret location to discuss something top secret. I found the location of meeting but need a password to enter the building. I think Bellaso sent the password to Vigenère in this message. Unfortunately, I don’t have anything else but this message. Can you help me find the password by breaking this message?
-',0,100,'Cryptography',0,1,'Reverse search is the new search.',NULL);
+',0,100,'Cryptography',0,0,'Reverse search is the new search.',NULL);
 INSERT INTO "challenges" VALUES(14,'Challenge 14','There is no flag.
 
-http://localhost/14/index.html',0,100,'Web',0,1,'Robots are good, Always ',NULL);
+http://localhost/14/index.html',0,100,'Web',0,0,'Robots are good, Always ',NULL);
 INSERT INTO "challenges" VALUES(15,'Challenge 15','It is simple. Just link it. And get me a shell.
-[ssh]',0,100,'Exploitation',0,1,'Symlinks are a powerful way to execute remote commands I have heard.',NULL);
+[ssh]',0,100,'Exploitation',0,0,'Symlinks are a powerful way to execute remote commands I have heard.',NULL);
 INSERT INTO "challenges" VALUES(16,'Challenge 16','be a CookieMonster
 
-http://localhost/16/index.php',0,150,'Web',0,1,'You know cookies ',NULL);
+http://localhost/16/index.php',0,150,'Web',0,0,'You know cookies ',NULL);
 INSERT INTO "challenges" VALUES(17,'Challenge 17','The enemy (who loves XOR cipher) sent a message via an email and we intercepted it. Can you help me break the encrypted message and get the original message so that I can get to them
-',0,150,'Cryptography',0,1,'Some catch in the source',NULL);
-INSERT INTO "challenges" VALUES(18,'Challenge 18','The enemy recently learnt a new algorithm for encrypting text called RSA. He sent me this message encrypted using RSA to his boss. But, we somehow got the encrypted message. Can you help me decrypt the message? We also were able to get some details thorugh a phone interrupt and it was to use openssl’s rsa utilities to extract details of the key but I don’t know what details are needed. Maybe this might help you',0,200,'Cryptography',0,1,'Magic Number , Header',NULL);
+',0,150,'Cryptography',0,0,'Some catch in the source',NULL);
+INSERT INTO "challenges" VALUES(18,'Challenge 18','The enemy recently learnt a new algorithm for encrypting text called RSA. He sent me this message encrypted using RSA to his boss. But, we somehow got the encrypted message. Can you help me decrypt the message? We also were able to get some details thorugh a phone interrupt and it was to use openssl’s rsa utilities to extract details of the key but I don’t know what details are needed. Maybe this might help you',0,200,'Cryptography',0,0,'Magic Number , Header',NULL);
 INSERT INTO "challenges" VALUES(19,'Challenge 19','EditThisCookie
 
-http://localhost/16/index.php',0,200,'Web',0,1,'Can you change the cookie? because only admin are permitted',NULL);
-INSERT INTO "challenges" VALUES(20,'Challenge 20','You have a text file. Or its not. Umm.. I''m not sure.',0,200,'Forensics',0,1,'Some catch in the source',NULL);
+http://localhost/16/index.php',0,200,'Web',0,0,'Can you change the cookie? because only admin are permitted',NULL);
+INSERT INTO "challenges" VALUES(20,'Challenge 20','You have a text file. Or its not. Umm.. I''m not sure.',0,200,'Forensics',0,0,'Some catch in the source',NULL);
 INSERT INTO "challenges" VALUES(21,'Challenge 21','Its their last bet. They(who also likes some snakes I think) learnt that we found the secret password and changed the password for next meeting again. Can you help me find the password for next meeting from this strange file? I could not find the type of this file. Maybe you should find that out first
-',0,80,'Reversing',0,1,'Mayhem Ends Threat At Delhi At Ten Am.',NULL);
+',0,80,'Reversing',0,0,'Mayhem Ends Threat At Delhi At Ten Am.',NULL);
 INSERT INTO "challenges" VALUES(22,'Challenge 22','Everything you think you know is wrong. Flow! And break the buffers ... Oh, and gain shell and read the flag.
-[ssh]',0,200,'Exploitation',0,1,'Does the buffer take in only as many bytes as you intend it to? Sure?',NULL);
-INSERT INTO "challenges" VALUES(23,'Challenge 23','Know more about the file.',0,350,'Boss',0,1,'Mayhem Ends Threat At Delhi At Ten Am.',NULL);
+[ssh]',0,200,'Exploitation',0,0,'Does the buffer take in only as many bytes as you intend it to? Sure?',NULL);
+INSERT INTO "challenges" VALUES(23,'Challenge 23','Know more about the file.',0,350,'Boss',0,0,'Mayhem Ends Threat At Delhi At Ten Am.',NULL);
 CREATE TABLE config (
 	id INTEGER NOT NULL, 
 	"key" TEXT, 
@@ -219,6 +219,7 @@ INSERT INTO "config" VALUES(16,'mail_username',NULL);
 INSERT INTO "config" VALUES(17,'mail_password',NULL);
 INSERT INTO "config" VALUES(18,'setup','1');
 INSERT INTO "config" VALUES(19,'hide_scores',NULL);
+INSERT INTO "config" VALUES(20,'mg_api_key',NULL);
 CREATE TABLE pages (
 	id INTEGER NOT NULL, 
 	route VARCHAR(80), 
@@ -272,8 +273,9 @@ CREATE TABLE tracking (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(team) REFERENCES teams (id)
 );
-INSERT INTO "tracking" VALUES(1,2130706433,1,'2017-04-01 12:07:42.310694');
+INSERT INTO "tracking" VALUES(1,2130706433,1,'2017-04-02 07:58:23.221008');
 INSERT INTO "tracking" VALUES(2,2130706433,114,'2017-04-01 13:25:51.755700');
+INSERT INTO "tracking" VALUES(3,2130706433,111,'2017-04-02 08:39:46.684119');
 CREATE TABLE solves (
 	id INTEGER NOT NULL, 
 	chalid INTEGER, 
@@ -286,6 +288,113 @@ CREATE TABLE solves (
 	FOREIGN KEY(chalid) REFERENCES challenges (id), 
 	FOREIGN KEY(teamid) REFERENCES teams (id)
 );
+INSERT INTO "solves" VALUES(1,3,1,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:37:33.316804');
+INSERT INTO "solves" VALUES(2,7,1,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:37:39.271146');
+INSERT INTO "solves" VALUES(3,1,1,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:37:45.326356');
+INSERT INTO "solves" VALUES(4,4,1,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:37:50.267765');
+INSERT INTO "solves" VALUES(5,19,1,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:38:01.193002');
+INSERT INTO "solves" VALUES(6,14,1,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:38:06.148447');
+INSERT INTO "solves" VALUES(7,22,1,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:38:16.155169');
+INSERT INTO "solves" VALUES(8,13,1,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:38:24.570290');
+INSERT INTO "solves" VALUES(9,20,1,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:38:31.417966');
+INSERT INTO "solves" VALUES(10,18,1,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:38:47.975342');
+INSERT INTO "solves" VALUES(11,3,3,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:39:20.673925');
+INSERT INTO "solves" VALUES(12,1,3,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:39:26.112813');
+INSERT INTO "solves" VALUES(13,4,3,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:39:33.084651');
+INSERT INTO "solves" VALUES(14,2,3,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:39:37.762184');
+INSERT INTO "solves" VALUES(15,11,3,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:39:43.208450');
+INSERT INTO "solves" VALUES(16,17,3,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:39:49.974979');
+INSERT INTO "solves" VALUES(17,8,3,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:39:56.982189');
+INSERT INTO "solves" VALUES(18,15,3,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:40:08.356163');
+INSERT INTO "solves" VALUES(19,12,3,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:40:19.874678');
+INSERT INTO "solves" VALUES(20,16,3,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:40:25.838115');
+INSERT INTO "solves" VALUES(21,5,8,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:40:48.963370');
+INSERT INTO "solves" VALUES(22,1,8,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:40:55.919686');
+INSERT INTO "solves" VALUES(23,3,8,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:41:02.939251');
+INSERT INTO "solves" VALUES(24,16,8,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:41:09.353917');
+INSERT INTO "solves" VALUES(25,13,8,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:41:14.816676');
+INSERT INTO "solves" VALUES(26,11,8,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:41:21.087561');
+INSERT INTO "solves" VALUES(27,18,8,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:41:27.192407');
+INSERT INTO "solves" VALUES(28,1,9,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:41:46.380880');
+INSERT INTO "solves" VALUES(29,3,9,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:41:52.213404');
+INSERT INTO "solves" VALUES(30,21,9,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:42:00.198686');
+INSERT INTO "solves" VALUES(31,23,9,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:42:05.048546');
+INSERT INTO "solves" VALUES(32,5,9,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:42:15.237256');
+INSERT INTO "solves" VALUES(33,3,11,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:42:33.773959');
+INSERT INTO "solves" VALUES(34,18,11,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:42:40.598985');
+INSERT INTO "solves" VALUES(35,19,11,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:42:51.941179');
+INSERT INTO "solves" VALUES(36,20,11,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:42:58.302377');
+INSERT INTO "solves" VALUES(37,9,14,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:43:15.203752');
+INSERT INTO "solves" VALUES(38,2,14,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:43:19.315013');
+INSERT INTO "solves" VALUES(39,4,14,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:43:23.561987');
+INSERT INTO "solves" VALUES(40,3,14,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:43:27.697428');
+INSERT INTO "solves" VALUES(41,17,14,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:43:32.530586');
+INSERT INTO "solves" VALUES(42,18,14,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:43:37.610903');
+INSERT INTO "solves" VALUES(43,1,14,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:43:47.274728');
+INSERT INTO "solves" VALUES(44,14,31,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:44:26.385097');
+INSERT INTO "solves" VALUES(45,7,31,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:44:31.711956');
+INSERT INTO "solves" VALUES(46,10,31,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:44:38.544589');
+INSERT INTO "solves" VALUES(47,12,31,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:44:43.970264');
+INSERT INTO "solves" VALUES(48,7,37,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:44:59.428191');
+INSERT INTO "solves" VALUES(49,3,37,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:45:06.631370');
+INSERT INTO "solves" VALUES(50,13,37,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:45:12.212577');
+INSERT INTO "solves" VALUES(51,17,37,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:45:17.187316');
+INSERT INTO "solves" VALUES(52,4,37,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:46:31.765707');
+INSERT INTO "solves" VALUES(53,15,37,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:46:39.361428');
+INSERT INTO "solves" VALUES(54,19,37,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:46:54.875021');
+INSERT INTO "solves" VALUES(55,1,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:47:10.072429');
+INSERT INTO "solves" VALUES(56,2,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:47:14.716940');
+INSERT INTO "solves" VALUES(57,3,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:47:20.122295');
+INSERT INTO "solves" VALUES(58,4,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:47:25.808120');
+INSERT INTO "solves" VALUES(59,5,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:47:31.260125');
+INSERT INTO "solves" VALUES(60,6,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:47:36.710159');
+INSERT INTO "solves" VALUES(61,7,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:47:43.748275');
+INSERT INTO "solves" VALUES(62,8,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:47:48.086548');
+INSERT INTO "solves" VALUES(63,9,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:47:53.342136');
+INSERT INTO "solves" VALUES(64,10,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:47:59.618812');
+INSERT INTO "solves" VALUES(65,11,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:48:04.222842');
+INSERT INTO "solves" VALUES(66,12,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:48:09.868609');
+INSERT INTO "solves" VALUES(67,13,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:48:14.413048');
+INSERT INTO "solves" VALUES(68,14,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:48:18.656731');
+INSERT INTO "solves" VALUES(69,15,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:48:24.015482');
+INSERT INTO "solves" VALUES(70,16,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:48:28.944577');
+INSERT INTO "solves" VALUES(71,21,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:48:37.390315');
+INSERT INTO "solves" VALUES(72,19,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:48:50.246706');
+INSERT INTO "solves" VALUES(73,17,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:48:57.871024');
+INSERT INTO "solves" VALUES(74,18,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:49:30.836210');
+INSERT INTO "solves" VALUES(75,20,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:49:35.898053');
+INSERT INTO "solves" VALUES(76,22,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:49:40.864175');
+INSERT INTO "solves" VALUES(77,23,2,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:49:44.989254');
+INSERT INTO "solves" VALUES(78,2,16,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:50:02.234985');
+INSERT INTO "solves" VALUES(79,3,16,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:50:07.177026');
+INSERT INTO "solves" VALUES(80,7,16,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:50:14.049173');
+INSERT INTO "solves" VALUES(81,18,16,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:50:45.811296');
+INSERT INTO "solves" VALUES(82,3,7,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:50:59.536972');
+INSERT INTO "solves" VALUES(83,8,7,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:51:05.340328');
+INSERT INTO "solves" VALUES(84,2,38,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:51:30.844374');
+INSERT INTO "solves" VALUES(85,5,38,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:51:34.787149');
+INSERT INTO "solves" VALUES(86,8,38,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:52:20.074145');
+INSERT INTO "solves" VALUES(87,3,50,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:52:58.197956');
+INSERT INTO "solves" VALUES(88,5,24,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:53:12.952062');
+INSERT INTO "solves" VALUES(89,1,24,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:53:17.889013');
+INSERT INTO "solves" VALUES(90,3,24,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:53:22.288528');
+INSERT INTO "solves" VALUES(91,10,21,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:53:44.140381');
+INSERT INTO "solves" VALUES(92,16,21,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:53:53.853304');
+INSERT INTO "solves" VALUES(93,2,18,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:55:54.670248');
+INSERT INTO "solves" VALUES(94,3,18,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:55:59.029460');
+INSERT INTO "solves" VALUES(95,1,25,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 06:56:12.497964');
+INSERT INTO "solves" VALUES(96,3,15,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 07:54:24.377028');
+INSERT INTO "solves" VALUES(97,5,15,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 07:54:30.275074');
+INSERT INTO "solves" VALUES(98,17,17,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 07:54:48.914245');
+INSERT INTO "solves" VALUES(99,3,17,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 07:54:54.937090');
+INSERT INTO "solves" VALUES(100,5,23,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 07:55:28.696755');
+INSERT INTO "solves" VALUES(101,1,55,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 07:56:18.750052');
+INSERT INTO "solves" VALUES(102,3,55,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 07:56:23.857396');
+INSERT INTO "solves" VALUES(103,6,105,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 07:56:40.357906');
+INSERT INTO "solves" VALUES(104,7,19,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 07:57:40.536685');
+INSERT INTO "solves" VALUES(105,10,19,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 07:57:44.286630');
+INSERT INTO "solves" VALUES(106,3,30,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 07:57:57.751860');
+INSERT INTO "solves" VALUES(107,19,47,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 07:58:12.942608');
 CREATE TABLE tags (
 	id INTEGER NOT NULL, 
 	chal INTEGER, 
