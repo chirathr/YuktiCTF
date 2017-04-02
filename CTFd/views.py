@@ -138,11 +138,12 @@ def teams(page):
 
     if utils.get_config('verify_emails'):
         count = Teams.query.filter_by(verified=True, banned=False).count()
-        teams = Teams.query.filter_by(verified=True, banned=False).slice(page_start, page_end).all()
+        teams = Teams.query.filter_by(verified=True, banned=False).order_by(Teams.id.desc()).slice(page_start, page_end).all()
     else:
         count = Teams.query.filter_by(banned=False).count()
-        teams = Teams.query.filter_by(banned=False).slice(page_start, page_end).all()
+        teams = Teams.query.filter_by(banned=False).order_by(Teams.id.desc()).slice(page_start, page_end).all()
     pages = int(count / results_per_page) + (count % results_per_page > 0)
+    print teams
     return render_template('teams.html', teams=teams, team_pages=pages, curr_page=page)
 
 
