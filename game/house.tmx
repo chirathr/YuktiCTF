@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="25" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="1" tilewidth="32" tileheight="32" tilecount="256">
+  <image source="tileset/1.jpg" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="257" name="2" tilewidth="32" tileheight="32" tilecount="120">
+  <image source="tileset/2.png" width="502" height="263"/>
+ </tileset>
+ <tileset firstgid="377" name="3" tilewidth="32" tileheight="32" tilecount="36">
+  <image source="tileset/3.jpg" width="200" height="200"/>
+ </tileset>
+ <tileset firstgid="413" name="4" tilewidth="32" tileheight="32" tilecount="165">
+  <image source="tileset/Furniture8vs2-byLunarea.png" width="480" height="360"/>
+ </tileset>
+ <tileset firstgid="578" name="oio86" tilewidth="32" tileheight="32" tilecount="256">
+  <image source="tileset/oio86.png" trans="ff00ff" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="834" name="images" tilewidth="32" tileheight="32" tilecount="40">
+  <image source="tileset/images.jpg" trans="ff00ff" width="279" height="181"/>
+ </tileset>
+ <tileset firstgid="874" name="tileb" tilewidth="32" tileheight="32" tilecount="256">
+  <image source="tileset/tileb.png" trans="ff00ff" width="512" height="512"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="20" height="25">
+  <data encoding="base64" compression="zlib">
+   eJzVk7tOwzAUQI3dNuxQOsBUWhaYCkzwBR0Z2XhKrLwk+AAk+IHuDLDzSdCCWKGFlWPZVUwwbkyyMBzdm+v4yLm+6U0J0VFCNKFHfilMbDq1MTsizZUyLFrc97SvY2s34mfN55tRhlWL+57Lkfx9zfWVwX/zzdO3hUDvYn3LuFYyvi0RJuTbwLWZ8T1zny9Qo55MOHue/n3g+oQ5XI0SfGNqOBOYLmn+6vqM0Aj4YmjhacNSSb48TJqF7DzE0Oc7BlDhDqvQgnaB2R7iGsEsjjqswboqNs9Fyevr2jvdJe7BvjS5uxbj27Z7jokncCpN7q75fLcyxa1fBGbuPOB7kClu/do+3xHvZRp17eoP39sNnC/bv0dm4gn6nlkbqO89OiMewKE0ua9/b+x5h6HHN4qcZ+1TFf4JSwKv0kRNFb4Aj/AHpQ==
+  </data>
+ </layer>
+</map>
