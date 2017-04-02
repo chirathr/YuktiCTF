@@ -78,7 +78,7 @@ msgid "Welcome back"
 msgstr "पुन्हा आपले स्वागत आहे"
 
 #: templates/original/index.html:41
-msgid "Building Tomorrow's Cyber Warrior"
+msgid "Building Tomorrow's Cyber Warriors"
 msgstr " निर्माण - भावीश्याचे सायबर योद्धा"
 
 #: templates/original/index.html:45
