@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="page-title">
-    <h1>Scoreboard</h1>
+    <h1>{{ gettext("Scoreboard") }}</h1>
 </div>
 <div class="container main-container ScrollOn">
     {% if errors %}
@@ -33,10 +33,13 @@
                 </td>
                 <td style="padding: 30px;"><b>{{ gettext("Student") }}</b>
                 </td>
-                <td style="padding: 30px;"><b>{{ gettext("Score") }}</b>
+                <td style="padding: 30px;"><b>{{ gettext("Affiliation") }}</b>
                 </td>
                 <td style="padding: 30px;"><b>{{ gettext("City") }}</b>
                 </td>
+                <td style="padding: 30px;"><b>{{ gettext("Score") }}</b>
+                </td>
+
             </tr>
         </thead>
         <tbody>
