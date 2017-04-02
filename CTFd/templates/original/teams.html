@@ -20,6 +20,7 @@
         </thead>
         <tbody>
         {% for team in teams %}
+          {%if not team.admin and not team.mentor %}
             <tr>
                 <td style="padding: 20px; background-color: transparent; border: none;">
                 {% if hide_scores() %}
@@ -32,6 +33,7 @@
                 <td style="padding: 20px; background-color: transparent; border: none;"><span>{% if team.city %}{{ team.city }}{% endif %}</span></td>
                 <td style="padding: 20px; background-color: transparent; border: none;" class="hidden-xs"><span>{% if team.year %}{{ team.year }}{% endif %}</span></td>
             </tr>
+          {% endif %}
         {% endfor %}
         </tbody>
     </table>
