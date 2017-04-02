@@ -22,8 +22,8 @@
             <script>
                 window.onload = function() {
                   swal({
-                  title: "Welcome back {{ session['username'] }}!",
-                  text: "continue to <a href='/challenges' style='color:black;'>Challenges</button>",
+                  title: " {{ gettext("Welcome back") + " " + session['username'] }}!",
+                  text: "Continue to <a href='/challenges' style='color:black;'>Challenges</button>",
                   html: true
                 });
                 };
@@ -40,6 +40,12 @@
         <div class="col-md-6 col-md-offset-3 text-center">
             <h3 class="WhiteText typewriter ctf-text">{{ gettext("Building Tomorrow's Cyber Warrior") }}</h3>
         </div>
+
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <h5 class="WhiteText typewriter ctf-ministry">{{ gettext("Ministry of Electronics and IT") }}</h5>
+        </div>
+
+
 
         <div class="col-md-12 text-center">
             <img src="{{ request.script_root }}/static/home/img/foss.png" width="70" alt="" hspace="20">

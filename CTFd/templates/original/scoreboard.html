@@ -26,23 +26,26 @@
     <div id="score-graph"></div>
     <br>
 
-    <table id="teamsboard" class="table table-striped" style="border: 1px solid rgba(255,255,255,0.5); border-radius: 5px;">
+    <table id="teamsboard" class="table table-striped" style="border: 1px solid rgba(255,255,255,0.5); border-radius: 5px; border-collapse: unset; font-size: 1.3em;">
         <thead id="teamsboard-head">
             <tr>
-                <td style="padding: 30px;"width="10px"><b>Rank</b>
+                <td style="padding: 30px;"width="10px"><b>{{ gettext("Rank") }}</b>
                 </td>
-                <td style="padding: 30px;"><b>Team</b>
+                <td style="padding: 30px;"><b>{{ gettext("Student") }}</b>
                 </td>
-                <td style="padding: 30px;"><b>Score</b>
+                <td style="padding: 30px;"><b>{{ gettext("Score") }}</b>
+                </td>
+                <td style="padding: 30px;"><b>{{ gettext("City") }}</b>
                 </td>
             </tr>
         </thead>
         <tbody>
         {% for team in teams %}
-            <tr>
-                <td style="padding: 20px; background-color: transparent;">{{ loop.index }}</td>
-                <td style="padding: 20px; background-color: transparent;"><a href="{{ request.script_root }}/team/{{ team.teamid }}">{{ team.name }}</a></td>
-                <td style="padding: 20px; background-color: transparent;">{{ team.score }}</td></tr>
+            <tr style="border-top: 1px solid white">
+                <td style="padding: 20px; background-color: transparent; border: none;">{{ loop.index }}</td>
+                <td style="padding: 20px; background-color: transparent; border: none;"><a href="{{ request.script_root }}/team/{{ team.teamid }}">{{ team.name }}</a></td>
+                <td style="padding: 20px; background-color: transparent; border: none;">{{ team.score }}</td></tr>
+                <td style="padding: 20px; background-color: transparent; border: none;">{{ team.city }}</td></tr>
         {% endfor %}
         </tbody>
     </table>

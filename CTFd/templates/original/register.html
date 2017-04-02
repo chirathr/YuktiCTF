@@ -22,7 +22,7 @@
                     <div class="col-md-12 pad-down-10">
                         <span class="input">
                         <label class="input-label" for="input-10">
-                            <span class="label-content" data-content="Full Name">Full Name</span>
+                            <span class="label-content" data-content="Full Name">{{ gettext("Full Name") }}</span>
                         </label>
                         <input class="input-field form-control" type="text" name="fname" id="input-10" />
                     </span>
@@ -32,7 +32,7 @@
                     <div class="col-md-12 pad-down-10">
                         <span class="input">
                         <label class="input-label" for="input-10">
-                            <span class="label-content" data-content="College/School">Affliation</span>
+                            <span class="label-content" data-content="College/School">{{ gettext("Affliliation") }}</span>
                         </label>
                         <input class="input-field form-control" type="text" name="affiliation" id="input-10" />
                     </span>
@@ -42,7 +42,7 @@
                     <div class="col-md-12 pad-down-10">
                         <span class="input">
                         <label class="input-label" for="input-10">
-                            <span class="label-content" data-content="Year/Class">Grade/Year</span>
+                            <span class="label-content" data-content="Year/Class">{{ gettext("Class/Year") }}r</span>
                         </label>
                         <input class="input-field form-control" type="text" name="year" id="input-10" />
                     </span>
@@ -52,7 +52,7 @@
                     <div class="col-md-12 pad-down-10">
                         <span class="input">
                         <label class="input-label" for="input-10">
-                            <span class="label-content" data-content="City">City</span>
+                            <span class="label-content" data-content="City">{{ gettext("City") }}</span>
                         </label>
                         <input class="input-field form-control" type="text" name="city" id="input-10" />
                     </span>
@@ -62,7 +62,7 @@
                     <div class="col-md-12 pad-down-10">
                         <span class="input">
                         <label class="input-label" for="input-10">
-                            <span class="label-content" data-content="gender">Gender</span>
+                            <span class="label-content" data-content="gender">{{ gettext("Gender") }}</span>
                         </label>
                             <select class="input-field form-control" type="text" name="gender" id="input-10" >
                                 <option value="M" selected>Male</option>
@@ -75,7 +75,7 @@
                     <div class="col-md-12 pad-down-10">
                         <span class="input">
                         <label class="input-label" for="input-10">
-                            <span class="label-content" data-content="mentor">Student or Mentor</span>
+                            <span class="label-content" data-content="mentor">{{ gettext("Student/Mentor") }}</span>
                         </label>
                             <select class="input-field form-control" type="text" name="user_type" id="input-10" >
                                 <option value="S" selected>Student</option>
@@ -88,7 +88,7 @@
                     <div class="col-md-12 pad-down-10">
                         <span class="input">
                         <label class="input-label" for="input-10">
-                            <span class="label-content" data-content="User Name">User Name</span>
+                            <span class="label-content" data-content="User Name">{{ gettext("Username") }}</span>
                         </label>
                         <input class="input-field form-control" type="text" name="name" id="input-10" />
                     </span>
@@ -98,7 +98,7 @@
                     <div class="col-md-12 pad-down-10">
                         <span class="input">
                         <label class="input-label" for="input-10">
-                            <span class="label-content" data-content="Email">Email</span>
+                            <span class="label-content" data-content="Email">{{ gettext("Email") }}</span>
                         </label>
                         <input class="input-field form-control" type="text" name="email" id="input-10" />
                     </span>
@@ -108,7 +108,7 @@
                     <div class="col-md-12 pad-down-10">
                         <span class="input">
                         <label class="input-label" for="input-10">
-                            <span class="label-content" data-content="Password">Password</span>
+                            <span class="label-content" data-content="Password">{{ gettext("Password") }}</span>
                         </label>
                         <input class="input-field form-control" type="password" name="password" id="input-10" />
                     </span>
@@ -117,7 +117,7 @@
 
                 <div class="done-row row">
                     <div class="col-md-6 col-md-offset-6" style="margin-top:10px">
-                        <button type="submit" id="submit" tabindex="5" class="btn btn-md btn-theme btn-outlined pull-right">Submit</button>
+                        <button type="submit" id="submit" tabindex="5" class="btn btn-md btn-theme btn-outlined pull-right">{{ gettext("Submit") }}</button>
                     </div>
                 </div>
                 <input type="hidden" name="nonce" value="{{ nonce }}">

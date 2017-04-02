@@ -59,12 +59,12 @@
                         <ul class="nav navbar-nav">
                                 {% if username is defined %}
                                     {% if admin %}
-                                        <li><a class="last-child WhiteText" href="{{ request.script_root }}/admin">{{ gettext("Admin") }}</a></li>
-                                    {% endif %}
+                                        <li><a class="last-child WhiteText" href="{{ request.script_root }}/admin">{{ gettext("Admin")}}</a></li>
+                                    {%  endif %}
                                     {% if is_mentor() %}
                                         <li><a class="WhiteText" href="{{ request.script_root }}/my-students">{{ gettext("My Students") }}</a></li>
                                     {% endif %}
-                                        <li><a  class="WhiteText" href="{{ request.script_root }}/team/{{ id }}">{{ gettext("Student") }}</a></li>
+                                        <li><a  class="WhiteText" href="{{ request.script_root }}/team/{{ id }}">{{ session["username"] }}</a></li>
                                         <li><a  class="WhiteText" href="{{ request.script_root }}/profile">{{ gettext("Profile") }}</a></li>
                                         <li><a  class="WhiteText" href="{{ request.script_root }}/logout">{{ gettext("Logout") }}</a></li>
                                     {% else %}

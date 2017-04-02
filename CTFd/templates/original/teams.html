@@ -9,28 +9,28 @@
     <h1>Teams</h1>
 </div>
 <div class="container main-container ScrollOn">
-    <table id="teamsboard" class="table table-striped" style="border: 1px solid rgba(255,255,255,0.5); border-radius: 5px;">
+    <table id="teamsboard" class="table table-striped" style="border: 1px solid rgba(255,255,255,0.5); border-radius: 5px; border-collapse: unset; font-size: 1.25em;">
         <thead id="teamsboard-head">
             <tr>
-                <td style="padding: 30px;"><b>Team</b></td>
-                <td style="padding: 30px;"><b>Website</b></td>
-                <td style="padding: 30px;"><b>Affiliation</b></td>
-                <td style="padding: 30px;"><b>Country</b></td>
+                <td style="padding: 30px;"><b>{{ gettext("Student") }}</b></td>
+                <td style="padding: 30px;"><b>{{ gettext("School/College") }}</b></td>
+                <td style="padding: 30px;"><b>{{ gettext("City") }}</b></td>
+                <td style="padding: 30px;"><b>{{ gettext("Class/Year") }}</b></td>
             </tr>
         </thead>
         <tbody>
         {% for team in teams %}
             <tr>
-                <td style="padding: 20px; background-color: transparent;">
+                <td style="padding: 20px; background-color: transparent; border: none;">
                 {% if hide_scores() %}
                     <span>{{ team.name }}</span>
                 {% else %}
-                    <a href="{{ request.script_root }}/team/{{ team.id }}">{{ team.name }}</a>
+                    <a href="{{ request.script_root }}/team/{{ team.id }}">{{ team.fname }}</a>
                 {% endif %}
                 </td>
-                <td style="padding: 20px; background-color: transparent;">{% if team.website and (team.website.startswith('http://') or team.website.startswith('https://')) %}<a href="{{ team.website }}">{{ team.website }}</a>{% endif %}</td>
-                <td style="padding: 20px; background-color: transparent;"><span>{% if team.affiliation %}{{ team.affiliation }}{% endif %}</span></td>
-                <td style="padding: 20px; background-color: transparent;"class="hidden-xs"><span>{% if team.country %}{{ team.country }}{% endif %}</span></td>
+                <td style="padding: 20px; background-color: transparent; border: none;"><span>{% if team.affiliation %}{{ team.affiliation }}{% endif %}</span></td>
+                <td style="padding: 20px; background-color: transparent; border: none;"><span>{% if team.city %}{{ team.city }}{% endif %}</span></td>
+                <td style="padding: 20px; background-color: transparent; border: none;" class="hidden-xs"><span>{% if team.year %}{{ team.year }}{% endif %}</span></td>
             </tr>
         {% endfor %}
         </tbody>
