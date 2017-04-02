@@ -74,3 +74,41 @@ html {
 .chal-score {
     color: white;
 }
+
+@media only screen and (max-width: 850px) {
+    .chal-left {
+        position: fixed;
+        padding: 4%;
+        top: 50%;
+        left: 0;
+        bottom: 0%;
+        height: 50%;
+        width: 100%;
+        color: white;
+        z-index: 4000;
+    }
+
+    .vertical-line {
+        display: none;
+    }
+
+    .chal-right {
+        padding: 4%;
+        position: fixed;
+        top:10%;
+        left:0;
+        height: 50%;
+        bottom: 49%;
+        width: 100%;
+        color: white;
+
+    }
+
+    .chal-list {
+        overflow:scroll;
+        position: fixed;
+        bottom: 0%;
+        width: 100%;
+        top: 50%;
+    }
+}
