@@ -262,10 +262,7 @@ hr{
     width: 0px;  /* remove scrollbar space */
     background: transparent;  /* optional: just make scrollbar invisible */
 }
-/* optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
-    background: #FF0000;
-}
+
 
 
 .ImageWrapper img{
@@ -983,10 +980,7 @@ hr{
  width: 0px;  /* remove scrollbar space */
  background: transparent;  /* optional: just make scrollbar invisible */
 }
-/* optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
- background: #FF0000;
-}
+
 
 
 @media only screen and (max-width: 500px) {
@@ -1000,5 +994,12 @@ hr{
     .ctf-ministry {
         font-size: 1.3em;
     }
+}
 
+.btn-outlined {
+    background-color: rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.37);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
