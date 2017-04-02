@@ -153,14 +153,14 @@ CREATE TABLE challenges (
 	PRIMARY KEY (id), 
 	CHECK (hidden IN (0, 1))
 );
-INSERT INTO "challenges" VALUES(1,'Challenge 1','Decrypt the contents of the letter.',0,10,'Cryptography',0,0,'You need this number "10".',NULL);
-INSERT INTO "challenges" VALUES(2,'Challenge 2','Name the series.',0,10,'Trivia',0,0,'Reverse search is the new search.',NULL);
-INSERT INTO "challenges" VALUES(3,'Challenge 3','Can you find the flag here.
-http://localhost/3/index.php',0,10,'Web',0,0,'Some catch in the source',NULL);
-INSERT INTO "challenges" VALUES(4,'Challenge 4','What you think about the file is wrong!!',0,30,'Forensics',0,0,'EXTend your thinking.',NULL);
-INSERT INTO "challenges" VALUES(5,'Challenge 5','A message sent from a very old multi-tap mobile phone.',0,30,'Cryptography',0,0,'',NULL);
-INSERT INTO "challenges" VALUES(6,'Challenge 6','Can you trick my arrays? I don''t think so ... Try to leak out the flag.
-[ssh]',0,30,'Exploitation',0,0,'Is the limit, the limit?',NULL);
+INSERT INTO "challenges" VALUES(1,'init()','Agni,
+We need your help but first we apologize for the challenge. Solve it and then we''ll talk.',0,10,'Cryptography',0,0,'You need this number "10".',NULL);
+INSERT INTO "challenges" VALUES(2,'Tineye','Agni,
+Few more tests. Name the series.',0,10,'Trivia',0,0,'Reverse search is the new search.',NULL);
+INSERT INTO "challenges" VALUES(3,'Webtastic','This code powers a crucial server of the enemy. Please identify the vulnerability in it so that we can leak the secret plans from their server.',0,10,'Web',0,0,'Some catch in the source',NULL);
+INSERT INTO "challenges" VALUES(4,'Misdirection','What you think about the file is wrong.',0,30,'Forensics',0,0,'EXTend your thinking.',NULL);
+INSERT INTO "challenges" VALUES(5,'Old is gold','We intercepted this secret message from the enemy of a bygone era. Can you decrypt it and find out what it says?',0,30,'Cryptography',0,0,'',NULL);
+INSERT INTO "challenges" VALUES(6,'Array re re','We found that our missile access code distribution server is running this vulnerable code. Can you patch it before the enemy steals the codes?',0,30,'Exploitation',0,0,'Is the limit, the limit?',NULL);
 INSERT INTO "challenges" VALUES(7,'Challenge 7','It is known that the enemy is conducting a secret meeting next week. I found a file that will give me a secret password that I can use to find the location of meeting. Unfortunately, I don’t know what to do with it. Can you help me find secret password from the file?
 ',0,50,'Reversing',0,0,'',NULL);
 INSERT INTO "challenges" VALUES(8,'Challenge 8','The file format is correct but there is something fishy about the file.',0,50,'Forensics',0,0,'Magic Number , Header',NULL);
@@ -220,6 +220,7 @@ INSERT INTO "config" VALUES(17,'mail_password',NULL);
 INSERT INTO "config" VALUES(18,'setup','1');
 INSERT INTO "config" VALUES(19,'hide_scores',NULL);
 INSERT INTO "config" VALUES(20,'mg_api_key',NULL);
+INSERT INTO "config" VALUES(21,'view_scoreboard_if_authed',NULL);
 CREATE TABLE pages (
 	id INTEGER NOT NULL, 
 	route VARCHAR(80), 
@@ -252,19 +253,10 @@ CREATE TABLE files (
 );
 INSERT INTO "files" VALUES(1,1,'78cd88b62ed6f564e9ea2ef2c2a6a8d5/Challenge.pdf');
 INSERT INTO "files" VALUES(2,2,'b948df0a75efe67a47701a05cd496af2/Challenge.png');
-INSERT INTO "files" VALUES(3,4,'0e6c94a04cdd5ea965a90f6755bbe391/Challenge.bin');
-INSERT INTO "files" VALUES(4,8,'5207592c4ed92439b598bfdcaf793c92/challenge.jpg');
-INSERT INTO "files" VALUES(5,11,'3888b75c30939f360b685314c4f171db/Challenge.jpg');
-INSERT INTO "files" VALUES(6,20,'5c1fb6cff1202ac746204f1ab0973bdc/Chalelenge.txt');
-INSERT INTO "files" VALUES(7,5,'602ce9d2fbaf0bdfbec2958ebff7e926/crypto_2.txt');
-INSERT INTO "files" VALUES(8,13,'f2de814eeef181fc190dc17e988991b6/crypto_3.txt');
-INSERT INTO "files" VALUES(9,17,'38d7fb84835ad1b77462397f0e212454/crypto_4.txt');
-INSERT INTO "files" VALUES(10,18,'a80d50a61e6c2a5a920a7c82d086b41c/crypto_5.txt');
-INSERT INTO "files" VALUES(11,18,'848d0632fd4737c300239c932268e189/key_5.pub.pem');
-INSERT INTO "files" VALUES(12,7,'d40d25ed8a7143d159d32d01ba656324/re1.c');
-INSERT INTO "files" VALUES(13,10,'88c65132ccab6310fe95184e0936ca2f/re2.java');
-INSERT INTO "files" VALUES(14,12,'58920d581233f388110726d5542ffd9a/re3.py');
-INSERT INTO "files" VALUES(15,21,'ea354daf9d2815b1998542e0251ce3e1/re4.pyc');
+INSERT INTO "files" VALUES(3,3,'369e8f057b24361c4df60b964b1b48d9/index.php');
+INSERT INTO "files" VALUES(4,4,'eb890cc743fea2c6cedb92254c08fc3b/Challenge.bin');
+INSERT INTO "files" VALUES(5,5,'2f54c6956c7e57dc1a90b08de62a6f38/crypto_2.txt');
+INSERT INTO "files" VALUES(6,6,'da32b2c44c6c8f1ce24c7f7f2176dd23/challenge.c');
 CREATE TABLE tracking (
 	id INTEGER NOT NULL, 
 	ip BIGINT, 
@@ -275,7 +267,7 @@ CREATE TABLE tracking (
 );
 INSERT INTO "tracking" VALUES(1,2130706433,1,'2017-04-02 07:58:23.221008');
 INSERT INTO "tracking" VALUES(2,2130706433,114,'2017-04-01 13:25:51.755700');
-INSERT INTO "tracking" VALUES(3,2130706433,111,'2017-04-02 08:39:46.684119');
+INSERT INTO "tracking" VALUES(3,2130706433,111,'2017-04-02 09:57:32.120589');
 CREATE TABLE solves (
 	id INTEGER NOT NULL, 
 	chalid INTEGER, 
