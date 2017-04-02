@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-04-02 07:57+0530\n"
-"PO-Revision-Date: 2017-04-02 07:57+0530\n"
+"POT-Creation-Date: 2017-04-02 09:14+0530\n"
+"PO-Revision-Date: 2017-04-02 09:14+0530\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: hi\n"
 "Language-Team: hi <LL@li.org>\n"
@@ -109,7 +109,7 @@ msgstr "युक्ति CTF"
 
 #: templates/original/index.html:25
 msgid "Welcome back"
-msgstr ""
+msgstr "वापसी पर स्वागत है"
 
 #: templates/original/index.html:41
 msgid "Building Tomorrow's Cyber Warrior"
@@ -117,76 +117,76 @@ msgstr "कल के साइबर योद्धा"
 
 #: templates/original/index.html:45
 msgid "Ministry of Electronics and IT"
-msgstr ""
+msgstr "इलेक्ट्रॉनिक्स और आईटी मंत्रालय"
 
 #: templates/original/index.html:59
 msgid "English"
-msgstr ""
+msgstr "अंग्रेज़ी"
 
 #: templates/original/index.html:60
 msgid "Hindi"
-msgstr ""
+msgstr "हिंदी"
 
 #: templates/original/login.html:36 templates/original/login.html:38
 #: templates/original/register.html:91
 msgid "Username"
-msgstr ""
+msgstr "प्रतियोगी का नाम"
 
 #: templates/original/login.html:46 templates/original/login.html:48
 #: templates/original/register.html:111
 msgid "Password"
-msgstr ""
+msgstr "पासवर्ड"
 
 #: templates/original/login.html:54
 msgid "Forgot your password?"
-msgstr ""
+msgstr "क्या आप अपना पासवर्ड भूल गए?"
 
 #: templates/original/login.html:57 templates/original/register.html:120
 msgid "Submit"
-msgstr ""
+msgstr "जमा करें"
 
 #: templates/original/register.html:25
 msgid "Full Name"
-msgstr ""
+msgstr "पूरा नाम"
 
 #: templates/original/register.html:35
 msgid "Affliliation"
-msgstr ""
+msgstr "संबंधन"
 
 #: templates/original/register.html:45 templates/original/teams.html:18
 msgid "Class/Year"
-msgstr ""
+msgstr "कक्षा / वर्ष"
 
 #: templates/original/register.html:55 templates/original/scoreboard.html:38
 #: templates/original/teams.html:17
 msgid "City"
-msgstr ""
+msgstr "शहर"
 
 #: templates/original/register.html:65
 msgid "Gender"
-msgstr ""
+msgstr "लिंग"
 
 #: templates/original/register.html:78
 msgid "Student/Mentor"
-msgstr ""
+msgstr "विद्यार्थी/गुरु"
 
 #: templates/original/register.html:101
 msgid "Email"
-msgstr ""
+msgstr "ई-मेल"
 
 #: templates/original/scoreboard.html:32
 msgid "Rank"
-msgstr ""
+msgstr "पद"
 
 #: templates/original/scoreboard.html:34 templates/original/teams.html:15
 msgid "Student"
-msgstr ""
+msgstr "विद्यार्थी"
 
 #: templates/original/scoreboard.html:36
 msgid "Score"
-msgstr ""
+msgstr "स्कोर"
 
 #: templates/original/teams.html:16
 msgid "School/College"
-msgstr ""
+msgstr "स्कूल / कॉलेज"
 
