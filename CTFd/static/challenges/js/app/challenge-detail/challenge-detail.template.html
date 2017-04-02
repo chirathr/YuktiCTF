@@ -1,13 +1,13 @@
-<div class="challenge-data" ng-controller="challengeController">
+<div class="challenge-data">
     <h1 class="chal-text">{{ $ctrl.selection.name }}</h1>
     <h5 class="chat-desc">{{ $ctrl.selection.description }}</h5>
 
     <div class="fields clearfix">
         <div class="flag-input">
-            <form class="flag-form" ng-if="$ctrl.selection.start != true" ng-submit="submitForm()">>
-                <label class="flag-label">FLAG </label>
-                <input class="flag-input" name="key" type="text" required placeholder="Flag" aria-required="true">
-                <button class="flag-btn" type="submit" name="flag-btn">Submit</button>
+            <form class="flag-form" ng-if="$ctrl.selection.start != true" style="display: flex;flex-flow: row;" ng-submit="submitForm()">
+                <label class="flag-label" style="flex: 1 1 auto;">FLAG </label>
+                <input class="flag-input" style="flex: 1 1 auto; width: 50%;" name="key" type="text" required placeholder="Flag" aria-required="true">
+                <button class="flag-btn" style="flex: 1 1 auto;" type="submit" name="flag-btn">Submit</button>
             </form>
         </div>
     </div>
@@ -22,6 +22,7 @@
         font-weight: 100;
         width: 100%;
         margin: 20px 0px 0px 0px;
+        overflow: hidden;
     }
     .flag-label {
         text-align: center;
@@ -53,6 +54,7 @@
         -moz-box-shadow: none;
         box-shadow: none;
         padding: 8px 13px 8px 14px;
+        float: right;
     }
 
     .chal-text {

@@ -1,29 +1,12 @@
-# Hindi translations for PROJECT.
-# Copyright (C) 2017 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
-#
-msgid ""
-msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-04-02 07:57+0530\n"
-"PO-Revision-Date: 2017-04-02 07:57+0530\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: hi\n"
-"Language-Team: hi <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-
 # Translations template for PROJECT.
 # Copyright (C) 2017 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
-#: templates/original/about.html:16
+#
 #, fuzzy
+
+
+#: templates/original/about.html:16
 msgid "About"
 msgstr ""
 
@@ -37,13 +20,7 @@ msgid ""
 "be taught at a young age about the importance of computer security.\n"
 "            A lot of research have been proven to be the best way to "
 "approach this is Capture the Flag style contests."
-msgstr ""
-"एक हालिया रिपोर्ट में पता चला है कि साइबर सुरक्षा में 0.6 स्नातक छात्र "
-"वर्तमान में काम कर रहे हैं जबकि देश में साइबर हमलों और उल्लंघनों का "
-"प्रदर्शन हो रहा है। युवाओं को भाग लेने के लिए प्रोत्साहित करने के लिए, "
-"उन्हें कम उम्र में कंप्यूटर सुरक्षा के महत्व के बारे में सिखाया जाना "
-"चाहिए। बहुत से अनुसंधान इस बात का प्रमाणित किया गया है कि इस दृष्टिकोण को"
-" ध्वज शैली प्रतियोगिता कैप्चर करना सबसे अच्छा तरीका है।"
+msgstr "एक हालिया रिपोर्ट में पता चला है कि साइबर सुरक्षा में 0.6 स्नातक छात्र वर्तमान में काम कर रहे हैं जबकि देश में साइबर हमलों और उल्लंघनों का प्रदर्शन हो रहा है। युवाओं को भाग लेने के लिए प्रोत्साहित करने के लिए, उन्हें कम उम्र में कंप्यूटर सुरक्षा के महत्व के बारे में सिखाया जाना चाहिए। बहुत से अनुसंधान इस बात का प्रमाणित किया गया है कि इस दृष्टिकोण को ध्वज शैली प्रतियोगिता कैप्चर करना सबसे अच्छा तरीका है।"
 
 #: templates/original/about.html:24
 msgid ""
@@ -57,15 +34,7 @@ msgid ""
 "Capture the Flag style contest specifically\n"
 "        designed to introduce cyber security awareness and training in "
 "high school students."
-msgstr ""
-"ये प्रतियोगिता आम तौर पर वास्तविक जीवन परिदृश्यों को अनुकरण करती है जो "
-"प्रतिभागियों को वास्तविक दुनिया सुरक्षा कौशल विकसित करने में सक्षम बनाती "
-"हैं। संयुक्त राज्य अमेरिका और चीन जैसे कई देशों ने साइबर सुरक्षा शिक्षा "
-"की आवश्यकता महसूस की है और वे स्कूल के छात्रों के लिए सीटीएफ "
-"प्रतियोगिताओं का आयोजन कर रहे हैं। अमृता यूनिवर्सिटी अमृता इनसीटीएफ "
-"जूनियर का आयोजन कर रही है, जो एक ऑनलाइन कैप्चर फ्लैग स्टाइल प्रतियोगिता "
-"है जो विशेष रूप से हाई स्कूल के छात्रों में साइबर सुरक्षा जागरूकता और "
-"प्रशिक्षण पेश करने के लिए डिज़ाइन की गई है।"
+msgstr "ये प्रतियोगिता आम तौर पर वास्तविक जीवन परिदृश्यों को अनुकरण करती है जो प्रतिभागियों को वास्तविक दुनिया सुरक्षा कौशल विकसित करने में सक्षम बनाती हैं। संयुक्त राज्य अमेरिका और चीन जैसे कई देशों ने साइबर सुरक्षा शिक्षा की आवश्यकता महसूस की है और वे स्कूल के छात्रों के लिए सीटीएफ प्रतियोगिताओं का आयोजन कर रहे हैं। अमृता यूनिवर्सिटी अमृता इनसीटीएफ जूनियर का आयोजन कर रही है, जो एक ऑनलाइन कैप्चर फ्लैग स्टाइल प्रतियोगिता है जो विशेष रूप से हाई स्कूल के छात्रों में साइबर सुरक्षा जागरूकता और प्रशिक्षण पेश करने के लिए डिज़ाइन की गई है।"
 
 #: templates/original/base.html:53
 msgid "Students"
@@ -189,4 +158,3 @@ msgstr ""
 #: templates/original/teams.html:16
 msgid "School/College"
 msgstr ""
-

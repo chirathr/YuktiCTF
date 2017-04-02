@@ -16,34 +16,6 @@ challenges = Blueprint('challenges', __name__)
 
 
 @challenges.route('/challenges', methods=['GET'])
-def challenges_view():
-    errors = []
-    start = utils.get_config('start') or 0
-    end = utils.get_config('end') or 0
-    if not utils.is_admin(): # User is not an admin
-        if not utils.ctftime():
-            # It is not CTF time
-            if utils.view_after_ctf(): # But we are allowed to view after the CTF ends
-                pass
-            else:  # We are NOT allowed to view after the CTF ends
-                if utils.get_config('start') and not utils.ctf_started():
-                    errors.append('{} has not started yet'.format(utils.ctf_name()))
-                if (utils.get_config('end') and utils.ctf_ended()) and not utils.view_after_ctf():
-                    errors.append('{} has ended'.format(utils.ctf_name()))
-                return render_template('chals.html', errors=errors, start=int(start), end=int(end))
-        if utils.get_config('verify_emails') and not utils.is_verified(): # User is not confirmed
-            return redirect(url_for('auth.confirm_user'))
-    if utils.user_can_view_challenges(): # Do we allow unauthenticated users?
-        if utils.get_config('start') and not utils.ctf_started():
-            errors.append('{} has not started yet'.format(utils.ctf_name()))
-        if (utils.get_config('end') and utils.ctf_ended()) and not utils.view_after_ctf():
-            errors.append('{} has ended'.format(utils.ctf_name()))
-        return render_template('chals.html', errors=errors, start=int(start), end=int(end))
-    else:
-        return redirect(url_for('auth.login', next='challenges'))
-
-
-@challenges.route('/challenges-angular', methods=['GET'])
 def challenges_angular_view():
     errors = []
     start = utils.get_config('start') or 0

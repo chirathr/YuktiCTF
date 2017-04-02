@@ -33,9 +33,9 @@
                     <div class="col-md-12 pad-down-10">
                         <span class="input">
                             <label class="input-label" for="name-input">
-                                <span class="label-content">Username</span>
+                                <span class="label-content">{{ gettext("Username") }}</span>
                             </label>
-                            <input class="input-field form-control" type="text" name="name" id="name-input" placeholder="Username" />
+                            <input class="input-field form-control" type="text" name="name" id="name-input" placeholder="{{ gettext("Username") }}" />
                         </span>
                     </div>
                 </div>
@@ -43,18 +43,18 @@
                     <div class="col-md-12 pad-down-10">
                         <span class="input">
                             <label class="input-label" for="password-input">
-                                <span class="label-content" data-content="Password">Password</span>
+                                <span class="label-content" data-content="Password">{{ gettext("Password") }}</span>
                             </label>
-                            <input class="input-field form-control" type="password" name="password" id="password-input" placeholder="Password"/>
+                            <input class="input-field form-control" type="password" name="password" id="password-input" placeholder="{{ gettext("Password") }}"/>
                         </span>
                     </div>
                 </div>
                 <div class="done-row row">
                     <div class="col-md-6" style="padding-left:0px">
-                        <a class="pull-left align-text-to-button" href="{{ request.script_root }}/reset_password" style = " color:white">Forgot your password?</a>
+                        <a class="pull-left align-text-to-button" href="{{ request.script_root }}/reset_password" style = " color:white">{{ gettext("Forgot your password?") }}</a>
                     </div>
                     <div class="col-md-6">
-                        <button type="submit" id="submit" tabindex="5" class="btn btn-md btn-theme btn-outlined pull-right">Submit</button>
+                        <button type="submit" id="submit" tabindex="5" class="btn btn-md btn-theme btn-outlined pull-right">{{ gettext("Submit") }}</button>
                     </div>
                 </div>
                 <input type="hidden" name="nonce" value="{{ nonce }}">

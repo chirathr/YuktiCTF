@@ -103,12 +103,13 @@ def setup():
 
 
 @views.route('/')
-def index():
+@views.route('/<int:welcome>')
+def index(welcome=None):
     try:
         print session["lan"]
     except:
         session["lan"] = "en"
-    return render_template('index.html')
+    return render_template('index.html', welcome=welcome)
 
 
 # Custom CSS handler
@@ -192,7 +193,13 @@ def my_students():
         else:
             return redirect("/")
     else:
-        return redirect(url_for('auth.login'))
+        return redirect(url_for('auth.login'))\
+
+
+
+@views.route('/about', methods=['GET'])
+def about():
+    return render_template("about.html")
 
 
 @views.route('/profile', methods=['POST', 'GET'])
@@ -286,7 +293,10 @@ babel = Babel(app)
 
 @babel.localeselector
 def get_locale():
-    return session["lan"]
+    try:
+        return session["lan"]
+    except:
+        return 'en'
     # return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
 
 

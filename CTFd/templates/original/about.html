@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block stylesheets %}
+    <style>
+        .about-text {
+            font-size: 1.4em;
+        }
+    .about {
+        padding-top: 8%;
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="page-title">
+    <h1>{{ gettext("About") }}</h1>
+</div>
+<div class="container main-container">
+    <div class="row about">
+        <p class="about-text">{{ gettext("A recent report has revealed that a miniscule 0.6 percentage of graduate students are currently working
+            in cyber security while cyber attacks and breaches are manifesting in the country.
+            In order to encourage the youth to participate, they need to be taught at a young age about the importance of computer security.
+            A lot of research have been proven to be the best way to approach this is Capture the Flag style contests.") }}</p>
+    <p class="about-text">{{ gettext("These contests typically simulate real life scenarios that enable participants to develop real world security skills.
+        Many of the countries like USA and China have realized the need for cyber security education and are
+        conducting CTF contests for school students. Having realized the dire need for such a training culture in India,
+        Amrita University is organizing Amrita InCTF Junior, an online Capture the Flag style contest specifically
+        designed to introduce cyber security awareness and training in high school students.") }} </p>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ request.script_root }}/static/{{ ctf_theme() }}/js/style.js"></script>
+{% endblock %}
+
