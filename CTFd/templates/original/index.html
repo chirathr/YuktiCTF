@@ -17,6 +17,20 @@
 
 
 {% block content %}
+
+    {% if welcome %}
+            <script>
+                window.onload = function() {
+                  swal({
+                  title: "Welcome back {{ session['username'] }}!",
+                  text: "continue to <a href='/challenges' style='color:black;'>Challenges</button>",
+                  html: true
+                });
+                };
+
+            </script>
+    {% endif %}
+
 <div class="container content-home">
 
         <div class="col-md-12 text-center">

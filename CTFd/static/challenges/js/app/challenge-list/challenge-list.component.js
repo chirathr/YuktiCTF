@@ -7,7 +7,7 @@ angular.
       function challengeListController($http) {
         var self = this;
         this.selection = {
-            "name": "Welcome to SIH hackathon",
+            "name": "Welcome to Yukti CTF",
             "description": "Click on a challange to start the game.",
             "start": true
         };

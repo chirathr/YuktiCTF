@@ -103,12 +103,13 @@ def setup():
 
 
 @views.route('/')
-def index():
+@views.route('/<int:welcome>')
+def index(welcome=None):
     try:
         print session["lan"]
     except:
         session["lan"] = "en"
-    return render_template('index.html')
+    return render_template('index.html', welcome=welcome)
 
 
 # Custom CSS handler

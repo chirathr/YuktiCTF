@@ -153,7 +153,7 @@ def register():
 
         logger = logging.getLogger('regs')
         logger.warn("[{0}] {1} registered with {2}".format(time.strftime("%m/%d/%Y %X"), request.form['name'].encode('utf-8'), request.form['email'].encode('utf-8')))
-        return redirect(url_for('challenges.challenges_view'))
+        return redirect(url_for('views.index', welcome=1))
     else:
         return render_template('register.html')
 
@@ -183,7 +183,7 @@ def login():
 
                 if request.args.get('next') and utils.is_safe_url(request.args.get('next')):
                     return redirect(request.args.get('next'))
-                return redirect(url_for('challenges.challenges_view'))
+                return redirect(url_for('views.index', welcome=1))
             else: # This user exists but the password is wrong
                 errors.append("Your username or password is incorrect")
                 db.session.close()
