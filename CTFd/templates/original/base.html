@@ -47,38 +47,38 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand Glow" href="/">{{ gettext("Yukti CTF") }}</a>
+                        <a class="navbar-brand Glow" style="font-size:2em" href="/">{{ gettext("Yukti CTF") }}</a>
                     </div>
 
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse navbar-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li><a data-scroll  class="last-child WhiteText" href="{{ request.script_root }}/teams">{{ gettext("Students") }}</a></li>
-                            <li><a data-scroll class="last-child WhiteText" href="{{ request.script_root }}/scoreboard">{{ gettext("Scoreboard") }}</a></li>
-                            <li><a data-scroll class="last-child WhiteText" href="{{ request.script_root }}/challenges">{{ gettext("Challenges") }}</a></li>
-                            <li><a data-scroll class="last-child WhiteText" href="{{ request.script_root }}/about">{{ gettext("About") }}</a></li>
-                            <li><a data-scroll class="last-child WhiteText" href="{{ request.script_root }}/Solutions">{{ gettext("Solutions") }}</a></li>
+                            <li><a data-scroll  class="last-child WhiteText" style="font-size:1em" href="{{ request.script_root }}/teams">{{ gettext("Students") }}</a></li>
+                            <li><a data-scroll class="last-child WhiteText" style="font-size:1em" href="{{ request.script_root }}/scoreboard">{{ gettext("Scoreboard") }}</a></li>
+                            <li><a data-scroll class="last-child WhiteText" style="font-size:1em" href="{{ request.script_root }}/challenges">{{ gettext("Challenges") }}</a></li>
+                            <li><a data-scroll class="last-child WhiteText" style="font-size:1em" href="{{ request.script_root }}/about">{{ gettext("About") }}</a></li>
+                            <li><a data-scroll class="last-child WhiteText" style="font-size:1em" href="{{ request.script_root }}/Solutions">{{ gettext("Solutions") }}</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                     <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
                         <ul class="nav navbar-nav">
                                 {% if username is defined %}
                                     {% if admin %}
-                                        <li><a class="last-child WhiteText" href="{{ request.script_root }}/admin">{{ gettext("Admin")}}</a></li>
+                                        <li><a class="last-child WhiteText" style="font-size:1em" href="{{ request.script_root }}/admin">{{ gettext("Admin")}}</a></li>
                                     {%  endif %}
                                     {% if is_mentor() %}
-                                        <li><a class="WhiteText" href="{{ request.script_root }}/my-students">{{ gettext("My Students") }}</a></li>
+                                        <li><a class="WhiteText" style="font-size:1em" href="{{ request.script_root }}/my-students">{{ gettext("My Students") }}</a></li>
                                     {% endif %}
-                                        <li><a  class="WhiteText" href="{{ request.script_root }}/team/{{ id }}">{{ session["username"] }}</a></li>
-                                        <li><a  class="WhiteText" href="{{ request.script_root }}/profile">{{ gettext("Profile") }}</a></li>
-                                        <li><a  class="WhiteText" href="{{ request.script_root }}/logout">{{ gettext("Logout") }}</a></li>
+                                        <li><a  class="WhiteText" style="font-size:1em" href="{{ request.script_root }}/team/{{ id }}">{{ session["username"] }}</a></li>
+                                        <li><a  class="WhiteText" style="font-size:1em" href="{{ request.script_root }}/profile">{{ gettext("Profile") }}</a></li>
+                                        <li><a  class="WhiteText" style="font-size:1em" href="{{ request.script_root }}/logout">{{ gettext("Logout") }}</a></li>
                                     {% else %}
                                     {% if can_register() %}
-                                        <li><a  class="WhiteText" href="{{ request.script_root }}/register">{{ gettext("Register") }}</a></li>
-                                        <li><a   style="padding-left:0px;padding-right:0px;">|</a></li>
+                                        <li><a  class="WhiteText" style="font-size:1em" href="{{ request.script_root }}/register">{{ gettext("Register") }}</a></li>
+                                        <li><a  style="font-size:1em"  style="padding-left:0px;padding-right:0px;">|</a></li>
                                     {% endif %}
-                                    <li><a class="WhiteText" href="{{ request.script_root }}/login">{{ gettext("Login") }}</a></li>
+                                    <li><a class="WhiteText" style="font-size:1em" hstyle="font-size:1em"ref="{{ request.script_root }}/login">{{ gettext("Login") }}</a></li>
                                 {% endif %}
                         </ul>
                     </div><!-- /.navbar-collapse -->
