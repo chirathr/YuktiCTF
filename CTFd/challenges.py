@@ -55,22 +55,31 @@ def chals(chalid=None):
     if utils.user_can_view_challenges() and (utils.ctf_started() or utils.is_admin()):
         json = {'game': []}
         if chalid is None:
-            chals = Challenges.query.filter(or_(Challenges.hidden != True, Challenges.hidden == None)).order_by(Challenges.value).all()
+            chals = Challenges.query.order_by(Challenges.value).all()
             for x in chals:
                 tags = [tag.tag for tag in Tags.query.add_columns('tag').filter_by(chal=x.id).all()]
                 files = [str(f.location) for f in Files.query.filter_by(chal=x.id).all()]
                 chal_type = get_chal_class(x.type)
-                json['game'].append({
-                    'id': x.id,
-                    'type': chal_type.name,
-                    'name': x.name,
-                    'value': x.value,
-                    'description': x.description,
-                    'category': x.category,
-                    'files': files,
-                    'tags': tags,
-                    'hint': x.hint
-                })
+                if x.hidden:
+                    json['game'].append({
+                        'id': x.id,
+                        'name': x.name,
+                        'value': x.value,
+                        'category': x.category,
+                        'hidden': True
+                    })
+                else:
+                    json['game'].append({
+                        'id': x.id,
+                        'type': chal_type.name,
+                        'name': x.name,
+                        'value': x.value,
+                        'description': x.description,
+                        'category': x.category,
+                        'files': files,
+                        'tags': tags,
+                        'hint': x.hint
+                    })
         else:
             chal = Challenges.query.filter_by(id=chalid).all()[0]
             if chal is None or chal.hidden:
