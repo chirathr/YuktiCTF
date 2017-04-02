@@ -17,10 +17,26 @@
         </div>
     </div>
 
-      <p style="padding-top:3%">{{ $ctrl.selection.hint }}<p>
-      <a style="padding-top:3%" href="/Solutions">Solution</a>
+      <p style="padding-top:3%">Hint : {{ $ctrl.selection.hint }}<p>
 
-      <p ng-if="$ctrl.response">{{ $ctrl.response.data.message }}</p>
+
+      <a ng-if="$ctrl.selection.id === 1" style="padding-top:3%" data-toggle="modal" data-target="#myModal">Solution</a>
+
+
+
+      <p ng-if="$ctrl.response">
+        {{ $ctrl.response.data.message }}
+        <script>
+                window.onload = function() {
+                      swal({
+                      title: "Challenge submitted",
+                      text: "Continue to <a href='/challenges' style='color:black;'>Challenges</button>",
+                      html: true
+                    });
+                };
+
+            </script>
+      </p>
 
 </div>
 
@@ -92,7 +108,11 @@
         font-family: monospace;
     }
     .chat-desc {
-        font-size: medium;
+        font-size: 1.4em;
+    }
+
+    .modal-backdrop {
+      z-index: -1;
     }
 </style>
 
@@ -109,3 +129,17 @@
         $(".hint-header").trigger('click');
     })
 </script>
+
+    <!-- Modal -->
+  <div style="margin-top: 5%;" class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <iframe width="800" height="500px"
+            src="static/home/video/Caesar_Cipher.mp4">
+        </iframe>
+      </div>
+
+    </div>
+  </div>

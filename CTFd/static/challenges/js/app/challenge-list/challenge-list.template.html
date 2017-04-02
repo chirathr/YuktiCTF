@@ -16,7 +16,7 @@
     <input class="chal-search" placeholder="Search" style="z-index: 4000;" ng-model="$ctrl.query"/>
 </div> -->
     <div class="chal-list">
-        <p>Cryptography</p>
+        <p class="chal-cat">Cryptography</p>
         <div class="challenge" ng-class="{'chal-hidden':challenge.hidden}" ng-repeat="challenge in $ctrl.challenges.game | filter:'cryptography' | orderBy:'id'" ng-click="$ctrl.selection = $ctrl.check_hidden(challenge, challenge.hidden)">
             <p class="chal-name">{{ challenge.name }}</p>
             <p class="chal-score">{{ challenge.value }}</p>
@@ -110,3 +110,24 @@
          return false;
      });
 </script>
+
+<style>
+    .chal-cat {
+        font-size: 1.1em;
+        font-weight: 600;
+    }
+    .challenge:hover {
+        background-color: rgba(133,133,133,0.6);
+        font-weight: 600;
+        box-shadow: 0px 0px 150px #000000;
+        z-index: 2;
+        -webkit-transition: all 200ms ease-in;
+        -webkit-transform: scale(1.5);
+        -ms-transition: all 200ms ease-in;
+        -ms-transform: scale(1.5);
+        -moz-transition: all 200ms ease-in;
+        -moz-transform: scale(1.5);
+        transition: all 200ms ease-in;
+        transform: scale(1.5);
+    }
+</style>
