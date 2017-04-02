@@ -19,6 +19,9 @@ challenge = {}
 for i in c:
     challenge[int(i)] = c[i]
 
+boys_names = json.load(open('data/boys.json'))
+girls_names = json.load(open('data/girls.json'))
+univ_names = json.load(open('data/univs.json'))
 data_file = os.path.join('data', 'data.json')
 fh = open(data_file)
 data = json.load(fh)
@@ -70,14 +73,34 @@ if __name__ == '__main__':
         db.session.close()
         # Generating Users
         print("Inserting users")
-        for user in sorted(data["players"]):
-            gender = random.choice(["M", "F"])
-            db.session.add(Teams(user, "MeitY", 2017, "Delhi", gender, user,
+        for _ in xrange(50):
+            user = random.choice(girls_names)
+            girls_names.pop(girls_names.index(user))
+            univ = random.choice(univ_names)
+            year = random.choice([1, 4])
+            db.session.add(Teams(user, univ[0], year, univ[1], "M", user,
                            user + '@gmail.com', user, "S"))
 
-        for user in sorted(data["mentors"]):
-            gender = random.choice(["M", "F"])
-            db.session.add(Teams(user, "MeitY", 2017, "Delhi", gender, user,
+        for _ in xrange(50):
+            user = random.choice(boys_names)
+            boys_names.pop(boys_names.index(user))
+            univ = random.choice(univ_names)
+            year = random.choice([1, 4])
+            db.session.add(Teams(user, univ[0], year, univ[1], "F", user,
+                           user + '@gmail.com', user, "S"))
+
+        for _ in xrange(5):
+            user = random.choice(boys_names)
+            boys_names.pop(boys_names.index(user))
+            univ = random.choice(univ_names)
+            db.session.add(Teams(user, univ[0], 2017, univ[1], "M", user,
+                           user + '@gmail.com', user, "M"))
+
+        for _ in xrange(5):
+            user = random.choice(girls_names)
+            girls_names.pop(girls_names.index(user))
+            univ = random.choice(univ_names)
+            db.session.add(Teams(user, univ[0], 2017, univ[1], "F", user,
                            user + '@gmail.com', user, "M"))
 
         for user in sorted(data["admins"]):
