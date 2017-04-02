@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-04-02 09:14+0530\n"
-"PO-Revision-Date: 2017-04-02 09:14+0530\n"
+"POT-Creation-Date: 2017-04-02 09:55+0530\n"
+"PO-Revision-Date: 2017-04-02 10:44+0530\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: hi\n"
 "Language-Team: hi <LL@li.org>\n"
@@ -18,12 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-# Translations template for PROJECT.
-# Copyright (C) 2017 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
-#: templates/original/about.html:16
-#, fuzzy
+#: templates/original/about.html:16 templates/original/base.html:57
 msgid "About"
 msgstr ""
 
@@ -67,45 +62,51 @@ msgstr ""
 "है जो विशेष रूप से हाई स्कूल के छात्रों में साइबर सुरक्षा जागरूकता और "
 "प्रशिक्षण पेश करने के लिए डिज़ाइन की गई है।"
 
-#: templates/original/base.html:53
+#: templates/original/base.html:47 templates/original/index.html:10
+#: templates/original/index.html:37
+msgid "Yukti CTF"
+msgstr "युक्ति CTF"
+
+#: templates/original/base.html:54 templates/original/my_students.html:9
+#: templates/original/teams.html:9
 msgid "Students"
 msgstr "छात्र"
 
-#: templates/original/base.html:54
+#: templates/original/base.html:55 templates/original/scoreboard.html:5
 msgid "Scoreboard"
 msgstr "स्कोरबोर्ड"
 
-#: templates/original/base.html:55
+#: templates/original/base.html:56
 msgid "Challenges"
 msgstr "चुनौतियां"
 
-#: templates/original/base.html:62
+#: templates/original/base.html:64
 msgid "Admin"
 msgstr "व्यवस्थापक"
 
-#: templates/original/base.html:65
+#: templates/original/base.html:67
 msgid "My Students"
-msgstr ""
+msgstr "मेरे छात्र"
 
-#: templates/original/base.html:68
+#: templates/original/base.html:70 templates/original/profile.html:19
 msgid "Profile"
-msgstr "प्रोफाइल"
+msgstr "प्रोफाइ"
 
-#: templates/original/base.html:69
+#: templates/original/base.html:71
 msgid "Logout"
-msgstr ""
+msgstr "लोग आउट"
 
-#: templates/original/base.html:72
+#: templates/original/base.html:74 templates/original/register.html:8
 msgid "Register"
 msgstr "पंजी"
 
-#: templates/original/base.html:75
+#: templates/original/base.html:77 templates/original/login.html:19
 msgid "Login"
 msgstr "लॉग इन करें"
 
-#: templates/original/index.html:10 templates/original/index.html:37
-msgid "Yukti CTF"
-msgstr "युक्ति CTF"
+#: templates/original/confirm.html:20
+msgid "Confirm"
+msgstr "पुष्टि करें"
 
 #: templates/original/index.html:25
 msgid "Welcome back"
@@ -113,7 +114,7 @@ msgstr "वापसी पर स्वागत है"
 
 #: templates/original/index.html:41
 msgid "Building Tomorrow's Cyber Warrior"
-msgstr "कल के साइबर योद्धा"
+msgstr "निर्माण कल के साइबर"
 
 #: templates/original/index.html:45
 msgid "Ministry of Electronics and IT"
@@ -139,7 +140,7 @@ msgstr "पासवर्ड"
 
 #: templates/original/login.html:54
 msgid "Forgot your password?"
-msgstr "क्या आप अपना पासवर्ड भूल गए?"
+msgstr "\"क्या आप अपना पासवर्ड भूल गए?"
 
 #: templates/original/login.html:57 templates/original/register.html:120
 msgid "Submit"
@@ -174,6 +175,10 @@ msgstr "विद्यार्थी/गुरु"
 msgid "Email"
 msgstr "ई-मेल"
 
+#: templates/original/reset_password.html:9
+msgid "Reset Password"
+msgstr "पासवर्ड रीसेट"
+
 #: templates/original/scoreboard.html:32
 msgid "Rank"
 msgstr "पद"
@@ -183,8 +188,16 @@ msgid "Student"
 msgstr "विद्यार्थी"
 
 #: templates/original/scoreboard.html:36
+msgid "Affiliation"
+msgstr "संबंधन"
+
+#: templates/original/scoreboard.html:40
 msgid "Score"
 msgstr "स्कोर"
+
+#: templates/original/setup.html:8
+msgid "Setup"
+msgstr "व्यवस्था"
 
 #: templates/original/teams.html:16
 msgid "School/College"

@@ -116,10 +116,11 @@ class Config(object):
 
     LANGUAGES = {
         'en': 'English',
-        'hi': 'Hindi'
+        'hi': 'Hindi',
+        'mr': 'Marathi'
     }
 
-    BABEL_DEFAULT_LOCALE = 'hi'
+    BABEL_DEFAULT_LOCALE = 'en'
 
 
     '''

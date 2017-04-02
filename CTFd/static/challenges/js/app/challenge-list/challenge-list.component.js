@@ -49,6 +49,19 @@ angular.
             else
                 return challenge;
         }
+
+        this.sent_key = function ($scope, $http) {
+              $scope.flag = '';
+              $scope.result = '';
+
+              $scope.submit = function() {
+                  if ($scope.flag) {
+                    $http.post('/key', {'flag': $scope.flag}).success(function(data) {
+                        $scope.result = data;
+                    })
+                  }
+              }
+          }
       }
     ]
 });

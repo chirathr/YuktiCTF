@@ -69,6 +69,10 @@ def chals(chalid=None):
                         'hidden': True
                     })
                 else:
+                    file_data = []
+                    for i in range(len(files)):
+                        file_data.append([str(files[i]).split('/')[1], str(files[i])])
+
                     json['game'].append({
                         'id': x.id,
                         'type': chal_type.name,
@@ -76,7 +80,7 @@ def chals(chalid=None):
                         'value': x.value,
                         'description': x.description,
                         'category': x.category,
-                        'files': files,
+                        'files': file_data,
                         'tags': tags,
                         'hint': x.hint
                     })

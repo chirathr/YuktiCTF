@@ -4,9 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
 #
 #, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-04-02 09:55+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
 
-
-#: templates/original/about.html:16
+#: templates/original/about.html:16 templates/original/base.html:57
 msgid "About"
 msgstr ""
 
@@ -20,7 +31,7 @@ msgid ""
 "be taught at a young age about the importance of computer security.\n"
 "            A lot of research have been proven to be the best way to "
 "approach this is Capture the Flag style contests."
-msgstr "एक हालिया रिपोर्ट में पता चला है कि साइबर सुरक्षा में 0.6\% स्नातक छात्र वर्तमान में काम कर रहे हैं जबकि देश में साइबर हमलों और उल्लंघनों का प्रदर्शन हो रहा है। युवाओं को भाग लेने के लिए प्रोत्साहित करने के लिए, उन्हें कम उम्र में कंप्यूटर सुरक्षा के महत्व के बारे में सिखाया जाना चाहिए। बहुत से अनुसंधान इस बात का प्रमाणित किया गया है कि इस दृष्टिकोण को ध्वज शैली प्रतियोगिता कैप्चर करना सबसे अच्छा तरीका है।"
+msgstr "एक हालिया रिपोर्ट में पता चला है कि साइबर सुरक्षा में 0.6 स्नातक छात्र वर्तमान में काम कर रहे हैं जबकि देश में साइबर हमलों और उल्लंघनों का प्रदर्शन हो रहा है। युवाओं को भाग लेने के लिए प्रोत्साहित करने के लिए, उन्हें कम उम्र में कंप्यूटर सुरक्षा के महत्व के बारे में सिखाया जाना चाहिए। बहुत से अनुसंधान इस बात का प्रमाणित किया गया है कि इस दृष्टिकोण को ध्वज शैली प्रतियोगिता कैप्चर करना सबसे अच्छा तरीका है।"
 
 #: templates/original/about.html:24
 msgid ""
@@ -36,126 +47,144 @@ msgid ""
 "high school students."
 msgstr "ये प्रतियोगिता आम तौर पर वास्तविक जीवन परिदृश्यों को अनुकरण करती है जो प्रतिभागियों को वास्तविक दुनिया सुरक्षा कौशल विकसित करने में सक्षम बनाती हैं। संयुक्त राज्य अमेरिका और चीन जैसे कई देशों ने साइबर सुरक्षा शिक्षा की आवश्यकता महसूस की है और वे स्कूल के छात्रों के लिए सीटीएफ प्रतियोगिताओं का आयोजन कर रहे हैं। अमृता यूनिवर्सिटी अमृता इनसीटीएफ जूनियर का आयोजन कर रही है, जो एक ऑनलाइन कैप्चर फ्लैग स्टाइल प्रतियोगिता है जो विशेष रूप से हाई स्कूल के छात्रों में साइबर सुरक्षा जागरूकता और प्रशिक्षण पेश करने के लिए डिज़ाइन की गई है।"
 
-#: templates/original/base.html:53
-msgid "Students"
-msgstr "छात्र"
-
-#: templates/original/base.html:54
-msgid "Scoreboard"
-msgstr "स्कोरबोर्ड"
-
-#: templates/original/base.html:55
-msgid "Challenges"
-msgstr "चुनौतियां"
-
-#: templates/original/base.html:62
-msgid "Admin"
-msgstr "व्यवस्थापक"
-
-#: templates/original/base.html:65
-msgid "My Students"
-msgstr ""
-
-#: templates/original/base.html:68
-msgid "Profile"
-msgstr "प्रोफाइल"
-
-#: templates/original/base.html:69
-msgid "Logout"
-msgstr ""
-
-#: templates/original/base.html:72
-msgid "Register"
-msgstr "पंजी"
-
-#: templates/original/base.html:75
-msgid "Login"
-msgstr "लॉग इन करें"
-
-#: templates/original/index.html:10 templates/original/index.html:37
+#: templates/original/base.html:47 templates/original/index.html:10
+#: templates/original/index.html:37
 msgid "Yukti CTF"
 msgstr "युक्ति CTF"
 
+#: templates/original/base.html:54 templates/original/my_students.html:9
+#: templates/original/teams.html:9
+msgid "Students"
+msgstr "छात्र"
+
+#: templates/original/base.html:55 templates/original/scoreboard.html:5
+msgid "Scoreboard"
+msgstr "स्कोरबोर्ड"
+
+#: templates/original/base.html:56
+msgid "Challenges"
+msgstr "चुनौतियां"
+
+#: templates/original/base.html:64
+msgid "Admin"
+msgstr "व्यवस्थापक"
+
+#: templates/original/base.html:67
+msgid "My Students"
+msgstr "मेरे छात्र"
+
+#: templates/original/base.html:70 templates/original/profile.html:19
+msgid "Profile"
+msgstr "प्रोफाइ"
+
+#: templates/original/base.html:71
+msgid "Logout"
+msgstr "लोग आउट"
+
+#: templates/original/base.html:74 templates/original/register.html:8
+msgid "Register"
+msgstr "पंजी"
+
+#: templates/original/base.html:77 templates/original/login.html:19
+msgid "Login"
+msgstr "लॉग इन करें"
+
+#: templates/original/confirm.html:20
+msgid "Confirm"
+msgstr "पुष्टि करें"
+
 #: templates/original/index.html:25
 msgid "Welcome back"
-msgstr ""
+msgstr "वापसी पर स्वागत है"
 
 #: templates/original/index.html:41
 msgid "Building Tomorrow's Cyber Warrior"
-msgstr "कल के साइबर योद्धा"
-
+msgstr "निर्माण कल के साइबर"
+ योद्धाओ का
 #: templates/original/index.html:45
 msgid "Ministry of Electronics and IT"
-msgstr ""
+msgstr "इलेक्ट्रॉनिक्स और आईटी मंत्रालय"
 
 #: templates/original/index.html:59
 msgid "English"
-msgstr ""
+msgstr "अंग्रेज़ी"
 
 #: templates/original/index.html:60
 msgid "Hindi"
-msgstr ""
+msgstr "हिंदी"
 
 #: templates/original/login.html:36 templates/original/login.html:38
 #: templates/original/register.html:91
 msgid "Username"
-msgstr ""
+msgstr "प्रतियोगी का नाम"
 
 #: templates/original/login.html:46 templates/original/login.html:48
 #: templates/original/register.html:111
 msgid "Password"
-msgstr ""
+msgstr "पासवर्ड"
 
 #: templates/original/login.html:54
 msgid "Forgot your password?"
-msgstr ""
+msgstr ""क्या आप अपना पासवर्ड भूल गए?"
 
 #: templates/original/login.html:57 templates/original/register.html:120
 msgid "Submit"
-msgstr ""
+msgstr "जमा करें"
 
 #: templates/original/register.html:25
 msgid "Full Name"
-msgstr ""
+msgstr "पूरा नाम"
 
 #: templates/original/register.html:35
 msgid "Affliliation"
-msgstr ""
+msgstr "संबंधन"
 
 #: templates/original/register.html:45 templates/original/teams.html:18
 msgid "Class/Year"
-msgstr ""
+msgstr "कक्षा / वर्ष"
 
 #: templates/original/register.html:55 templates/original/scoreboard.html:38
 #: templates/original/teams.html:17
 msgid "City"
-msgstr ""
+msgstr "शहर"
 
 #: templates/original/register.html:65
 msgid "Gender"
-msgstr ""
+msgstr "लिंग"
 
 #: templates/original/register.html:78
 msgid "Student/Mentor"
-msgstr ""
+msgstr "विद्यार्थी/गुरु"
 
 #: templates/original/register.html:101
 msgid "Email"
-msgstr ""
+msgstr "ई-मेल"
+
+#: templates/original/reset_password.html:9
+msgid "Reset Password"
+msgstr "पासवर्ड रीसेट"
 
 #: templates/original/scoreboard.html:32
 msgid "Rank"
-msgstr ""
+msgstr "पद"
 
 #: templates/original/scoreboard.html:34 templates/original/teams.html:15
 msgid "Student"
-msgstr ""
+msgstr "विद्यार्थी"
 
 #: templates/original/scoreboard.html:36
+msgid "Affiliation"
+msgstr "संबंधन"
+
+#: templates/original/scoreboard.html:40
 msgid "Score"
-msgstr ""
+msgstr "स्कोर"
+
+#: templates/original/setup.html:8
+msgid "Setup"
+msgstr "व्यवस्था"
 
 #: templates/original/teams.html:16
 msgid "School/College"
-msgstr ""
+msgstr "स्कूल / कॉलेज"
 
