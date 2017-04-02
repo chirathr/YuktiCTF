@@ -33,8 +33,6 @@
                 </td>
                 <td style="padding: 30px;"><b>{{ gettext("Student") }}</b>
                 </td>
-                <td style="padding: 30px;"><b>{{ gettext("Affiliation") }}</b>
-                </td>
                 <td style="padding: 30px;"><b>{{ gettext("Score") }}</b>
                 </td>
 
@@ -46,8 +44,8 @@
             <tr style="border-top: 1px solid white">
                 <td style="padding: 20px; background-color: transparent; border: none;">{{ loop.index }}</td>
                 <td style="padding: 20px; background-color: transparent; border: none;"><a href="{{ request.script_root }}/team/{{ team.teamid }}">{{ team.name }}</a>{{ team.fname }}</td>
-                <td style="padding: 20px; background-color: transparent; border: none;">{{ team.affiliation }}</td></tr>
-                <td style="padding: 20px; background-color: transparent; border: none;">{{ team.score }}</td></tr>
+                <td style="padding: 20px; background-color: transparent; border: none;">{{ team.score }}</td>
+              </tr>
           {% endif %}
         {% endfor %}
         </tbody>

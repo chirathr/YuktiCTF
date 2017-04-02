@@ -17,9 +17,11 @@
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
       <p style="padding-top:3%">{{ $ctrl.selection.hint }}<p>
       <a style="padding-top:3%" href="/Solutions">Solution</a>
+
+      <p ng-if="$ctrl.response">{{ $ctrl.response.data.message }}</p>
+
 </div>
 
 <style>
