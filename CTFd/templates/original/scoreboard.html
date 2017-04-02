@@ -35,8 +35,6 @@
                 </td>
                 <td style="padding: 30px;"><b>{{ gettext("Affiliation") }}</b>
                 </td>
-                <td style="padding: 30px;"><b>{{ gettext("City") }}</b>
-                </td>
                 <td style="padding: 30px;"><b>{{ gettext("Score") }}</b>
                 </td>
 
@@ -47,9 +45,9 @@
           {% if not team.admin and not team.mentor %}
             <tr style="border-top: 1px solid white">
                 <td style="padding: 20px; background-color: transparent; border: none;">{{ loop.index }}</td>
-                <td style="padding: 20px; background-color: transparent; border: none;"><a href="{{ request.script_root }}/team/{{ team.teamid }}">{{ team.name }}</a></td>
+                <td style="padding: 20px; background-color: transparent; border: none;"><a href="{{ request.script_root }}/team/{{ team.teamid }}">{{ team.name }}</a>{{ team.fname }}</td>
+                <td style="padding: 20px; background-color: transparent; border: none;">{{ team.affiliation }}</td></tr>
                 <td style="padding: 20px; background-color: transparent; border: none;">{{ team.score }}</td></tr>
-                <td style="padding: 20px; background-color: transparent; border: none;">{{ team.city }}</td></tr>
           {% endif %}
         {% endfor %}
         </tbody>

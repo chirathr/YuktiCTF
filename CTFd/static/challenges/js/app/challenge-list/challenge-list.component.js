@@ -57,14 +57,24 @@ angular.
 
 
           this.processForm = function(key, id, nonce){
-              var v = {'key': key, 'nonce': nonce};
-              $http.post('/chal/' + id.toString(), v).success(function(data) {
-                $scope.result = data;
-                console.log(data);
+              // var v = {key: key, nonce: nonce};
+              // $http.post('/chal/' + id.toString(), v).success(function(data) {
+              //   $scope.result = data;
+              //   console.log(data);
+              //
+              // });
 
+              var xsrf = $.param({key: key, nonce: nonce});
+              $http({
+                    method: 'POST',
+                    url: '/chal/' + id.toString(),
+                    data: xsrf,
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+              }).then(function successCallback(response) {
+                self.response = response;
+              }, function errorCallback(response) {
+                self.response = response;
               });
-              console.log(v);
-
           };
 
       }
