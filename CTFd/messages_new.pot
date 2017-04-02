@@ -1,0 +1,190 @@
+# Translations template for PROJECT.
+# Copyright (C) 2017 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-04-02 09:55+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: templates/original/about.html:16 templates/original/base.html:57
+msgid "About"
+msgstr ""
+
+#: templates/original/about.html:20
+msgid ""
+"A recent report has revealed that a miniscule 0.6 percentage of graduate "
+"students are currently working\n"
+"            in cyber security while cyber attacks and breaches are "
+"manifesting in the country.\n"
+"            In order to encourage the youth to participate, they need to "
+"be taught at a young age about the importance of computer security.\n"
+"            A lot of research have been proven to be the best way to "
+"approach this is Capture the Flag style contests."
+msgstr ""
+
+#: templates/original/about.html:24
+msgid ""
+"These contests typically simulate real life scenarios that enable "
+"participants to develop real world security skills.\n"
+"        Many of the countries like USA and China have realized the need "
+"for cyber security education and are\n"
+"        conducting CTF contests for school students. Having realized the "
+"dire need for such a training culture in India,\n"
+"        Amrita University is organizing Amrita InCTF Junior, an online "
+"Capture the Flag style contest specifically\n"
+"        designed to introduce cyber security awareness and training in "
+"high school students."
+msgstr ""
+
+#: templates/original/base.html:47 templates/original/index.html:10
+#: templates/original/index.html:37
+msgid "Yukti CTF"
+msgstr ""
+
+#: templates/original/base.html:54 templates/original/my_students.html:9
+#: templates/original/teams.html:9
+msgid "Students"
+msgstr ""
+
+#: templates/original/base.html:55 templates/original/scoreboard.html:5
+msgid "Scoreboard"
+msgstr ""
+
+#: templates/original/base.html:56
+msgid "Challenges"
+msgstr ""
+
+#: templates/original/base.html:64
+msgid "Admin"
+msgstr ""
+
+#: templates/original/base.html:67
+msgid "My Students"
+msgstr ""
+
+#: templates/original/base.html:70 templates/original/profile.html:19
+msgid "Profile"
+msgstr ""
+
+#: templates/original/base.html:71
+msgid "Logout"
+msgstr ""
+
+#: templates/original/base.html:74 templates/original/register.html:8
+msgid "Register"
+msgstr ""
+
+#: templates/original/base.html:77 templates/original/login.html:19
+msgid "Login"
+msgstr ""
+
+#: templates/original/confirm.html:20
+msgid "Confirm"
+msgstr ""
+
+#: templates/original/index.html:25
+msgid "Welcome back"
+msgstr ""
+
+#: templates/original/index.html:41
+msgid "Building Tomorrow's Cyber Warrior"
+msgstr ""
+
+#: templates/original/index.html:45
+msgid "Ministry of Electronics and IT"
+msgstr ""
+
+#: templates/original/index.html:59
+msgid "English"
+msgstr ""
+
+#: templates/original/index.html:60
+msgid "Hindi"
+msgstr ""
+
+#: templates/original/login.html:36 templates/original/login.html:38
+#: templates/original/register.html:91
+msgid "Username"
+msgstr ""
+
+#: templates/original/login.html:46 templates/original/login.html:48
+#: templates/original/register.html:111
+msgid "Password"
+msgstr ""
+
+#: templates/original/login.html:54
+msgid "Forgot your password?"
+msgstr ""
+
+#: templates/original/login.html:57 templates/original/register.html:120
+msgid "Submit"
+msgstr ""
+
+#: templates/original/register.html:25
+msgid "Full Name"
+msgstr ""
+
+#: templates/original/register.html:35
+msgid "Affliliation"
+msgstr ""
+
+#: templates/original/register.html:45 templates/original/teams.html:18
+msgid "Class/Year"
+msgstr ""
+
+#: templates/original/register.html:55 templates/original/scoreboard.html:38
+#: templates/original/teams.html:17
+msgid "City"
+msgstr ""
+
+#: templates/original/register.html:65
+msgid "Gender"
+msgstr ""
+
+#: templates/original/register.html:78
+msgid "Student/Mentor"
+msgstr ""
+
+#: templates/original/register.html:101
+msgid "Email"
+msgstr ""
+
+#: templates/original/reset_password.html:9
+msgid "Reset Password"
+msgstr ""
+
+#: templates/original/scoreboard.html:32
+msgid "Rank"
+msgstr ""
+
+#: templates/original/scoreboard.html:34 templates/original/teams.html:15
+msgid "Student"
+msgstr ""
+
+#: templates/original/scoreboard.html:36
+msgid "Affiliation"
+msgstr ""
+
+#: templates/original/scoreboard.html:40
+msgid "Score"
+msgstr ""
+
+#: templates/original/setup.html:8
+msgid "Setup"
+msgstr ""
+
+#: templates/original/teams.html:16
+msgid "School/College"
+msgstr ""
+
