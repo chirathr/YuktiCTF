@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2017-04-02 09:55+0530\n"
-"PO-Revision-Date: 2017-04-02 10:48+0530\n"
+"PO-Revision-Date: 2017-04-02 14:17+0530\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: mr\n"
 "Language-Team: mr <LL@li.org>\n"
@@ -20,40 +20,42 @@ msgstr ""
 
 #: templates/original/about.html:16 templates/original/base.html:57
 msgid "About"
-msgstr ""
+msgstr " CTF के बारे में"
 
 #: templates/original/about.html:20
 msgid ""
-"A recent report has revealed that a miniscule 0.6 percentage of graduate "
-"students are currently working\n"
-"            in cyber security while cyber attacks and breaches are "
-"manifesting in the country.\n"
-"            In order to encourage the youth to participate, they need to "
-"be taught at a young age about the importance of computer security.\n"
-"            A lot of research have been proven to be the best way to "
-"approach this is Capture the Flag style contests."
-msgstr " अलीकडील अहवाल उघड आहे की पदवीधर 0.6 टक्क"
-
-#: templates/original/about.html:24
-msgid ""
-"These contests typically simulate real life scenarios that enable "
-"participants to develop real world security skills.\n"
-"        Many of the countries like USA and China have realized the need "
-"for cyber security education and are\n"
-"        conducting CTF contests for school students. Having realized the "
-"dire need for such a training culture in India,\n"
-"        Amrita University is organizing Amrita InCTF Junior, an online "
-"Capture the Flag style contest specifically\n"
-"        designed to introduce cyber security awareness and training in "
-"high school students."
+"A recent report has revealed that a 0.6 percent of graduate students are "
+"currently working in cyber security while cyber attacks and breaches are "
+"manifesting in the country. In order to encourage the youth to "
+"participate, they need to be taught at a young age about the importance "
+"of computer security.A lot of research have been proven to be the best "
+"way to approach this is Capture the Flag style contests. In cyber "
+"security, Capture the Flag is a computer security contest.These contests "
+"typically simulate real life scenarios that enable participants to "
+"develop real world security skills. Many of the countries like USA and "
+"China have realized the need for cyber security education and are "
+"conducting CTF contests for school students. Having realized the dire "
+"need for such a training culture in India, Team YUKTI has designed an "
+"online customizable Capture the Flag style contest specifically designed "
+"to introduce cyber security awareness and training  for students in "
+"Technical Institutions."
 msgstr ""
-"या स्पर्धा विशेषत: वास्तविक जगात सुरक्षा कौशल्य विकसित करण्यासाठी सहभागी "
-"सक्षम वास्तविक जीवनात परिस्थिती आव आणणे. अमेरिका आणि चीन सारख्या देशात "
-"अनेक सायबर सुरक्षा शिक्षणाची गरज लक्षात आहे आणि शाळा विद्यार्थ्यांना CTF "
-"स्पर्धा आयोजन करीत आहोत. भारतात अशा प्रशिक्षण संस्कृती नितांत आवश्यकता "
-"लक्षात येत, आम्ही विशेषत: उच्च माध्यमिक शाळा विद्यार्थ्यांना सायबर "
-"सुरक्षा जागरूकता आणि प्रशिक्षण परिचय रचना खेळ आधारित ऑनलाइन CTF शैली "
-"स्पर्धा आले आहेत. "
+"एक हाल ही की रिपोर्ट में पता चला है कि 0.6 प्रतिशतता  स्नातक छात्र "
+"वर्तमान में साइबर सुरक्षा में काम कर रहे हैं, जबकि साइबर हमलों और देश में"
+" उल्लंघनों का प्रदर्शन हो रहा है। युवाओं को भाग लेने के लिए प्रोत्साहित "
+"करने के लिए, उन्हें कम उम्र में कंप्यूटर सुरक्षा के महत्व के बारे में "
+"सिखाया जाना चाहिए। बहुत से अनुसंधानों से इस बात को प्रमाणित किया गया है "
+"कि इस दृष्टिकोण को ध्वज शैली प्रतियोगिता कैप्चर करना सबसे अच्छा तरीका है।"
+" साइबर सुरक्षा में, 'कैप्चर फ्लैग' या CTF  एक कंप्यूटर सुरक्षा "
+"प्रतियोगिता है I ये प्रतियोगिता आम तौर पर वास्तविक जीवन परिदृश्यों को "
+"अनुकरण करती है जो प्रतिभागियों को वास्तविक दुनिया सुरक्षा कौशल विकसित "
+"करने में सक्षम बनाती हैं। संयुक्त राज्य अमेरिका और चीन जैसे कई देशों ने "
+"साइबर सुरक्षा शिक्षा की आवश्यकता महसूस की है और वे स्कूल के छात्रों के "
+"लिए सीटीएफ प्रतियोगिताओं का आयोजन कर रहे हैं। भारत में इस तरह की एक "
+"प्रशिक्षण संस्कृति की सख्त आवश्यकता का एहसास होने के बाद टीम युक्ति ने एक"
+" ऑनलाइन अनुकूलन कैप्चर फ्लैग शैली प्रतियोगिता तैयार की है, जो विशेष रूप "
+"से तकनीकी संस्थानों में छात्रों के लिए साइबर सुरक्षा जागरूकता और "
+"प्रशिक्षण पेश करने के लिए डिज़ाइन की गई है।"
 
 #: templates/original/base.html:47 templates/original/index.html:10
 #: templates/original/index.html:37
@@ -63,59 +65,59 @@ msgstr "युक्ति CTF"
 #: templates/original/base.html:54 templates/original/my_students.html:9
 #: templates/original/teams.html:9
 msgid "Students"
-msgstr "विद्यार्थी"
+msgstr "छात्र"
 
 #: templates/original/base.html:55 templates/original/scoreboard.html:5
 msgid "Scoreboard"
-msgstr " स्कोअरबोर्ड"
+msgstr "स्कोरबोर्ड"
 
 #: templates/original/base.html:56
 msgid "Challenges"
-msgstr "स्पर्धा प्रश्न"
+msgstr "चुनौतियां"
 
 #: templates/original/base.html:64
 msgid "Admin"
-msgstr "प्रशासन"
+msgstr "व्यवस्थापक"
 
 #: templates/original/base.html:67
 msgid "My Students"
-msgstr "माझे विद्यार्थी"
+msgstr "मेरे छात्र"
 
 #: templates/original/base.html:70 templates/original/profile.html:19
 msgid "Profile"
-msgstr "प्रोफाइल"
+msgstr "प्रोफाइ"
 
 #: templates/original/base.html:71
 msgid "Logout"
-msgstr "लॉग ऑफ करा"
+msgstr "लोग आउट"
 
 #: templates/original/base.html:74 templates/original/register.html:8
 msgid "Register"
-msgstr "नोंदणी"
+msgstr "पंजी"
 
 #: templates/original/base.html:77 templates/original/login.html:19
 msgid "Login"
-msgstr "लॉग-इन"
+msgstr "लॉग इन करें"
 
 #: templates/original/confirm.html:20
 msgid "Confirm"
-msgstr "पुष्टी"
+msgstr "पुष्टि करें"
 
 #: templates/original/index.html:25
 msgid "Welcome back"
-msgstr "पुन्हा आपले स्वागत आहे"
+msgstr "वापसी पर स्वागत है"
 
 #: templates/original/index.html:41
 msgid "Building Tomorrow's Cyber Warrior"
-msgstr " निर्माण - भावीश्याचे सायबर योद्धा"
+msgstr "निर्माण कल के साइबर योद्धाओ का"
 
 #: templates/original/index.html:45
 msgid "Ministry of Electronics and IT"
-msgstr " इलेक्ट्रॉनिक्स आणि आयटी मंत्रालय "
+msgstr "इलेक्ट्रॉनिक्स और आईटी मंत्रालय"
 
 #: templates/original/index.html:59
 msgid "English"
-msgstr "इंग्रजी"
+msgstr "English"
 
 #: templates/original/index.html:60
 msgid "Hindi"
@@ -124,7 +126,7 @@ msgstr "हिंदी"
 #: templates/original/login.html:36 templates/original/login.html:38
 #: templates/original/register.html:91
 msgid "Username"
-msgstr "वापरकर्ता नाव"
+msgstr "प्रतियोगी का नाम"
 
 #: templates/original/login.html:46 templates/original/login.html:48
 #: templates/original/register.html:111
@@ -133,23 +135,23 @@ msgstr "पासवर्ड"
 
 #: templates/original/login.html:54
 msgid "Forgot your password?"
-msgstr " आपला संकेतशब्द विसरलात?"
+msgstr "क्या आप अपना पासवर्ड भूल गए?"
 
 #: templates/original/login.html:57 templates/original/register.html:120
 msgid "Submit"
-msgstr "सबमिट करा"
+msgstr "जमा करें"
 
 #: templates/original/register.html:25
 msgid "Full Name"
-msgstr "पूर्ण नाव"
+msgstr "पूरा नाम"
 
 #: templates/original/register.html:35
 msgid "Affliliation"
-msgstr "संलग्नीकरण"
+msgstr "संबंधन"
 
 #: templates/original/register.html:45 templates/original/teams.html:18
 msgid "Class/Year"
-msgstr "वर्ग / वर्ष"
+msgstr "कक्षा / वर्ष"
 
 #: templates/original/register.html:55 templates/original/scoreboard.html:38
 #: templates/original/teams.html:17
@@ -162,7 +164,7 @@ msgstr "लिंग"
 
 #: templates/original/register.html:78
 msgid "Student/Mentor"
-msgstr "विद्यार्थी / गुरू"
+msgstr "विद्यार्थी/गुरु"
 
 #: templates/original/register.html:101
 msgid "Email"
@@ -170,11 +172,11 @@ msgstr "ई-मेल"
 
 #: templates/original/reset_password.html:9
 msgid "Reset Password"
-msgstr "पासवर्ड रीसेट करा"
+msgstr "पासवर्ड रीसेट"
 
 #: templates/original/scoreboard.html:32
 msgid "Rank"
-msgstr "पदवी स्थान"
+msgstr "पद"
 
 #: templates/original/scoreboard.html:34 templates/original/teams.html:15
 msgid "Student"
@@ -182,17 +184,17 @@ msgstr "विद्यार्थी"
 
 #: templates/original/scoreboard.html:36
 msgid "Affiliation"
-msgstr "संलग्नीकरण"
+msgstr "संबंधन"
 
 #: templates/original/scoreboard.html:40
 msgid "Score"
-msgstr "गुण"
+msgstr "स्कोर"
 
 #: templates/original/setup.html:8
 msgid "Setup"
-msgstr "सेटअप"
+msgstr "व्यवस्था"
 
 #: templates/original/teams.html:16
 msgid "School/College"
-msgstr "शाळा / कॉलेज"
+msgstr "स्कूल / कॉलेज"
 

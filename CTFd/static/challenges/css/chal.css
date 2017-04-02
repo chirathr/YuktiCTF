@@ -62,7 +62,7 @@ html {
     margin: 10px;
     background-color: rgba(249,249,249,0.11);
     text-align: center;
-    padding: 5px;
+    padding: 6px;
     color: white;
 
 }
@@ -116,4 +116,8 @@ html {
 .chal-hidden {
     color: rgba(133,133,133,0.56);
     background-color: rgba(133,133,133,0.25)
+}
+
+.chal-cat {
+    padding-left: 6px;
 }

@@ -3,8 +3,8 @@ angular.
   module('challengeList').
   component('challengeList', {
     templateUrl: '/static/challenges/js/app/challenge-list/challenge-list.template.html',
-    controller: ['$http',
-      function challengeListController($http) {
+    controller: ['$http', '$scope',
+      function challengeListController($http, $scope) {
         var self = this;
         this.selection = {
             "name": "Welcome to Yukti CTF",
@@ -13,6 +13,8 @@ angular.
         };
         $http.get('/chals').then(function(response) {
           self.challenges = response.data;
+          self.nonce = self.challenges.nonce;
+          console.log(self.challenges.nonce);
           self.level = [[], [], [], [], [], [], [], []];
             for (var i=1; i<=3; i++) {
                 self.level[0].push(self.challenges.game[i-1]);
@@ -48,20 +50,23 @@ angular.
                 };
             else
                 return challenge;
-        }
-
-        this.sent_key = function ($scope, $http) {
-              $scope.flag = '';
+        };
+          this.flag = '';
               $scope.result = '';
 
-              $scope.submit = function() {
-                  if ($scope.flag) {
-                    $http.post('/key', {'flag': $scope.flag}).success(function(data) {
-                        $scope.result = data;
-                    })
-                  }
-              }
-          }
+
+
+          this.processForm = function(key, id, nonce){
+              var v = {'key': key, 'nonce': nonce};
+              $http.post('/chal/' + id.toString(), v).success(function(data) {
+                $scope.result = data;
+                console.log(data);
+
+              });
+              console.log(v);
+
+          };
+
       }
     ]
 });

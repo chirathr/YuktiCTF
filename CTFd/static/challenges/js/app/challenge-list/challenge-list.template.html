@@ -9,15 +9,68 @@
     <div class="side-bar-elements"></div>
 </div>
 
+
+
 <div class="chal-left">
-    <!-- Search: <input ng-model="$ctrl.query" /> -->
+<!--<div>
+    <input class="chal-search" placeholder="Search" style="z-index: 4000;" ng-model="$ctrl.query"/>
+</div> -->
     <div class="chal-list">
-        <p>{{ challenges.name }}</p>
-        <div class="challenge" ng-class="{'chal-hidden':challenge.hidden}" ng-repeat="challenge in $ctrl.challenges.game | filter:$ctrl.query | orderBy:'id'" ng-click="$ctrl.selection = $ctrl.check_hidden(challenge, challenge.hidden)">
+        <p>Cryptography</p>
+        <div class="challenge" ng-class="{'chal-hidden':challenge.hidden}" ng-repeat="challenge in $ctrl.challenges.game | filter:'cryptography' | orderBy:'id'" ng-click="$ctrl.selection = $ctrl.check_hidden(challenge, challenge.hidden)">
+            <p class="chal-name">{{ challenge.name }}</p>
+            <p class="chal-score">{{ challenge.value }}</p>
+        </div>
+
+        <br>
+
+        <p class="chal-cat">Exploitation</p>
+        <div class="challenge" ng-class="{'chal-hidden':challenge.hidden}" ng-repeat="challenge in $ctrl.challenges.game | filter:'exploitation' | orderBy:'id'" ng-click="$ctrl.selection = $ctrl.check_hidden(challenge, challenge.hidden)">
+            <p class="chal-name">{{ challenge.name }}</p>
+            <p class="chal-score">{{ challenge.value }}</p>
+        </div>
+        <br>
+
+        <p class="chal-cat">Forensics</p>
+        <div class="challenge" ng-class="{'chal-hidden':challenge.hidden}" ng-repeat="challenge in $ctrl.challenges.game | filter:'forensics' | orderBy:'id'" ng-click="$ctrl.selection = $ctrl.check_hidden(challenge, challenge.hidden)">
+            <p class="chal-name">{{ challenge.name }}</p>
+            <p class="chal-score">{{ challenge.value }}</p>
+        </div>
+
+        <br>
+
+        <p class="chal-cat">Web</p>
+        <div class="challenge" ng-class="{'chal-hidden':challenge.hidden}" ng-repeat="challenge in $ctrl.challenges.game | filter:'web' | orderBy:'id'" ng-click="$ctrl.selection = $ctrl.check_hidden(challenge, challenge.hidden)">
+            <p class="chal-name">{{ challenge.name }}</p>
+            <p class="chal-score">{{ challenge.value }}</p>
+        </div>
+
+        <br>
+
+
+        <p class="chal-cat">Reversing</p>
+        <div class="challenge" ng-class="{'chal-hidden':challenge.hidden}" ng-repeat="challenge in $ctrl.challenges.game | filter:'reversing' | orderBy:'id'" ng-click="$ctrl.selection = $ctrl.check_hidden(challenge, challenge.hidden)">
+            <p class="chal-name">{{ challenge.name }}</p>
+            <p class="chal-score">{{ challenge.value }}</p>
+        </div>
+
+        <br>
+
+        <p class="chal-cat">Trivia</p>
+        <div class="challenge" ng-class="{'chal-hidden':challenge.hidden}" ng-repeat="challenge in $ctrl.challenges.game | filter:'trivia' | orderBy:'id'" ng-click="$ctrl.selection = $ctrl.check_hidden(challenge, challenge.hidden)">
+            <p class="chal-name">{{ challenge.name }}</p>
+            <p class="chal-score">{{ challenge.value }}</p>
+        </div>
+
+        <br>
+
+        <p class="chal-cat">Boss</p>
+        <div class="challenge" ng-class="{'chal-hidden':challenge.hidden}" ng-repeat="challenge in $ctrl.challenges.game | filter:'boss' | orderBy:'id'" ng-click="$ctrl.selection = $ctrl.check_hidden(challenge, challenge.hidden)">
             <p class="chal-name">{{ challenge.name }}</p>
             <p class="chal-score">{{ challenge.value }}</p>
         </div>
     </div>
+
 </div>
 
 <div class="vertical-line">

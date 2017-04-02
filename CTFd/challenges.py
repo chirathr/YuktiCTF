@@ -53,7 +53,7 @@ def chals(chalid=None):
             else:
                 return redirect(url_for('views.static_html'))
     if utils.user_can_view_challenges() and (utils.ctf_started() or utils.is_admin()):
-        json = {'game': []}
+        json = {'game': [], 'nonce': ''}
         if chalid is None:
             chals = Challenges.query.order_by(Challenges.value).all()
             for x in chals:
@@ -84,6 +84,8 @@ def chals(chalid=None):
                         'tags': tags,
                         'hint': x.hint
                     })
+
+                    json["nonce"] = session["nonce"]
         else:
             chal = Challenges.query.filter_by(id=chalid).all()[0]
             if chal is None or chal.hidden:

@@ -19,34 +19,13 @@ msgstr ""
 
 #: templates/original/about.html:16 templates/original/base.html:57
 msgid "About"
-msgstr ""
+msgstr "CTF काय आहे"
 
 #: templates/original/about.html:20
-msgid ""
-"A recent report has revealed that a miniscule 0.6 percentage of graduate "
-"students are currently working\n"
-"            in cyber security while cyber attacks and breaches are "
-"manifesting in the country.\n"
-"            In order to encourage the youth to participate, they need to "
-"be taught at a young age about the importance of computer security.\n"
-"            A lot of research have been proven to be the best way to "
-"approach this is Capture the Flag style contests."
-msgstr " अलीकडील अहवाल उघड आहे की पदवीधर 0.6 टक्के
-विद्यार्थ्यांना सध्या सायबर सुरक्षा मध्ये काम करत आहेत. सायबर हल्ले आणि धोका देशात होतात आहेत. सहभागी तरुणांना प्रोत्साहित करण्यासाठी, ते संगणकावर सुरक्षा विषयक एक तरुण वयात शिकवले करणे आवश्यक आहे. संशोधन भरपूर हा ध्वज शैली स्पर्धा कॅप्चर आहे संपर्क सर्वोत्तम मार्ग असल्याचे सिद्ध झाले आहे."
+msgid "A recent report has revealed that a 0.6 percent of graduate students are currently working in cyber security while cyber attacks and breaches are manifesting in the country. In order to encourage the youth to participate, they need to be taught at a young age about the importance of computer security.A lot of research have been proven to be the best way to approach this is Capture the Flag style contests. In cyber security, Capture the Flag is a computer security contest.These contests typically simulate real life scenarios that enable participants to develop real world security skills. Many of the countries like USA and China have realized the need for cyber security education and are conducting CTF contests for school students. Having realized the dire need for such a training culture in India, Team YUKTI has designed an online customizable Capture the Flag style contest specifically designed to introduce cyber security awareness and training  for students in Technical Institutions."
 
-#: templates/original/about.html:24
-msgid ""
-"These contests typically simulate real life scenarios that enable "
-"participants to develop real world security skills.\n"
-"        Many of the countries like USA and China have realized the need "
-"for cyber security education and are\n"
-"        conducting CTF contests for school students. Having realized the "
-"dire need for such a training culture in India,\n"
-"        Amrita University is organizing Amrita InCTF Junior, an online "
-"Capture the Flag style contest specifically\n"
-"        designed to introduce cyber security awareness and training in "
-"high school students."
-msgstr "या स्पर्धा विशेषत: वास्तविक जगात सुरक्षा कौशल्य विकसित करण्यासाठी सहभागी सक्षम वास्तविक जीवनात परिस्थिती आव आणणे. अमेरिका आणि चीन सारख्या देशात अनेक सायबर सुरक्षा शिक्षणाची गरज लक्षात आहे आणि शाळा विद्यार्थ्यांना CTF स्पर्धा आयोजन करीत आहोत. भारतात अशा प्रशिक्षण संस्कृती नितांत आवश्यकता लक्षात येत, आम्ही विशेषत: उच्च माध्यमिक शाळा विद्यार्थ्यांना सायबर सुरक्षा जागरूकता आणि प्रशिक्षण परिचय रचना खेळ आधारित ऑनलाइन CTF शैली स्पर्धा आले आहेत. "
+msgstr "अलीकडील अहवाल पदवीधर विद्यार्थी 0.6  टक्केवारी  सध्या सायबर सुरक्षा मध्ये काम करत आहेत, असे निदर्शनास आले आहे. सायबर हल्ले आणि धोका देशात होतात आहेत. सहभागी तरुणांना प्रोत्साहित करण्यासाठी, ते संगणकावर सुरक्षा विषयक एक तरुण वयात शिकवले करणे आवश्यक आहे. संशोधन भरपूर हा ध्वज शैली स्पर्धा कॅप्चर आहे संपर्क सर्वोत्तम मार्ग असल्याचे सिद्ध झाले आहे. सायबर सुरक्षा मध्ये, 'कॅप्चर द फ्लॅग' किंवा CTF एक संगणक सुरक्षा स्पर्धा आहे.या स्पर्धा विशेषत: वास्तविक जगात सुरक्षा कौशल्य विकसित करण्यासाठी सहभागी सक्षम वास्तविक जीवनात परिस्थिती आव आणणे. अमेरिका आणि चीन सारख्या देशात अनेक सायबर सुरक्षा शिक्षणाची गरज लक्षात आहे आणि शाळा विद्यार्थ्यांना CTF स्पर्धा आयोजन करीत आहोत. लक्षात येत भारतात अशा प्रशिक्षण संस्कृती नितांत आवश्यकता टीम YUKTI विशेषतः तांत्रिक संस्था विद्यार्थ्यांना सायबर सुरक्षा जागरूकता आणि प्रशिक्षण परिचय डिझाइन केलेले ऑनलाईन सानुकूल CTF शैली स्पर्धा रचना करत आहे"
+
 
 #: templates/original/base.html:47 templates/original/index.html:10
 #: templates/original/index.html:37
@@ -108,7 +87,7 @@ msgstr " इलेक्ट्रॉनिक्स आणि आयटी म�
 
 #: templates/original/index.html:59
 msgid "English"
-msgstr "इंग्रजी"
+msgstr "English"
 
 #: templates/original/index.html:60
 msgid "Hindi"
