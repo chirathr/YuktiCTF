@@ -13,14 +13,14 @@
 
 {% block content %}
 <div class="page-title">
-    <h1>{{ gettext("About") }}</h1>
+    <h1>{{ gettext("Demo") }}</h1>
 </div>
-<div class="container main-container">
-    <div class="row about">
+<div class="container main-container row">
+    <div class="col-md-6" style = "margin-left:33%">
         <!-- <embed src="static/home/video/Caesar_Cipher.mp4" autostart="false" height="30" width="144" /> -->
 
         <!-- <div class="vidbeo-embed" data-id="abcdefg" data-img="static/home/video/Caesar_Cipher.mp4" data-width="640" data-aspect="16:9"></div><script>(function(d){var s=d.createElement("script");var i=d.getElementsByTagName("script")[0];s.src="https://vidbeo.com/assets/js/vidbeo-embed.min.js";s.async=true;i.parentNode.insertBefore(s,i)})(document);</script>         -->
-        <iframe width="800" height="600"
+        <iframe width="800" height="500px"
             src="static/home/video/Caesar_Cipher.mp4">
         </iframe>
     </div>
@@ -30,5 +30,3 @@
 {% block scripts %}
     <script src="{{ request.script_root }}/static/{{ ctf_theme() }}/js/style.js"></script>
 {% endblock %}
-
-Caesar_Cipher.mp4
