@@ -153,47 +153,47 @@ CREATE TABLE challenges (
 	PRIMARY KEY (id), 
 	CHECK (hidden IN (0, 1))
 );
-INSERT INTO "challenges" VALUES(1,'Challenge 1','Decrypt the contents of the letter.',0,10,'Cryptography',0,1,'You need this number "10".',NULL);
-INSERT INTO "challenges" VALUES(2,'Challenge 2','Name the series.',0,10,'Trivia',0,1,'Reverse search is the new search.',NULL);
+INSERT INTO "challenges" VALUES(1,'Challenge 1','Decrypt the contents of the letter.',0,10,'Cryptography',0,0,'You need this number "10".',NULL);
+INSERT INTO "challenges" VALUES(2,'Challenge 2','Name the series.',0,10,'Trivia',0,0,'Reverse search is the new search.',NULL);
 INSERT INTO "challenges" VALUES(3,'Challenge 3','Can you find the flag here.
-http://localhost/3/index.php',0,10,'Web',0,1,'Some catch in the source',NULL);
-INSERT INTO "challenges" VALUES(4,'Challenge 4','What you think about the file is wrong!!',0,30,'Forensics',0,1,'EXTend your thinking.',NULL);
-INSERT INTO "challenges" VALUES(5,'Challenge 5','A message sent from a very old multi-tap mobile phone.',0,30,'Cryptography',0,1,'',NULL);
+http://localhost/3/index.php',0,10,'Web',0,0,'Some catch in the source',NULL);
+INSERT INTO "challenges" VALUES(4,'Challenge 4','What you think about the file is wrong!!',0,30,'Forensics',0,0,'EXTend your thinking.',NULL);
+INSERT INTO "challenges" VALUES(5,'Challenge 5','A message sent from a very old multi-tap mobile phone.',0,30,'Cryptography',0,0,'',NULL);
 INSERT INTO "challenges" VALUES(6,'Challenge 6','Can you trick my arrays? I don''t think so ... Try to leak out the flag.
-[ssh]',0,30,'Exploitation',0,1,'Is the limit, the limit?',NULL);
+[ssh]',0,30,'Exploitation',0,0,'Is the limit, the limit?',NULL);
 INSERT INTO "challenges" VALUES(7,'Challenge 7','It is known that the enemy is conducting a secret meeting next week. I found a file that will give me a secret password that I can use to find the location of meeting. Unfortunately, I don’t know what to do with it. Can you help me find secret password from the file?
-',0,50,'Reversing',0,1,'',NULL);
-INSERT INTO "challenges" VALUES(8,'Challenge 8','The file format is correct but there is something fishy about the file.',0,50,'Forensics',0,1,'Magic Number , Header',NULL);
+',0,50,'Reversing',0,0,'',NULL);
+INSERT INTO "challenges" VALUES(8,'Challenge 8','The file format is correct but there is something fishy about the file.',0,50,'Forensics',0,0,'Magic Number , Header',NULL);
 INSERT INTO "challenges" VALUES(9,'Challenge 9','This is updated version of previous web-Challenge
 
 http://localhost/9/index.php
-',0,80,'Web',0,1,'Extract the source',NULL);
+',0,80,'Web',0,0,'Extract the source',NULL);
 INSERT INTO "challenges" VALUES(10,'Challenge 10','The enemy (who is a big fan of coffee and an island in Indonesia) changed the password for next meeting for some reason and distributed this file to exchange password. Can you help me find the password for next meeting?
-',0,80,'Reversing',0,1,'Some catch in the source',NULL);
-INSERT INTO "challenges" VALUES(11,'Challenge 11','Know more about the file.',0,80,'Forensics',0,1,'Mayhem Ends Threat At Delhi At Ten Am.',NULL);
-INSERT INTO "challenges" VALUES(12,'Challenge 12','Those guys are getting better and better. They changed the password again for some reason! I don’t know why he keeps doing this. Anyway, this file has password for next level. Unfortunately, my brother did something called MD5 hashing of password and stored the result. Can you get the actual password?',0,80,'Reversing',0,1,'You need this number "10".',NULL);
+',0,80,'Reversing',0,0,'Some catch in the source',NULL);
+INSERT INTO "challenges" VALUES(11,'Challenge 11','Know more about the file.',0,80,'Forensics',0,0,'Mayhem Ends Threat At Delhi At Ten Am.',NULL);
+INSERT INTO "challenges" VALUES(12,'Challenge 12','Those guys are getting better and better. They changed the password again for some reason! I don’t know why he keeps doing this. Anyway, this file has password for next level. Unfortunately, my brother did something called MD5 hashing of password and stored the result. Can you get the actual password?',0,80,'Reversing',0,0,'You need this number "10".',NULL);
 INSERT INTO "challenges" VALUES(13,'Challenge 13','Two people, Blaise de Vigenère and Giovan Battista Bellaso, are meeting at a secret location to discuss something top secret. I found the location of meeting but need a password to enter the building. I think Bellaso sent the password to Vigenère in this message. Unfortunately, I don’t have anything else but this message. Can you help me find the password by breaking this message?
-',0,100,'Cryptography',0,1,'Reverse search is the new search.',NULL);
+',0,100,'Cryptography',0,0,'Reverse search is the new search.',NULL);
 INSERT INTO "challenges" VALUES(14,'Challenge 14','There is no flag.
 
-http://localhost/14/index.html',0,100,'Web',0,1,'Robots are good, Always ',NULL);
+http://localhost/14/index.html',0,100,'Web',0,0,'Robots are good, Always ',NULL);
 INSERT INTO "challenges" VALUES(15,'Challenge 15','It is simple. Just link it. And get me a shell.
-[ssh]',0,100,'Exploitation',0,1,'Symlinks are a powerful way to execute remote commands I have heard.',NULL);
+[ssh]',0,100,'Exploitation',0,0,'Symlinks are a powerful way to execute remote commands I have heard.',NULL);
 INSERT INTO "challenges" VALUES(16,'Challenge 16','be a CookieMonster
 
-http://localhost/16/index.php',0,150,'Web',0,1,'You know cookies ',NULL);
+http://localhost/16/index.php',0,150,'Web',0,0,'You know cookies ',NULL);
 INSERT INTO "challenges" VALUES(17,'Challenge 17','The enemy (who loves XOR cipher) sent a message via an email and we intercepted it. Can you help me break the encrypted message and get the original message so that I can get to them
-',0,150,'Cryptography',0,1,'Some catch in the source',NULL);
-INSERT INTO "challenges" VALUES(18,'Challenge 18','The enemy recently learnt a new algorithm for encrypting text called RSA. He sent me this message encrypted using RSA to his boss. But, we somehow got the encrypted message. Can you help me decrypt the message? We also were able to get some details thorugh a phone interrupt and it was to use openssl’s rsa utilities to extract details of the key but I don’t know what details are needed. Maybe this might help you',0,200,'Cryptography',0,1,'Magic Number , Header',NULL);
+',0,150,'Cryptography',0,0,'Some catch in the source',NULL);
+INSERT INTO "challenges" VALUES(18,'Challenge 18','The enemy recently learnt a new algorithm for encrypting text called RSA. He sent me this message encrypted using RSA to his boss. But, we somehow got the encrypted message. Can you help me decrypt the message? We also were able to get some details thorugh a phone interrupt and it was to use openssl’s rsa utilities to extract details of the key but I don’t know what details are needed. Maybe this might help you',0,200,'Cryptography',0,0,'Magic Number , Header',NULL);
 INSERT INTO "challenges" VALUES(19,'Challenge 19','EditThisCookie
 
-http://localhost/16/index.php',0,200,'Web',0,1,'Can you change the cookie? because only admin are permitted',NULL);
-INSERT INTO "challenges" VALUES(20,'Challenge 20','You have a text file. Or its not. Umm.. I''m not sure.',0,200,'Forensics',0,1,'Some catch in the source',NULL);
+http://localhost/16/index.php',0,200,'Web',0,0,'Can you change the cookie? because only admin are permitted',NULL);
+INSERT INTO "challenges" VALUES(20,'Challenge 20','You have a text file. Or its not. Umm.. I''m not sure.',0,200,'Forensics',0,0,'Some catch in the source',NULL);
 INSERT INTO "challenges" VALUES(21,'Challenge 21','Its their last bet. They(who also likes some snakes I think) learnt that we found the secret password and changed the password for next meeting again. Can you help me find the password for next meeting from this strange file? I could not find the type of this file. Maybe you should find that out first
-',0,80,'Reversing',0,1,'Mayhem Ends Threat At Delhi At Ten Am.',NULL);
+',0,80,'Reversing',0,0,'Mayhem Ends Threat At Delhi At Ten Am.',NULL);
 INSERT INTO "challenges" VALUES(22,'Challenge 22','Everything you think you know is wrong. Flow! And break the buffers ... Oh, and gain shell and read the flag.
-[ssh]',0,200,'Exploitation',0,1,'Does the buffer take in only as many bytes as you intend it to? Sure?',NULL);
-INSERT INTO "challenges" VALUES(23,'Challenge 23','Know more about the file.',0,350,'Boss',0,1,'Mayhem Ends Threat At Delhi At Ten Am.',NULL);
+[ssh]',0,200,'Exploitation',0,0,'Does the buffer take in only as many bytes as you intend it to? Sure?',NULL);
+INSERT INTO "challenges" VALUES(23,'Challenge 23','Know more about the file.',0,350,'Boss',0,0,'Mayhem Ends Threat At Delhi At Ten Am.',NULL);
 CREATE TABLE config (
 	id INTEGER NOT NULL, 
 	"key" TEXT, 
@@ -275,6 +275,7 @@ CREATE TABLE tracking (
 );
 INSERT INTO "tracking" VALUES(1,2130706433,1,'2017-04-02 07:58:23.221008');
 INSERT INTO "tracking" VALUES(2,2130706433,114,'2017-04-01 13:25:51.755700');
+INSERT INTO "tracking" VALUES(3,2130706433,111,'2017-04-02 08:39:46.684119');
 CREATE TABLE solves (
 	id INTEGER NOT NULL, 
 	chalid INTEGER, 
