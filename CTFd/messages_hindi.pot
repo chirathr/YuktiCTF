@@ -30,6 +30,7 @@ msgstr "एक हाल ही की रिपोर्ट में पता
 msgid "Yukti CTF"
 msgstr "युक्ति CTF"
 
+#: templates/original/Solutions.html:16 templates/original/base.html:61
 msgid "Solutions"
 msgstr "उपाय"
 
