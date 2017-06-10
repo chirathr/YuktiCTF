@@ -14,3 +14,17 @@ Tedchnology used:
  4. Bootstrap
  
 This was developed as a part of Smart India Hackathon 2017.
+
+## Screenshots
+
+Homepage
+
+![Alt text](/img/1.png?raw=true "Homepage")
+
+Registration page
+
+![Alt text](/img/2.png?raw=true "Registration")
+
+Challenge page
+
+![Alt text](/img/3.png?raw=true "Challenges")
