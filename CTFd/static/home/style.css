@@ -1095,10 +1095,11 @@ input {
 
   background: transparent;
   outline: none;
-  color: #726659;
+  color: #fefff6;
 
   border: solid 1px #b3aca7;
   border-bottom: none;
+    font-weight: 300;
 
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -1107,8 +1108,9 @@ input {
 }
 
 input:hover {
-  background: #b3aca7;
+  background: rgba(179, 172, 167, 0.67);
   color: #e2dedb;
+  font-weight: 300;
 }
 
 textarea {

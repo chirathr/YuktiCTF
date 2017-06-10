@@ -1,0 +1,150 @@
+(function(name,data){
+ if(typeof onTileMapLoaded === 'undefined') {
+  if(typeof TileMaps === 'undefined') TileMaps = {};
+  TileMaps[name] = data;
+ } else {
+  onTileMapLoaded(name,data);
+ }})("house",
+{ "height":25,
+ "layers":[
+        {
+         "compression":"zlib",
+         "data":"eJzVk7tOwzAUQI3dNuxQOsBUWhaYCkzwBR0Z2XhKrLwk+AAk+IHuDLDzSdCCWKGFlWPZVUwwbkyyMBzdm+v4yLm+6U0J0VFCNKFHfilMbDq1MTsizZUyLFrc97SvY2s34mfN55tRhlWL+57Lkfx9zfWVwX\/zzdO3hUDvYn3LuFYyvi0RJuTbwLWZ8T1zny9Qo55MOHue\/n3g+oQ5XI0SfGNqOBOYLmn+6vqM0Aj4YmjhacNSSb48TJqF7DzE0Oc7BlDhDqvQgnaB2R7iGsEsjjqswboqNs9Fyevr2jvdJe7BvjS5uxbj27Z7jokncCpN7q75fLcyxa1fBGbuPOB7kClu\/do+3xHvZRp17eoP39sNnC\/bv0dm4gn6nlkbqO89OiMewKE0ua9\/b+x5h6HHN4qcZ+1TFf4JSwKv0kRNFb4Aj\/AHpQ==",
+         "encoding":"base64",
+         "height":25,
+         "name":"Tile Layer 1",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
+        }],
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "properties":
+    {
+
+    },
+ "renderorder":"right-down",
+ "tileheight":32,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "image":"tileset\/1.jpg",
+         "imageheight":512,
+         "imagewidth":512,
+         "margin":0,
+         "name":"1",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tilecount":256,
+         "tileheight":32,
+         "tilewidth":32
+        }, 
+        {
+         "firstgid":257,
+         "image":"tileset\/2.png",
+         "imageheight":263,
+         "imagewidth":502,
+         "margin":0,
+         "name":"2",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tilecount":120,
+         "tileheight":32,
+         "tilewidth":32
+        }, 
+        {
+         "firstgid":377,
+         "image":"tileset\/3.jpg",
+         "imageheight":200,
+         "imagewidth":200,
+         "margin":0,
+         "name":"3",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tilecount":36,
+         "tileheight":32,
+         "tilewidth":32
+        }, 
+        {
+         "firstgid":413,
+         "image":"tileset\/Furniture8vs2-byLunarea.png",
+         "imageheight":360,
+         "imagewidth":480,
+         "margin":0,
+         "name":"4",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tilecount":165,
+         "tileheight":32,
+         "tilewidth":32
+        }, 
+        {
+         "firstgid":578,
+         "image":"tileset\/oio86.png",
+         "imageheight":512,
+         "imagewidth":512,
+         "margin":0,
+         "name":"oio86",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tilecount":256,
+         "tileheight":32,
+         "tilewidth":32,
+         "transparentcolor":"#ff00ff"
+        }, 
+        {
+         "firstgid":834,
+         "image":"tileset\/images.jpg",
+         "imageheight":181,
+         "imagewidth":279,
+         "margin":0,
+         "name":"images",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tilecount":40,
+         "tileheight":32,
+         "tilewidth":32,
+         "transparentcolor":"#ff00ff"
+        }, 
+        {
+         "firstgid":874,
+         "image":"tileset\/tileb.png",
+         "imageheight":512,
+         "imagewidth":512,
+         "margin":0,
+         "name":"tileb",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tilecount":256,
+         "tileheight":32,
+         "tilewidth":32,
+         "transparentcolor":"#ff00ff"
+        }],
+ "tilewidth":32,
+ "version":1,
+ "width":20
+});

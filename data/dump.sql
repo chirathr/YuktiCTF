@@ -139,6 +139,10 @@ INSERT INTO "teams" VALUES(110,'Harisha','2017','Guntur','F','Harisha','Harisha@
 INSERT INTO "teams" VALUES(111,'admin1','2017','Delhi','F','admin1','admin1@gmail.com','$bcrypt-sha256$2b,12$rf2WKQbI1HtAh2tShNj/YO$ftOaOFfCsYvGRBla2faXJQFZY0tYbVG',NULL,'MeitY',NULL,NULL,0,0,1,0,'2017-04-02 05:38:49.434382');
 INSERT INTO "teams" VALUES(112,'admin2','2017','Delhi','M','admin2','admin2@gmail.com','$bcrypt-sha256$2b,12$g4ZPzfKEAHKMz5dKwcf7JO$MlrCQVy9YvKPnhvhVmIW8L6yfTR9DpO',NULL,'MeitY',NULL,NULL,0,0,1,0,'2017-04-02 05:38:49.434558');
 INSERT INTO "teams" VALUES(113,'admin3','2017','Delhi','F','admin3','admin3@gmail.com','$bcrypt-sha256$2b,12$I9Ikq80TXr1eaBESUzrIiu$Ol1n9DLV4.HGe/ZGpOkWYbx2dXYpTLq',NULL,'MeitY',NULL,NULL,0,0,1,0,'2017-04-02 05:38:49.434695');
+INSERT INTO "teams" VALUES(114,'Shaunak','4','Amritapuri','M','shaunak','sg.shaunakganorkar@gmail.com','$bcrypt-sha256$2b,12$O/nQilByJnxUguXWzSd/Re$EFIhTp/npGMnwhfYx/PSIz924Iqlzmm',NULL,'Amrita University',NULL,NULL,0,0,0,0,'2017-04-02 10:10:02.156846');
+INSERT INTO "teams" VALUES(115,'arvind','3','Kollam','M','arvind','blah@blah.com','$bcrypt-sha256$2b,12$HGcthj7Nec/jFwmdVEnxKe$SdbkGeaLF/nYKv.0KWMlHMr2yzddXee',NULL,'Amrita',NULL,NULL,0,0,0,0,'2017-04-02 11:09:56.595274');
+INSERT INTO "teams" VALUES(116,'Tarunkant','1st year','Shahdol','male','tarun','xyz@gmail.com','$bcrypt-sha256$2b,12$8S6xkshGAzS2VkCadvG4Ue$uHw0y0N99/dTzLI3tDy4tRl7eVB/5pO',NULL,'college',NULL,NULL,0,0,0,0,'2017-04-02 11:34:15.598154');
+INSERT INTO "teams" VALUES(117,'SIdhant Gupta','2016','Delhi','M','sg004','guptasidhant004@gmail.com','$bcrypt-sha256$2b,12$KYrbsUI83C4jpqamS8k6ae$kEt0rGX5HhfIP0Hg5rxkRkeXdubkufi',NULL,'Amrtai University, Amritapuri, Kerala',NULL,NULL,0,0,0,0,'2017-04-02 11:45:24.494886');
 CREATE TABLE challenges (
 	id INTEGER NOT NULL, 
 	name VARCHAR(80), 
@@ -153,14 +157,14 @@ CREATE TABLE challenges (
 	PRIMARY KEY (id), 
 	CHECK (hidden IN (0, 1))
 );
-INSERT INTO "challenges" VALUES(1,'init()','Agni,
+INSERT INTO "challenges" VALUES(1,'Et tu, Brute?','Agni,
 We need your help but first we apologize for the challenge. Solve it and then we''ll talk.',0,10,'Cryptography',0,0,'You need this number "10".',NULL);
 INSERT INTO "challenges" VALUES(2,'Tineye','Agni,
 Few more tests. Name the series.',0,10,'Trivia',0,0,'Reverse search is the new search.',NULL);
 INSERT INTO "challenges" VALUES(3,'Webtastic','This code powers a crucial server of the enemy. Please identify the vulnerability in it so that we can leak the secret plans from their server.',0,10,'Web',0,0,'Some catch in the source',NULL);
 INSERT INTO "challenges" VALUES(4,'Misdirection','What you think about the file is wrong.',0,30,'Forensics',0,0,'EXTend your thinking.',NULL);
 INSERT INTO "challenges" VALUES(5,'Old is gold','We intercepted this secret message from the enemy of a bygone era. Can you decrypt it and find out what it says?',0,30,'Cryptography',0,0,'',NULL);
-INSERT INTO "challenges" VALUES(6,'Array re re','We found that our missile access code distribution server is running this vulnerable code. Can you patch it before the enemy steals the codes?',0,30,'Exploitation',0,0,'Is the limit, the limit?',NULL);
+INSERT INTO "challenges" VALUES(6,'Array re re','We found that our missile access code distribution server is running this vulnerable code. Can you identify the vulnerable function ?',0,30,'Exploitation',0,0,'Is the limit, the limit?',NULL);
 INSERT INTO "challenges" VALUES(7,'Challenge 7','It is known that the enemy is conducting a secret meeting next week. I found a file that will give me a secret password that I can use to find the location of meeting. Unfortunately, I don’t know what to do with it. Can you help me find secret password from the file?
 ',0,50,'Reversing',0,0,'',NULL);
 INSERT INTO "challenges" VALUES(8,'Challenge 8','The file format is correct but there is something fishy about the file.',0,50,'Forensics',0,0,'Magic Number , Header',NULL);
@@ -184,7 +188,7 @@ INSERT INTO "challenges" VALUES(16,'Challenge 16','be a CookieMonster
 http://localhost/16/index.php',0,150,'Web',0,0,'You know cookies ',NULL);
 INSERT INTO "challenges" VALUES(17,'Challenge 17','The enemy (who loves XOR cipher) sent a message via an email and we intercepted it. Can you help me break the encrypted message and get the original message so that I can get to them
 ',0,150,'Cryptography',0,0,'Some catch in the source',NULL);
-INSERT INTO "challenges" VALUES(18,'Challenge 18','The enemy recently learnt a new algorithm for encrypting text called RSA. He sent me this message encrypted using RSA to his boss. But, we somehow got the encrypted message. Can you help me decrypt the message? We also were able to get some details thorugh a phone interrupt and it was to use openssl’s rsa utilities to extract details of the key but I don’t know what details are needed. Maybe this might help you',0,200,'Cryptography',0,0,'Magic Number , Header',NULL);
+INSERT INTO "challenges" VALUES(18,'Challenge 18','The enemy recently learnt a new algorithm for encrypting text called RSA. He sent me this message encrypted using RSA. But, we somehow got the encrypted message. Can you help me decrypt the message? We also were able to get some details thorugh a phone interrupt and it was to use openssl’s rsa utilities to extract details of the key but I don’t know what details are needed. Maybe this might help you',0,200,'Cryptography',0,0,'Magic Number , Header',NULL);
 INSERT INTO "challenges" VALUES(19,'Challenge 19','EditThisCookie
 
 http://localhost/16/index.php',0,200,'Web',0,0,'Can you change the cookie? because only admin are permitted',NULL);
@@ -221,6 +225,11 @@ INSERT INTO "config" VALUES(18,'setup','1');
 INSERT INTO "config" VALUES(19,'hide_scores',NULL);
 INSERT INTO "config" VALUES(20,'mg_api_key',NULL);
 INSERT INTO "config" VALUES(21,'view_scoreboard_if_authed',NULL);
+INSERT INTO "config" VALUES(22,'prevent_name_change',NULL);
+INSERT INTO "config" VALUES(23,'view_scoreboard_if_utils.authed',NULL);
+INSERT INTO "config" VALUES(24,'mailfrom_addr',NULL);
+INSERT INTO "config" VALUES(25,'mg_base_url',NULL);
+INSERT INTO "config" VALUES(26,'view_after_ctf',NULL);
 CREATE TABLE pages (
 	id INTEGER NOT NULL, 
 	route VARCHAR(80), 
@@ -256,7 +265,7 @@ INSERT INTO "files" VALUES(2,2,'b948df0a75efe67a47701a05cd496af2/Challenge.png')
 INSERT INTO "files" VALUES(3,3,'369e8f057b24361c4df60b964b1b48d9/index.php');
 INSERT INTO "files" VALUES(4,4,'eb890cc743fea2c6cedb92254c08fc3b/Challenge.bin');
 INSERT INTO "files" VALUES(5,5,'2f54c6956c7e57dc1a90b08de62a6f38/crypto_2.txt');
-INSERT INTO "files" VALUES(6,6,'da32b2c44c6c8f1ce24c7f7f2176dd23/challenge.c');
+INSERT INTO "files" VALUES(6,6,'adf54a86551557bf948292ef793de9df/vuln.c');
 CREATE TABLE tracking (
 	id INTEGER NOT NULL, 
 	ip BIGINT, 
@@ -267,7 +276,14 @@ CREATE TABLE tracking (
 );
 INSERT INTO "tracking" VALUES(1,2130706433,1,'2017-04-02 07:58:23.221008');
 INSERT INTO "tracking" VALUES(2,2130706433,114,'2017-04-01 13:25:51.755700');
-INSERT INTO "tracking" VALUES(3,2130706433,111,'2017-04-02 09:57:32.120589');
+INSERT INTO "tracking" VALUES(3,2130706433,111,'2017-04-02 12:57:24.100732');
+INSERT INTO "tracking" VALUES(4,-1062720667,111,'2017-04-02 11:16:27.827390');
+INSERT INTO "tracking" VALUES(5,-1062720667,114,'2017-04-02 10:15:38.357079');
+INSERT INTO "tracking" VALUES(6,-1062720767,111,'2017-04-02 11:32:22.152109');
+INSERT INTO "tracking" VALUES(7,-1062720667,8,'2017-04-02 11:09:01.532731');
+INSERT INTO "tracking" VALUES(8,-1062720667,115,'2017-04-02 11:15:35.863826');
+INSERT INTO "tracking" VALUES(9,-1062720738,116,'2017-04-02 11:55:46.871506');
+INSERT INTO "tracking" VALUES(10,-1062720569,117,'2017-04-02 11:55:14.623838');
 CREATE TABLE solves (
 	id INTEGER NOT NULL, 
 	chalid INTEGER, 
@@ -387,6 +403,13 @@ INSERT INTO "solves" VALUES(104,7,19,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','201
 INSERT INTO "solves" VALUES(105,10,19,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 07:57:44.286630');
 INSERT INTO "solves" VALUES(106,3,30,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 07:57:57.751860');
 INSERT INTO "solves" VALUES(107,19,47,2130706433,'MARKED_AS_SOLVED_BY_ADMIN','2017-04-02 07:58:12.942608');
+INSERT INTO "solves" VALUES(108,1,114,-1062720667,'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}','2017-04-02 10:11:16.934555');
+INSERT INTO "solves" VALUES(109,1,115,-1062720667,'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}','2017-04-02 11:14:45.827629');
+INSERT INTO "solves" VALUES(110,9,116,-1062720738,'flag{Extr4ct_S0urc3_C0d3}','2017-04-02 11:43:21.683260');
+INSERT INTO "solves" VALUES(111,14,116,-1062720738,'flag{Y0u_4r3_G00d_1n_r0b0ts}','2017-04-02 11:48:33.809532');
+INSERT INTO "solves" VALUES(112,1,117,-1062720569,'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}','2017-04-02 11:49:53.191271');
+INSERT INTO "solves" VALUES(113,1,111,2130706433,'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}','2017-04-02 11:56:26.672575');
+INSERT INTO "solves" VALUES(114,6,111,2130706433,'gets','2017-04-02 12:39:45.881279');
 CREATE TABLE tags (
 	id INTEGER NOT NULL, 
 	chal INTEGER, 
@@ -407,7 +430,6 @@ INSERT INTO "keys" VALUES(1,1,0,'flag{pr0v3_y0ur_5kill5_t0_c0mp3t3}',NULL);
 INSERT INTO "keys" VALUES(2,2,0,'flag{westworld}',NULL);
 INSERT INTO "keys" VALUES(3,3,0,'flag{A1w4ys_S3e_S0urc3_C0d3}',NULL);
 INSERT INTO "keys" VALUES(4,4,0,'flag{y0u_g0t_7h3_3xt3ns10n_c0rr3ct3d}',NULL);
-INSERT INTO "keys" VALUES(6,6,0,'flag{B4by_57ep5_t0_1337}',NULL);
 INSERT INTO "keys" VALUES(8,8,0,'flag{y0u_n33d_t0_ed1t_7h3_h34d3r}',NULL);
 INSERT INTO "keys" VALUES(9,9,0,'flag{Extr4ct_S0urc3_C0d3}',NULL);
 INSERT INTO "keys" VALUES(11,11,0,'flag{m3tadat4_15_v3ry_1mp0rt4nt}',NULL);
@@ -426,6 +448,8 @@ INSERT INTO "keys" VALUES(28,7,0,'flag{source_code}',NULL);
 INSERT INTO "keys" VALUES(29,10,0,'flag{java_is_not_just_coffee}',NULL);
 INSERT INTO "keys" VALUES(30,12,0,'flag{secretcode}',NULL);
 INSERT INTO "keys" VALUES(31,21,0,'flag{python_rocks}',NULL);
+INSERT INTO "keys" VALUES(32,6,0,'gets()',NULL);
+INSERT INTO "keys" VALUES(33,6,0,'gets',NULL);
 CREATE TABLE wrong_keys (
 	id INTEGER NOT NULL, 
 	chalid INTEGER, 
@@ -436,6 +460,14 @@ CREATE TABLE wrong_keys (
 	FOREIGN KEY(chalid) REFERENCES challenges (id), 
 	FOREIGN KEY(teamid) REFERENCES teams (id)
 );
+INSERT INTO "wrong_keys" VALUES(1,1,114,'2017-04-02 10:10:54.993054','pr0v3_y0ur_5kill5_t0_c0mp3t3');
+INSERT INTO "wrong_keys" VALUES(2,1,116,'2017-04-02 11:37:17.498692','flag{prvyurkilltcmpt}');
+INSERT INTO "wrong_keys" VALUES(3,1,116,'2017-04-02 11:41:32.431190','flag{prv_yur_kill_tcmpt}');
+INSERT INTO "wrong_keys" VALUES(4,1,116,'2017-04-02 11:41:36.228256','flag{prv_yur_kill_tcmpt}');
+INSERT INTO "wrong_keys" VALUES(5,1,116,'2017-04-02 11:41:58.986360','flag{prv_yur_killt_cmpt}');
+INSERT INTO "wrong_keys" VALUES(6,1,116,'2017-04-02 11:42:01.076681','flag{prv_yur_killt_cmpt}');
+INSERT INTO "wrong_keys" VALUES(7,1,116,'2017-04-02 11:42:02.123784','flag{prv_yur_killt_cmpt}');
+INSERT INTO "wrong_keys" VALUES(8,1,116,'2017-04-02 11:42:02.341893','flag{prv_yur_killt_cmpt}');
 CREATE TABLE awards (
 	id INTEGER NOT NULL, 
 	teamid INTEGER, 
