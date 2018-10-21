@@ -1,4 +1,8 @@
-*Yukti CTF
+[![Rawsec's CyberSecurity Inventory](https://inventory.rawsec.ml/img/badges/Rawsec-inventoried-FF5050_flat.svg)](https://inventory.rawsec.ml/ctf_platforms.html#YuktiCTF)
+[![GitHub stars](https://img.shields.io/github/stars/chirathr/YuktiCTF.svg)](https://github.com/chirathr/YuktiCTF/stargazers)
+[![GitHub license](https://img.shields.io/github/license/chirathr/YuktiCTF.svg)](https://github.com/chirathr/YuktiCTF/blob/master/LICENSE)
+
+# Yukti CTF
 
 A Game platform to spread awareness among school and university students about various cyber attacks. Yuki CTF is based on CTFd(github.com/ctfd/ctfd) and adds an Intractive UI along with an RPG style game.
 
